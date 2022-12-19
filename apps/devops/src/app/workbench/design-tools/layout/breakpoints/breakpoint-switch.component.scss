@@ -1,0 +1,44 @@
+:host {
+  ::ng-deep {
+    &, & label {
+      display: flex
+    }
+
+    label {
+      cursor: pointer;
+      padding: 0.3125rem 0.3125rem;
+      margin: 0 0.25rem;
+      align-items: center;
+
+      font-size: 1.25rem;
+
+      &.checked {
+        border-radius: 0.1875rem;
+        background-color: #f0f0f0;
+      }
+    }
+
+    label :first-child {
+      padding-left: 0
+    }
+
+    label :last-child {
+      padding-right: 0
+    }
+
+    input {
+      opacity: 0;
+      height: 0;
+      width: 0
+    }
+
+    tri-icon svg {
+      fill: #959dad
+    }
+
+    input:checked ~ tri-icon svg, label:hover tri-icon svg {
+      fill: #444;
+    }
+
+  }
+}

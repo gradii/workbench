@@ -1,0 +1,70 @@
+:host {
+  pointer-events: none;
+  position: relative
+}
+
+:host .handle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+:host .both-handle.active, :host .both-handle:hover, :host .horizontal-handle.active, :host .horizontal-handle:hover, :host .vertical-handle.active, :host .vertical-handle:hover {
+  background-color: rgba(255, 133, 108, .3)
+}
+
+.reverse:host {
+  cursor: nesw-resize
+}
+
+:host .both-handle {
+  width: .75rem;
+  height: .75rem;
+  pointer-events: auto;
+  position: absolute;
+  right: -.375rem;
+  bottom: -.375rem;
+  cursor: nwse-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px
+}
+
+:host .both-handle .handle {
+  border: 1px solid var(--dev-ui-action-background-color);
+  border-radius: 2px;
+  background-color: #fff;
+  width: .5rem;
+  height: .5rem
+}
+
+:host .both-handle.reverse {
+  right: auto;
+  left: -.375rem;
+  cursor: nwse-resize
+}
+
+:host .vertical-handle {
+  width: 100%;
+  height: 8px;
+  pointer-events: auto;
+  position: absolute;
+  bottom: -4px;
+  cursor: ns-resize
+}
+
+:host .horizontal-handle {
+  width: 8px;
+  height: 100%;
+  pointer-events: auto;
+  position: absolute;
+  right: -4px;
+  cursor: ew-resize
+}
+
+:host .horizontal-handle.reverse {
+  right: auto;
+  left: -4px
+}

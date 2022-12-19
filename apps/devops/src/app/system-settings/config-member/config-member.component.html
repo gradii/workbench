@@ -1,0 +1,25 @@
+<h3>用户列表</h3>
+
+<button triButton (click)="onAddMember()">添加用户</button>
+<tri-data-table [dataSource]="items"
+              [scrollable]="true">
+  <tri-data-table-column field="id" title="id"></tri-data-table-column>
+  <tri-data-table-column field="accountName" title="accountName"></tri-data-table-column>
+  <tri-data-table-column field="realName" title="realName"></tri-data-table-column>
+  <!--  <d-column field="role" title="role"></d-column>-->
+  <tri-data-table-column [editable]="false" field="permissionRoles" title="角色">
+    <ng-template triGridCellTemplate let-cellItem="cellItem" let-cellValue="cellValue">
+      {{this.formatPermissionRoles(cellValue)}}
+    </ng-template>
+  </tri-data-table-column>
+  <tri-data-table-column field="created_at" title="创建时间">
+    <ng-template triGridCellTemplate let-cellValue="cellValue">
+      {{cellValue|date:'yyyy-MM-dd HH:mm:ssZ'}}
+    </ng-template>
+  </tri-data-table-column>
+  <tri-data-table-column title="操作">
+      <ng-template triGridCellTemplate let-rowItem="rowItem">
+        <button triButton (click)="onEditRole(rowItem)" [size]="'sm'">编辑角色</button>
+      </ng-template>
+  </tri-data-table-column>
+</tri-data-table>

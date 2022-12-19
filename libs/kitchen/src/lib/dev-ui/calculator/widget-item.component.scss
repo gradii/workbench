@@ -1,0 +1,84 @@
+:host {
+  width: 9.625rem;
+  height: 9.625rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #15171f;
+  color: #fff;
+  border-radius: .25rem;
+  cursor: pointer;
+  position: relative
+}
+
+.suggested:host {
+  background-color: transparent;
+  border-right: none
+}
+
+:host:hover {
+  background-color: #232730;
+  color: #959dad
+}
+
+:host:active, :host:focus {
+  background-color: #313642;
+  color: #959dad
+}
+
+:host .preview-image {
+  width: 100%
+}
+
+:host .widget-name {
+  margin: .875rem .25rem;
+  line-height: 1.5;
+  text-align: center;
+  font-size: .6875rem;
+  font-weight: 600
+}
+
+:host bc-icon {
+  margin: 1.125rem 0 .5rem
+}
+
+:host bc-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff
+}
+
+:host :hover bc-icon svg {
+  fill: #959dad
+}
+
+:host .lock-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 2.8125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(21, 24, 41, .75);
+  font-size: .8125rem;
+  font-weight: 600;
+  text-align: center
+}
+
+:host .lock-container bc-icon {
+  display: block;
+  background-color: #293143;
+  border-radius: .25rem;
+  padding: .375rem
+}
+
+:host .lock-container span {
+  margin: 1rem 3rem
+}
+
+:host .lock-container bc-icon svg {
+  width: 1.5rem;
+  height: 1.5rem
+}

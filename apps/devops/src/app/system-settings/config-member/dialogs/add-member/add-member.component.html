@@ -1,0 +1,36 @@
+<tri-card>
+  <tri-card-header>
+    <span>{{'Add Member'}}</span>
+  </tri-card-header>
+  <tri-card-body>
+    <form tri-form labelSize="100" autocomplete="off">
+      <tri-form-item>
+        <tri-form-label>account</tri-form-label>
+        <tri-form-control>
+          <input triInput name="accountName" required [(ngModel)]="formData.accountName" />
+        </tri-form-control>
+      </tri-form-item>
+      <tri-form-item>
+        <tri-form-label>real name</tri-form-label>
+        <tri-form-control>
+          <input triInput name="realName" required [(ngModel)]="formData.realName" />
+        </tri-form-control>
+      </tri-form-item>
+      <tri-form-item>
+        <tri-form-label>密码</tri-form-label>
+        <tri-form-control>
+          <input triInput type="password" name="password" required [(ngModel)]="formData.password" />
+        </tri-form-control>
+      </tri-form-item>
+      <tri-form-item>
+        <tri-form-label>确认密码</tri-form-label>
+        <tri-form-control>
+          <input triInput type="password" name="confirmPassword" required [(ngModel)]="formData.confirmPassword" />
+        </tri-form-control>
+      </tri-form-item>
+    </form>
+  </tri-card-body>
+  <tri-card-footer>
+    <button tri-button (click)="onSave()">save</button>
+  </tri-card-footer>
+</tri-card>

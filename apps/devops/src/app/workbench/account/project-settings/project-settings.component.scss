@@ -1,0 +1,13 @@
+.action-buttons-wrapper {
+  margin: 0 0 0 auto
+}
+
+.action-buttons-wrapper > * {
+  margin-left: .5rem
+}
+
+nb-alert {
+  position: absolute;
+  bottom: 0;
+  right: 1rem
+}

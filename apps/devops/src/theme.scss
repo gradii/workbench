@@ -1,0 +1,19 @@
+@use '@gradii/triangle/core/style/theming';
+@use '@gradii/triangle/core/style/variables' as v;
+@use "@gradii/triangle/core/themes/theme" with (
+  $primary : theming.tri-palette(v.$tri-indigo),
+  $secondary  : theming.tri-palette(v.$tri-pink, A200, A100, A400),
+  $info    : theming.tri-palette(v.$tri-blue, A200, A100, A400),
+  $success : theming.tri-palette(v.$tri-blue, A200, A100, A400),
+);
+
+@use "@gradii/triangle/core/core-theme";
+@use '@gradii/triangle/core/themes/theme-global';
+
+* {
+  box-sizing : border-box;
+}
+
+@include core-theme.tri-core();
+
+@include theme-global.gradii-triangle-theme-global();

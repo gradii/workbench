@@ -1,0 +1,187 @@
+<div class="welcome-survey">
+  <img src="assets/logo.svg" class="logo-image" alt="Devops"/>
+
+  <h1 id="title" class="form-heading">Welcome to UI&nbsp;Bakery</h1>
+
+  <a class="link-skip subtitle text-hint" (click)="navigate()">Skip this step</a>
+
+  <form (ngSubmit)="updateUser()" [formGroup]="user" class="bc-form" aria-labelledby="title">
+    <p class="form-legend">Let’s get acquainted!</p>
+
+    <div class="inputs">
+      <div class="left-inputs">
+        <div class="form-control-group">
+          <label class="form-control-label" for="input-full_name">Full name</label>
+          <input
+            triInput
+            id="input-full_name"
+            triTrim
+            placeholder="Full Name"
+            autofocus
+            formControlName="fullName"
+            fullWidth
+          />
+          <span class="form-control-message-container">
+            <ng-container *ngIf="fullName.invalid">
+              <p class="form-error-message" *ngIf="fullName.errors?.required">
+                <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+                Full name is required!
+              </p>
+              <p class="form-error-message" *ngIf="fullName.errors?.tooManyChars">
+                <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+                Full name should not contain more than 250 symbols!
+              </p>
+            </ng-container>
+          </span>
+        </div>
+
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">Role</label>
+          <tri-select
+            id="input-role"
+            shape="rectangle"
+            placeholder="Your role:"
+            formControlName="role"
+            outline
+            fullWidth
+          >
+            <tri-option value="Developer">Developer</tri-option>
+            <tri-option value="Lead / Architect / Developers manager">Lead / Architect / Developers manager</tri-option>
+            <tri-option value="UI/UX Designer">UI/UX Designer</tri-option>
+            <tri-option value="Consultant">Consultant</tri-option>
+            <tri-option value="Product manager">Product manager</tri-option>
+            <tri-option value="CEO/CTO">CEO/CTO</tri-option>
+            <tri-option value="Other">Other</tri-option>
+          </tri-select>
+        </div>
+
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">Company size</label>
+          <tri-select
+            id="input-company-size"
+            shape="rectangle"
+            placeholder="Your company size:"
+            formControlName="companySize"
+            outline
+            fullWidth
+          >
+            <tri-option value="1">1</tri-option>
+            <tri-option value="2-10">2-10</tri-option>
+            <tri-option value="11-50">11-50</tri-option>
+            <tri-option value="51-200">51-200</tri-option>
+            <tri-option value="201-500">201-500</tri-option>
+            <tri-option value="501-1,000">501-1,000</tri-option>
+            <tri-option value="1,001-5,000">1,001-5,000</tri-option>
+            <tri-option value="5,001-10,000">5,001-10,000</tri-option>
+            <tri-option value="10,000+">10,000+</tri-option>
+          </tri-select>
+        </div>
+
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">Company industry</label>
+          <tri-select
+            id="input-company-industry"
+            shape="rectangle"
+            placeholder="Your company industry:"
+            formControlName="companyIndustry"
+            outline
+            fullWidth
+          >
+            <tri-option value="Agriculture & Forestry/Wildlife">Agriculture & Forestry/Wildlife</tri-option>
+            <tri-option value="Business & Information">Business & Information</tri-option>
+            <tri-option value="Construction/Utilities/Contracting">Construction/Utilities/Contracting</tri-option>
+            <tri-option value="Computer Science">Computer Science</tri-option>
+            <tri-option value="Consulting">Consulting</tri-option>
+            <tri-option value="Education">Education</tri-option>
+            <tri-option value="Finance & Insurance">Finance & Insurance</tri-option>
+            <tri-option value="Food & Hospitality">Food & Hospitality</tri-option>
+            <tri-option value="Gaming">Gaming</tri-option>
+            <tri-option value="Health Services">Health Services</tri-option>
+            <tri-option value="Motor vehicles">Motor vehicles</tri-option>
+            <tri-option value="Natural Resources/Environmental">Natural Resources/Environmental</tri-option>
+            <tri-option value="Personal Services">Personal Services</tri-option>
+            <tri-option value="Real Estate & Housing">Real Estate & Housing</tri-option>
+            <tri-option value="Safety/Security & Legal">Safety/Security & Legal</tri-option>
+            <tri-option value="Other">Other</tri-option>
+          </tri-select>
+        </div>
+      </div>
+
+      <div class="right-inputs">
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">What's the problem do you want to solve with Devops?</label>
+          <tri-select
+            id="input-problem-to-solve"
+            shape="rectangle"
+            placeholder="select"
+            formControlName="problemToSolve"
+            outline
+            fullWidth
+          >
+            <tri-option value="Decrease time to market">Decrease time to market</tri-option>
+            <tri-option value="Handle 'design to code' process better">Handle "design to code" process better</tri-option>
+            <tri-option value="Simplify frontend development">Simplify frontend development</tri-option>
+            <tri-option value="Decrease costs for frontend development"
+            >Decrease costs for frontend development
+            </tri-option>
+            <tri-option value="Minimize repetitive/monkey job">Minimize repetitive/monkey job</tri-option>
+            <tri-option value="Other">Other</tri-option>
+          </tri-select>
+        </div>
+
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">Which of the following describes you best?</label>
+          <tri-select
+            id="input-your-description"
+            shape="rectangle"
+            placeholder="select"
+            formControlName="description"
+            outline
+            fullWidth
+          >
+            <tri-option value="A new app for my company">A new app for my company</tri-option>
+            <tri-option value="An existing app for my company">An existing app for my company</tri-option>
+            <tri-option value="A new app for my client">A new app for my client</tri-option>
+            <tri-option value="An existing app for my client">An existing app for my client</tri-option>
+            <tri-option value="A new app for myself">A new app for myself</tri-option>
+            <tri-option value="An existing app for myself">An existing app for myself</tri-option>
+          </tri-select>
+        </div>
+
+        <div class="form-control-group no-errors">
+          <label class="form-control-label">What's the solution do you want to make?</label>
+          <tri-select
+            id="input-your-solution"
+            shape="rectangle"
+            placeholder="select"
+            formControlName="solution"
+            outline
+            fullWidth
+          >
+            <tri-option value="B2B application">B2B application</tri-option>
+            <tri-option value="B2C application">B2C application</tri-option>
+            <tri-option value="Automation internal processes (HR, Accounting, etc)"
+            >Automation internal processes (HR, Accounting, etc)
+            </tri-option>
+            <tri-option value="Corporate site">Corporate site</tri-option>
+            <tri-option value="Other">Other</tri-option>
+          </tri-select>
+        </div>
+
+        <div class="form-actions-group form-submit">
+          <button
+            triButton
+            status="primary"
+            class="form-action"
+            [disabled]="user.invalid"
+            [type]="submitted ? 'button' : 'submit'"
+            [class.spinner-button]="submitted"
+            [loading]="submitted"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

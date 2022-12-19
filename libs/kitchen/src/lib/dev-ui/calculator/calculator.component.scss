@@ -1,0 +1,31 @@
+:host {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%
+}
+
+:host .search-input[nbInput][class] {
+  border-color: #313642;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: #15171f;
+  padding: .75rem .75rem .75rem 2.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+:host .search-input[nbInput][class]:active, :host .search-input[nbInput][class]:focus {
+  border-color: #313642;
+  outline: none;
+  box-shadow: none
+}
+
+:host nb-tabset {
+  overflow: hidden
+}
+
+:host nb-tabset .tab nb-icon, :host nb-tabset nb-icon svg {
+  font-size: 1rem
+}

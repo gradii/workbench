@@ -1,0 +1,18 @@
+<!--<p>deploy-log works!</p>-->
+<tri-card>
+
+  <div class="ui-terminal-container">
+    <ui-terminal #terminal="uiTerminal" [outChunk]="outChunk"></ui-terminal>
+
+
+  </div>
+  <div class="mt-2">
+    <button triButton class="mx-1" (click)="onReDeployGenerateCode()">重新部署-生成代码</button>
+    <button triButton class="mx-1" (click)="onReDeployDependency()" [disabled]="prodDisabled">重新部署-安装依赖</button>
+    <button triButton class="mx-1" (click)="onReDeployBuild()">重新部署-构建</button>
+    <button triButton class="mx-1" (click)="onReDeployRestart()">重新部署-启动服务</button>
+    <button triButton class="mx-1" bsStyle="danger" (click)="onReDeployStop()">停止服务</button>
+    <button triButton class="mx-1" bsStyle="common" (click)="showServerLog()">服务日志</button>
+  </div>
+
+</tri-card>

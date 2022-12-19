@@ -1,0 +1,57 @@
+:host {
+  justify-content: flex-start;
+  position: relative
+}
+
+:host, :host .list {
+  display: flex;
+  align-items: flex-start
+}
+
+:host .list {
+  position: absolute
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled {
+  padding: .1875rem .25rem
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled.breadcrumb-item:active, :host .action-button[nbButton].clear-icon.appearance-filled.breadcrumb-item:focus, :host .action-button[nbButton].clear-icon.appearance-filled.breadcrumb-item:hover {
+  color: var(--dev-ui-hover-breadcrumb-color);
+  background-color: var(--dev-ui-hover-background-breadcrumb-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled.not-available {
+  cursor: unset
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled.not-available:active, :host .action-button[nbButton].clear-icon.appearance-filled.not-available:focus, :host .action-button[nbButton].clear-icon.appearance-filled.not-available:hover {
+  color: var(--dev-ui-action-color);
+  background-color: var(--dev-ui-action-background-color)
+}
+
+.top :host {
+  flex-direction: column
+}
+
+.top :host .action-button {
+  margin-top: .125rem
+}
+
+.top :host .list {
+  bottom: 1.25rem;
+  flex-direction: column
+}
+
+.bottom-inset :host, .bottom :host {
+  flex-direction: column-reverse
+}
+
+.bottom-inset :host .action-button, .bottom :host .action-button {
+  margin-bottom: .125rem
+}
+
+.bottom-inset :host .list, .bottom :host .list {
+  top: 1.25rem;
+  flex-direction: column-reverse
+}

@@ -1,0 +1,11 @@
+<tri-checkbox name="announcements" [(ngModel)]="confirmState.announcements" (ngModelChange)="onChange()">
+  <span class="text-hint">By clicking Sign up, I agree to get announcement emails from Devops.</span>
+</tri-checkbox>
+
+<tri-checkbox name="terms" [(ngModel)]="confirmState.terms" (ngModelChange)="onChange()" required>
+  <span class="text-hint">
+    By clicking Sign up, I agree to the&#32;
+    <a href="https://loclahost/terms-of-service" class="link" target="_blank">Terms of Service</a>&#32; and&#32;
+    <a href="https://loclahost/privacy-policy" class="link" target="_blank">Privacy Policy</a>
+  </span>
+</tri-checkbox>

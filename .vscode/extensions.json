@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "k--kato.intellij-idea-keybindings",
+    "angular.ng-template",
+    "akamud.vscode-theme-onedark",
+    "abusaidm.html-snippets",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
+  ]
+}

@@ -1,0 +1,32 @@
+
+.reverse:host {
+  flex-direction: row-reverse;
+
+  .point-container {
+    left: 100%
+  }
+}
+
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-size: .75rem;
+
+  .point-container {
+    position: absolute;
+    left: -12px;
+    width: .75rem;
+    height: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .point {
+    width: .375rem;
+    height: .375rem;
+    border-radius: 50%
+  }
+}

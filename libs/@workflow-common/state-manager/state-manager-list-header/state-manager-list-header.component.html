@@ -1,0 +1,13 @@
+<div class="header-row">
+  <h6 class="workflow-title">Variable List</h6>
+
+  <button class="list-header-btn" triButton variant="default" color="primary" size="xsmall" (click)="create.emit()">
+    <span class="text">Add New</span>
+    <tri-icon svgIcon="outline:plus"></tri-icon>
+  </button>
+</div>
+
+
+<pf-state-variable-search
+  (filterByName)="filterByName.emit($event)">
+</pf-state-variable-search>

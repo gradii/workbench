@@ -1,0 +1,111 @@
+.nb-theme-dark a[nbButton] svg,
+.nb-theme-dark button[nbButton] svg {
+  transition: fill 0.15s ease-in;
+}
+.nb-theme-dark button[nbButton].status-basic.appearance-ghost, .nb-theme-dark button[nbButton].appearance-ghost[nbInput] {
+  color: #959dad;
+  fill: #959dad;
+}
+.nb-theme-dark button[nbButton].status-basic.appearance-ghost:hover:not([disabled]), .nb-theme-dark button[nbButton].appearance-ghost:hover:not([disabled])[nbInput], .nb-theme-dark button[nbButton].status-basic.appearance-ghost:not([disabled]):active, .nb-theme-dark button[nbButton].appearance-ghost:not([disabled]):active[nbInput], .nb-theme-dark button[nbButton].status-basic.appearance-ghost:not([disabled]):focus, .nb-theme-dark button[nbButton].appearance-ghost:not([disabled]):focus[nbInput] {
+  background-color: transparent;
+  color: #ffffff;
+}
+.nb-theme-dark button[nbButton].status-basic.appearance-ghost:hover:not([disabled]) svg, .nb-theme-dark button[nbButton].appearance-ghost:hover:not([disabled])[nbInput] svg, .nb-theme-dark button[nbButton].status-basic.appearance-ghost:not([disabled]):active svg, .nb-theme-dark button[nbButton].appearance-ghost:not([disabled]):active[nbInput] svg, .nb-theme-dark button[nbButton].status-basic.appearance-ghost:not([disabled]):focus svg, .nb-theme-dark button[nbButton].appearance-ghost:not([disabled]):focus[nbInput] svg {
+  fill: #ffffff;
+}
+.nb-theme-dark button[nbButton].clear-icon,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled {
+  border: none;
+  background-color: transparent;
+  color: #959dad;
+  fill: #959dad;
+  font-size: 0;
+}
+.nb-theme-dark button[nbButton].clear-icon.active svg,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled.active svg {
+  fill: #ffffff;
+}
+.nb-theme-dark button[nbButton].clear-icon:not([disabled]):hover, .nb-theme-dark button[nbButton].clear-icon:not([disabled]):active, .nb-theme-dark button[nbButton].clear-icon:not([disabled]):focus,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):hover,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):active,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):focus {
+  background-color: transparent;
+  color: #ffffff;
+}
+.nb-theme-dark button[nbButton].clear-icon:not([disabled]):hover svg, .nb-theme-dark button[nbButton].clear-icon:not([disabled]):active svg, .nb-theme-dark button[nbButton].clear-icon:not([disabled]):focus svg,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):hover svg,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):active svg,
+.nb-theme-dark button[nbButton].clear-icon.appearance-filled:not([disabled]):focus svg {
+  fill: #ffffff;
+}
+.nb-theme-dark button[nbButton] svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nb-theme-dark button[nbButton][size="tiny"] svg {
+  width: 1rem;
+  height: 1rem;
+}
+.nb-theme-dark button[nbButton][size="small"] svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.nb-theme-dark button[nbButton][size="medium"] svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nb-theme-dark button[nbButton][size="large"] svg {
+  width: 2rem;
+  height: 2rem;
+}
+.nb-theme-dark [nbButton].appearance-filled.status-secondary {
+  background-color: #8f5cff;
+  border-color: #8f5cff;
+  color: #ffffff;
+}
+.nb-theme-dark [nbButton].appearance-filled.status-secondary:focus {
+  background-color: #6d43db;
+  border-color: #502eb7;
+}
+.nb-theme-dark [nbButton].appearance-filled.status-secondary:hover {
+  background-color: #ae84ff;
+  border-color: #ae84ff;
+}
+.nb-theme-dark [nbButton].appearance-filled.status-secondary:active {
+  background-color: #6d43db;
+  border-color: #6d43db;
+}
+.nb-theme-dark [nbButton].appearance-filled.status-secondary[disabled] {
+  background-color: rgba(149, 157, 173, 0.24);
+  border-color: rgba(149, 157, 173, 0.24);
+  color: rgba(149, 157, 173, 0.48);
+}
+.nb-theme-dark a bc-icon svg {
+  fill: #1e89ef;
+}
+.nb-theme-dark a:visited bc-icon svg {
+  fill: #53aff4;
+}
+.nb-theme-dark a:hover bc-icon svg {
+  fill: #53aff4;
+}
+.nb-theme-dark a svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nb-theme-dark a.tiny svg {
+  width: 2rem;
+  height: 2rem;
+}
+.nb-theme-dark a.small svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.nb-theme-dark a.medium svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.nb-theme-dark a.large svg {
+  width: 2rem;
+  height: 2rem;
+}

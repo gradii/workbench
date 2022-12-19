@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/devops-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/devops-e2e/cypress.json",
+        "tsConfig": "apps/devops-e2e/tsconfig.e2e.json",
+        "devServerTarget": "devops:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "devops:serve:production"
+        }
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["devops"]
+}

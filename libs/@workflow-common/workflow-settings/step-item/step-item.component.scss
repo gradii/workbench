@@ -1,0 +1,45 @@
+
+
+:host {
+
+  display: flex;
+  width: 390px;
+  cursor: pointer;
+  align-items: center;
+
+
+  &.selected {
+    background-color: #1e89ef
+  }
+
+  .step-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .625rem .5rem .625rem .4rem
+  }
+
+  .item-text {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly
+  }
+
+  .item-name {
+    margin: 0;
+    font-size: .8125rem
+  }
+
+  .item-description {
+    color: #959dad;
+    font-size: .6875rem;
+    font-weight: 400
+  }
+
+  &.selected .item-description {
+    color: #fff
+  }
+}

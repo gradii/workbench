@@ -1,0 +1,119 @@
+<div class="auth-wrapper">
+  <img src="assets/logo.svg" class="logo-image" alt="Devops"/>
+
+  <h1 class="form-heading" id="title">Sign up</h1>
+
+  <p>Get access for free to the new solution. No credit card needed.</p>
+
+<!--  <div>
+    <button (click)="authGoogle()" nbButton outline fullWidth status="primary">
+      <nb-icon pack="eva" icon="google"></nb-icon>
+      Sign up with Google
+    </button>
+  </div>-->
+
+  <p class="divider-container">
+    <span class="divider-content text-hint">or</span>
+  </p>
+
+  <form (ngSubmit)="register()" aria-labelledby="title" class="bc-form">
+    <div *ngIf="showMessages.error && errors?.length && !submitted" role="alert">
+      <tri-alert *ngFor="let error of errors" color="danger" outline="danger">
+        <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+        {{ error }}
+      </tri-alert>
+    </div>
+
+    <div class="form-control-group">
+      <label class="form-control-label" for="input-email">Email</label>
+      <input
+        triInput
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        triTrim
+        bcEmailValidator
+        id="input-email"
+        name="email"
+        placeholder="Email"
+        fullWidth
+        [required]="getConfigValue('forms.validation.email.required')"
+        [attr.aria-invalid]="email.invalid && email.touched ? true : null"
+      />
+      <span class="form-control-message-container">
+        <ng-container *ngIf="email.invalid && email.touched">
+          <p class="form-error-message" *ngIf="email.errors?.required">
+            <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+            Email is required!
+          </p>
+          <p class="form-error-message" *ngIf="!email.errors?.required && email.errors?.email">
+            <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+            Email should be the real one!
+          </p>
+        </ng-container>
+      </span>
+    </div>
+
+    <div class="form-control-group input-control-block">
+      <label class="form-control-label" for="input-password">Password</label>
+      <bc-password-input-icon #passwordInput="passwordInputIcon" iconPosition="right">
+        <input
+          triInput
+          [(ngModel)]="user.password"
+          #password="ngModel"
+          [type]="passwordInput.hidden ? 'password' : 'text'"
+          id="input-password"
+          name="password"
+          placeholder="Password"
+          fullWidth
+          bcPasswordValidator
+          [required]="getConfigValue('forms.validation.password.required')"
+          [minlength]="getConfigValue('forms.validation.password.minLength')"
+          [maxlength]="getConfigValue('forms.validation.password.maxLength')"
+          [attr.aria-invalid]="password.invalid && password.touched ? true : null"
+        />
+      </bc-password-input-icon>
+      <span class="form-control-message-container">
+        <ng-container *ngIf="password.invalid && password.touched">
+          <p class="form-error-message" *ngIf="password.errors?.required">
+            <tri-icon svgIcon="outline:warning"></tri-icon>
+            Password is required!
+          </p>
+          <p class="form-error-message" *ngIf="password.errors?.space">
+            <tri-icon svgIcon="outline:warning"></tri-icon>
+            Password should not contain spaces!
+          </p>
+          <p
+            class="form-error-message"
+            *ngIf="!password.errors?.space && (password.errors?.minlength || password.errors?.maxlength)"
+          >
+            <tri-icon svgIcon="outline:warning"></tri-icon>
+            Password should contain from {{ getConfigValue('forms.validation.password.minLength') }} to
+            {{ getConfigValue('forms.validation.password.maxLength') }}
+            characters!
+          </p>
+        </ng-container>
+      </span>
+    </div>
+
+    <div class="form-control-group no-errors">
+      <ub-confirm-register (valueChange)="onConfirmChange($event)"></ub-confirm-register>
+    </div>
+
+    <div class="form-actions-group-inline">
+      <button
+        triButton
+        [disabled]="!email.valid || !password.valid || !user.terms"
+        [type]="submitted ? 'button' : 'submit'"
+        [class.spinner-button]="submitted"
+        [loading]="submitted"
+        class="form-action"
+      >
+        Sign Up
+      </button>
+      <span class="form-action form-secondary-action">
+        Already have an account?
+        <a routerLink="../login" queryParamsHandling="merge" [queryParams]="loginQueryParams">Login here</a>
+      </span>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<bc-input-icon icon="pricetags-outline">
+  <input
+    [status]="status$ | async"
+    triInput
+    fullWidth
+    triTrim
+    [formControl]="coupon"
+    [ubFormControlDisabled]="loading$ | async"
+    (blur)="onTouched()"
+    placeholder="Do you have a coupon?"
+  />
+</bc-input-icon>
+
+<span *ngIf="withStatus" class="form-control-message-container">
+  <span *ngIf="coupon$ | async as coupon" class="form-warning-message">
+    You already redeemed coupon for {{ coupon.perks }}. Redeeming new coupon will overwrite the active one.
+  </span>
+
+  <ng-container [ngSwitch]="status$ | async">
+    <span class="form-success-message" *ngSwitchCase="'success'"> You'll get {{ perks$ | async }} </span>
+
+    <span class="form-error-message" *ngSwitchCase="'danger'">
+      Coupon is incorrect, redeemed or expired
+    </span>
+  </ng-container>
+</span>

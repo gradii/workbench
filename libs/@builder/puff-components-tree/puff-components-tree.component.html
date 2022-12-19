@@ -1,0 +1,137 @@
+<pf-components-filter></pf-components-filter>
+
+<div style="margin-top: 1rem">
+    <div triDragContainer [triDragContainerConnectedTo]="connectedTo$|async">
+      <tri-accordion [bordered]="false" size="small">
+        <tri-accordion-item *ngFor="let it of list">
+          <div accordion-title>{{it.accordionTitle}}</div>
+          <div>
+            <button *ngFor="let item of it.children"
+                    triButton variant="outlined"
+                    triDrag [triDragData]="item"
+            >{{item.label}}</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>通用</div>
+          <div>
+            <button triButton variant="outlined" triDrag>按钮</button>
+            <button triButton variant="outlined" triDrag>分割按钮</button>
+            <button triButton variant="outlined" triDrag>菜单按钮</button>
+            <button triButton variant="outlined" triDrag>按钮组</button>
+            <button triButton variant="outlined" triDrag>分割线</button>
+            <button triButton variant="outlined" triDrag>图标</button>
+            <button triButton variant="outlined" triDrag>链接</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>引导</div>
+          <div>
+            <button triButton variant="outlined" triDrag>面包屑</button>
+            <button triButton variant="outlined" triDrag>翻页器</button>
+            <button triButton variant="outlined" triDrag>步骤</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>信息输入</div>
+          <div>
+            <button triButton variant="outlined" triDrag>普通型</button>
+            <button triButton variant="outlined" triDrag>自定义</button>
+            <button triButton variant="outlined" triDrag>级联选择器</button>
+            <button triButton variant="outlined" triDrag>级联</button>
+            <button triButton variant="outlined" triDrag>复选按钮</button>
+            <button triButton variant="outlined" triDrag>复选按钮组</button>
+            <button triButton variant="outlined" triDrag>日期选择框</button>
+            <button triButton variant="outlined" triDrag>日期区间</button>
+            <button triButton variant="outlined" triDrag>表单容器</button>
+            <button triButton variant="outlined" triDrag>输入框</button>
+            <button triButton variant="outlined" triDrag>密码框</button>
+            <button triButton variant="outlined" triDrag>TextArea</button>
+            <button triButton variant="outlined" triDrag>NextTable</button>
+            <button triButton variant="outlined" triDrag>数字输入框</button>
+            <button triButton variant="outlined" triDrag>单选按钮</button>
+            <button triButton variant="outlined" triDrag>单选按钮组</button>
+            <button triButton variant="outlined" triDrag>区段选择器</button>
+            <button triButton variant="outlined" triDrag>评分</button>
+            <button triButton variant="outlined" triDrag>搜索</button>
+            <button triButton variant="outlined" triDrag>带分类</button>
+            <button triButton variant="outlined" triDrag>选择器</button>
+            <button triButton variant="outlined" triDrag>开关组件</button>
+            <button triButton variant="outlined" triDrag>普通型</button>
+            <button triButton variant="outlined" triDrag>时间选择器</button>
+            <button triButton variant="outlined" triDrag>穿梭框</button>
+            <button triButton variant="outlined" triDrag>树型选择控件</button>
+            <button triButton variant="outlined" triDrag>上传组件</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>信息展示</div>
+          <div>
+            <button triButton variant="outlined" triDrag>头像</button>
+            <button triButton variant="outlined" triDrag>微标数</button>
+            <button triButton variant="outlined" triDrag>卡片型</button>
+            <button triButton variant="outlined" triDrag>面板型</button>
+            <button triButton variant="outlined" triDrag>全屏型</button>
+            <button triButton variant="outlined" triDrag>图片轮播</button>
+            <button triButton variant="outlined" triDrag>标签</button>
+            <button triButton variant="outlined" triDrag>可关闭标签</button>
+            <button triButton variant="outlined" triDrag>可选中标签</button>
+            <button triButton variant="outlined" triDrag>时间轴</button>
+            <button triButton variant="outlined" triDrag>树型控件</button>
+            <button triButton variant="outlined" triDrag>视频</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>信息反馈</div>
+          <div>
+            <button triButton variant="outlined" triDrag>提示</button>
+            <button triButton variant="outlined" triDrag>气泡框</button>
+            <button triButton variant="outlined" triDrag>加载</button>
+            <button triButton variant="outlined" triDrag>进度指示器</button>
+            <button triButton variant="outlined" triDrag>面包片</button>
+          </div>
+        </tri-accordion-item>
+
+        <tri-accordion-item>
+          <div accordion-title>基础元素</div>
+          <div>
+            <button triButton variant="outlined" triDrag>图片</button>
+            <button triButton variant="outlined" triDrag>标题</button>
+            <button triButton variant="outlined" triDrag>正文</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>布局容器类</div>
+          <div>
+            <button triButton variant="outlined" triDrag>自然布局</button>
+            <button triButton variant="outlined" triDrag>行列容器</button>
+            <button triButton variant="outlined" triDrag>页头</button>
+            <button triButton variant="outlined" triDrag>卡片</button>
+            <button triButton variant="outlined" triDrag>内部卡片</button>
+            <button triButton variant="outlined" triDrag>高级对话框</button>
+            <button triButton variant="outlined" triDrag>高级抽屉</button>
+            <button triButton variant="outlined" triDrag>选项卡</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>表格类</div>
+          <div>
+            <button triButton variant="outlined" triDrag>可编辑表格</button>
+            <button triButton variant="outlined" triDrag>母子表格</button>
+            <button triButton variant="outlined" triDrag>查询筛选</button>
+            <button triButton variant="outlined" triDrag>分组表格</button>
+            <button triButton variant="outlined" triDrag>高级表格</button>
+            <button triButton variant="outlined" triDrag>树状表格</button>
+          </div>
+        </tri-accordion-item>
+        <tri-accordion-item>
+          <div accordion-title>表单类</div>
+          <div>
+            <button triButton variant="outlined" triDrag>电梯表单</button>
+            <button triButton variant="outlined" triDrag>高级表单</button>
+            <button triButton variant="outlined" triDrag>步骤表单</button>
+          </div>
+        </tri-accordion-item>
+      </tri-accordion>
+    </div>
+</div>

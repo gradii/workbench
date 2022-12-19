@@ -1,0 +1,104 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "apps/playground/src",
+  "prefix": "devops-tools",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/playground",
+        "index": "apps/playground/src/index.html",
+        "main": "apps/playground/src/main.ts",
+        "polyfills": "apps/playground/src/polyfills.ts",
+        "tsConfig": "apps/playground/tsconfig.app.json",
+        "aot": true,
+        "assets": [
+          "apps/playground/src/favicon.ico",
+          "apps/playground/src/assets"
+        ],
+        "styles": [
+          "global/nebular/nebular.scss",
+          "apps/playground/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/playground/src/environments/environment.ts",
+              "with": "apps/playground/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": []
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "playground:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "playground:build:production"
+        },
+        "development": {
+          "browserTarget": "playground:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "playground:build"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/playground/jest.config.js",
+        "tsConfig": "apps/playground/tsconfig.spec.json",
+        "passWithNoTests": true,
+        "setupFile": "apps/playground/src/test-setup.ts"
+      },
+      "outputs": ["coverage/apps/playground"]
+    }
+  },
+  "tags": []
+}

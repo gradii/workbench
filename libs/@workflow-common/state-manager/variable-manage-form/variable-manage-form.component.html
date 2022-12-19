@@ -1,0 +1,119 @@
+<div *ngIf="noItems && !createMode" class="empty-setting">
+  <span class="content">
+    <p>no variable items yet.</p>
+    <p>Click “Add New“ to create a variable.</p>
+  </span>
+</div>
+
+<ng-container *ngIf="!noItems || createMode">
+
+  <tri-card [bordered]="false">
+    <tri-card-header>
+      <pf-state-manager-settings-header
+        [createMode]="createMode"
+        [unSaved]="unSaved"
+      ></pf-state-manager-settings-header>
+    </tri-card-header>
+    <tri-card-body>
+      <form tri-form [formGroup]="formGroup">
+        <tri-form-item>
+          <tri-form-label>Variable Name</tri-form-label>
+          <tri-form-control>
+            <bc-input-icon icon="workflow-save-step" iconPack="bakery" class="store-item-name">
+              <input #nameInput triInput fullWidth placeholder="Enter name" [formControl]="name" />
+            </bc-input-icon>
+            <tri-form-extra>
+              <div class="errors">
+                <span *ngIf="name.errors?.required">Name is required.</span>
+                <span *ngIf="name.errors?.pattern"
+                >Name should start with a letter and contain letters, numbers and underscores.</span
+                >
+                <span *ngIf="name.errors?.unique">Variable with this name already exists.</span>
+              </div>
+            </tri-form-extra>
+          </tri-form-control>
+        </tri-form-item>
+
+        <tri-form-item>
+          <tri-form-label>Scope</tri-form-label>
+          <tri-form-control>
+            <tri-select formControlName="scope" style="width: 200px">
+              <tri-option [value]="this.storeItemScopes.GLOBAL_STORE">
+                Global Store
+              </tri-option>
+              <tri-option [value]="this.storeItemScopes.CURRENT_PAGE">
+                Current Page
+              </tri-option>
+            </tri-select>
+          </tri-form-control>
+        </tri-form-item>
+
+        <tri-form-item>
+          <tri-form-label>Type</tri-form-label>
+          <tri-form-control>
+            <tri-select formControlName="type" style="width: 200px">
+              <tri-option class="settings-option-item" *ngFor="let typeOption of storeItemTypes" [value]="typeOption">
+                {{ typeOption | titlecase }}
+              </tri-option>
+            </tri-select>
+          </tri-form-control>
+        </tri-form-item>
+
+        <tri-form-item [class]="type.value">
+          <tri-form-label>Initial value</tri-form-label>
+          <tri-form-control>
+            <div [ngSwitch]="type.value" class="values">
+              <ng-container *ngSwitchCase="storeItemType.STRING">
+                <input triInput fullWidth class="string-value" formControlName="initialValueString" />
+              </ng-container>
+
+              <ng-container *ngSwitchCase="storeItemType.NUMBER">
+                <input triInput type="number" fullWidth formControlName="initialValueNumber" />
+              </ng-container>
+
+              <ng-container *ngSwitchCase="storeItemType.BOOLEAN">
+                <tri-radio-group class="boolean-value" formControlName="initialValueBoolean">
+                  <label tri-radio [value]="true">True</label>
+                  <label tri-radio [value]="false">False</label>
+                </tri-radio-group>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="storeItemType.OBJECT">
+                <ub-simple-code-editor syntax="json" formControlName="initialValueObject" [lineNumbers]="false">
+                </ub-simple-code-editor>
+                <div class="errors">
+                  <span *ngIf="initialValueObject.errors?.invalid">Object isn't valid.</span>
+                </div>
+              </ng-container>
+
+              <ng-container *ngSwitchCase="storeItemType.ARRAY">
+                <ub-simple-code-editor syntax="json" formControlName="initialValueArray" [lineNumbers]="false">
+                </ub-simple-code-editor>
+                <div class="errors">
+                  <span *ngIf="initialValueArray.errors?.invalid">Array isn't valid.</span>
+                </div>
+              </ng-container>
+            </div>
+          </tri-form-control>
+        </tri-form-item>
+
+        <tri-form-item *ngIf="!createMode">
+          <tri-form-label>Current value:</tri-form-label>
+          <tri-form-control>
+            <pre class="store-item-overview">{{ storeItemValue }}</pre>
+          </tri-form-control>
+        </tri-form-item>
+
+        <tri-form-item>
+          <tri-form-label></tri-form-label>
+          <tri-form-extra>
+            <button triButton
+                    [disabled]="!(createMode || unSaved)"
+                    variant="fill" color="success" (click)="saveStoreItem()">Save
+            </button>
+          </tri-form-extra>
+        </tri-form-item>
+      </form>
+    </tri-card-body>
+  </tri-card>
+</ng-container>

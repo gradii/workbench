@@ -1,0 +1,21 @@
+:host {
+  position: relative;
+  display: flex;
+  align-items: center
+}
+
+:host .unit {
+  position: absolute;
+  right: 0;
+  padding: .375rem .5rem;
+  cursor: pointer;
+  text-align: end
+}
+
+:host .unit.disabled {
+  pointer-events: none
+}
+
+:host input[nbInput][class] {
+  padding-right: 1.5rem
+}

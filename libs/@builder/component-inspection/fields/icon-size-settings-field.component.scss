@@ -1,0 +1,23 @@
+.field-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.field-container nb-select {
+  flex: 1;
+  margin-right: 1rem
+}
+
+.field-container bc-input-unit {
+  width: 6rem
+}
+
+.field-container nb-select .select-button {
+  min-width: 7rem
+}
+
+.field-container input[type=number]::-webkit-inner-spin-button, .field-container input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}

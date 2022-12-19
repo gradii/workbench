@@ -1,0 +1,81 @@
+nb-card-header {
+  border-bottom-width: 1px;
+  border-bottom-color: #e4e9f2;
+  background-color: #edf1f7;
+  font-size: 1.1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center
+}
+
+nb-card-header bc-icon {
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem
+}
+
+nb-card-header .status-wrapper {
+  margin: 0 auto
+}
+
+nb-card-header .status-text {
+  display: inline-block;
+  margin-right: .4rem
+}
+
+nb-card-body {
+  background-color: #f7f9fc
+}
+
+.description {
+  color: #959dad
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse
+}
+
+table tr {
+  border: none
+}
+
+table td {
+  padding: 1rem
+}
+
+table th {
+  padding: 1rem 1rem .5rem
+}
+
+table tbody {
+  background-color: #fff
+}
+
+table tbody tr {
+  border: 1px solid #e4e9f2;
+  height: 50px
+}
+
+table .status {
+  padding: .5rem
+}
+
+.status-text {
+  font-size: .875rem;
+  text-transform: uppercase;
+  color: #959dad;
+  font-weight: 700;
+  display: flex
+}
+
+.status-text bc-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: .3rem
+}
+
+.status-text.published {
+  color: #08db96
+}

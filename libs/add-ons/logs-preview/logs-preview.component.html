@@ -1,0 +1,44 @@
+<div class="devui-logs-header">
+  <ng-template [ngTemplateOutlet]="template || defaultTemplate"> </ng-template>
+  <ng-template #defaultTemplate>
+    <div class="logs-title" [innerHTML]="title"></div>
+  </ng-template>
+  <div class="logs-operation">
+    <button
+      *ngIf="showMenuBar.search"
+      id="search"
+      dTooltip
+      [content]="'CTRL+F'"
+      [position]="'left'"
+      bsStyle=""
+      icon="icon-search"
+      style="margin-right: 20px;"
+      (btnClick)="seachLog()"
+    ></button>
+    <button
+      *ngIf="showMenuBar.fullscreen"
+      id="fullscreen"
+      bsStyle=""
+      icon="icon-maxmize"
+      style="margin-right: 20px;"
+      (btnClick)="fullScreen(true)"
+    >全屏</button
+    >
+    <button *ngIf="showMenuBar.download" id="download" bsStyle="" icon="icon-op-download" (btnClick)="downloadLogs()">全量日志</button>
+    <ng-content select="[moreOpts]"></ng-content>
+  </div>
+</div>
+<div class="devui-logs-content">
+  <dp-codemirror
+    #codemirror
+    [options]="codeMirrorOptions"
+    [(ngModel)]="logContent"
+    (ngModelChange)="contentChange()"
+    (focusChange)="focusChangeEvent($event)"
+    (cursorActivity)="cursorActivityEvent($event)"
+    (scrollEvent)="scroll($event)"
+    (codemirrorReady)="codemirrorReadyEvent($event)"
+  ></dp-codemirror>
+  <d-button icon="icon-minimize" bsStyle="1" id="fullScreenShrink" *ngIf="isFullScreen" (btnClick)="fullScreen(false)">退出全屏</d-button>
+  <ng-content></ng-content>
+</div>

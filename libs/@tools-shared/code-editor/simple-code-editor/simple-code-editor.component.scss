@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: .25rem;
+  min-height: 10.6rem
+}
+
+:host .CodeMirror {
+  font-family: Roboto Mono, monospace;
+  font-size: .6875rem;
+  background: #313642;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  height: 100%;
+  transition-duration: .15s;
+  transition-property: background-color, border-color;
+  transition-timing-function: ease-in
+}
+
+:host .CodeMirror-scrollbar-filler {
+  background-color: transparent
+}
+
+:host .CodeMirror:hover {
+  background-color: #3c424f;
+  border-color: #1e89ef
+}
+
+:host .CodeMirror-focused {
+  background-color: #313642;
+  border-color: #1e89ef
+}
+
+:host .CodeMirror-gutters .CodeMirror-gutter {
+  width: 3.25rem;
+  background-color: #232730
+}
+
+:host .CodeMirror-linenumber {
+  color: #565c6b
+}
+
+:host .cm-s-ayu-mirage div.CodeMirror-selected {
+  background: rgba(30, 137, 239, .24)
+}
+
+:host .CodeMirror {
+  width: 100%;
+  height: auto
+}
+
+.readonly:host .CodeMirror-focused {
+  border: 1px solid transparent
+}

@@ -1,0 +1,8 @@
+:host {
+  font-size: 0;
+  line-height: 0
+}
+
+:host, :host > span {
+  display: inline-block
+}

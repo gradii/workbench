@@ -1,0 +1,17 @@
+:host {
+  .error-icon {
+    cursor: pointer
+  }
+
+  .error-icon.empty {
+    display: none
+  }
+
+  &:not(.selected) nb-icon svg {
+    fill: #ef4e3c
+  }
+
+  &.selected nb-icon svg {
+    fill: #a4dffe
+  }
+}

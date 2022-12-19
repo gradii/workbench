@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "description": "An explanation about the purpose of this instance.",
+    "default": {},
+    "examples": [
+      {
+        "data": [
+          [
+            "January",
+            -80
+          ],
+          [
+            "February",
+            30
+          ]
+        ],
+        "name": "First Dataset"
+      },
+      {
+        "data": [
+          [
+            "January",
+            -60
+          ],
+          [
+            "February",
+            -2
+          ]
+        ],
+        "name": "Second Dataset"
+      }
+    ],
+    "required": [
+      "name",
+      "data"
+    ],
+    "properties": {
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": [
+          "number",
+          "string"
+        ],
+        "title": "The Name Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": "",
+        "examples": [
+          "First Dataset"
+        ]
+      },
+      "data": {
+        "$id": "#/items/properties/data",
+        "type": "array",
+        "title": "The Data Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": [],
+        "items": {
+          "$id": "#/items/properties/data/items",
+          "type": "array",
+          "title": "The Items Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "items": {
+            "$id": "#/items/properties/data/items/items",
+            "type": [
+              "number",
+              "string"
+            ],
+            "title": "The Items Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "January",
+              -80
+            ]
+          }
+        }
+      }
+    }
+  }
+}

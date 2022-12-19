@@ -1,0 +1,29 @@
+<div class="left-container" [class.error]="error">
+  <span class="workflow-name">{{ workflow.name }}</span>
+  <ub-error-notification
+    *ngIf="workflow.id"
+    [workflowId]="workflow.id"
+    [selected]="selected"
+    (hasError)="onChangeStatus($event)"
+  ></ub-error-notification>
+</div>
+<div *ngIf="workflow.id" class="action-controls">
+  <tri-icon
+    *ngIf="!assigned"
+    class="not-hidden"
+    triTooltip="Action is not assigned"
+    svgIcon="workbench:action-isnt-assigned"
+  ></tri-icon>
+  <button triButton class="bakery-button workflow-icon" ghost (click)="duplicateWithoutPropagation($event)">
+    <tri-icon svgIcon="workbench:copy"></tri-icon>
+  </button>
+  <button
+    *ngIf="canBeDeleted"
+    class="bakery-button workflow-icon"
+    triButton
+    ghost
+    (click)="deleteWithoutPropagation($event)"
+  >
+    <tri-icon svgIcon="outline:trash"></tri-icon>
+  </button>
+</div>

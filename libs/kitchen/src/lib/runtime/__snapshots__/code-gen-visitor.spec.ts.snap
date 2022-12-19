@@ -1,0 +1,398 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`code-gen-visitor test generate code 1`] = `
+PureElementNode {
+  "attributes": Array [
+    PureAttribute {
+      "name": "cdkScrollable",
+      "value": null,
+    },
+    PureAttribute {
+      "name": "uid",
+      "value": "1",
+    },
+    PureAttribute {
+      "name": "triDropFlexContainer",
+      "value": null,
+    },
+    PureAttribute {
+      "name": "id",
+      "value": "1",
+    },
+    PureAttribute {
+      "name": "triDropFlexContainerOrientation",
+      "value": "vertical",
+    },
+    PureAttribute {
+      "name": "_kitchenRuntime",
+      "value": null,
+    },
+    PureAttribute {
+      "name": "_kitchenRuntimeComponentId",
+      "value": "1",
+    },
+    PureAttribute {
+      "name": "_kitchenRuntimeDefinitionId",
+      "value": "slot",
+    },
+  ],
+  "classAttribute": Array [
+    "space",
+    "direction-column",
+  ],
+  "classBindingAttribute": Array [],
+  "isSlot": true,
+  "parent": null,
+  "styleAttribute": Array [],
+  "styleBindingAttribute": Array [],
+  "tagName": "div",
+  "textContent": null,
+}
+`;
+
+exports[`code-gen-visitor test generate code with element 1`] = `
+"<div
+  class=\\"space direction-column\\"
+  cdkScrollable
+  uid=\\"1\\"
+  triDropFlexContainer
+  id=\\"1\\"
+  triDropFlexContainerOrientation=\\"vertical\\"
+  _kitchenRuntime
+  _kitchenRuntimeComponentId=\\"1\\"
+  _kitchenRuntimeDefinitionId=\\"slot\\"
+>
+  <div
+    class=\\"direction-column\\"
+    cdkScrollable
+    uid=\\"15786492785660.41803516438866173\\"
+    triDropFlexContainer
+    id=\\"15786492785660.41803516438866173\\"
+    _kitchenRuntime
+    _kitchenRuntimeComponentId=\\"15786492785660.41803516438866173\\"
+    _kitchenRuntimeDefinitionId=\\"space\\"
+    triDrag
+    [triDragData]=\\"{'id':'15786492785660.41803516438866173','name':'Space','parentSlotId':'1'}\\"
+    class=\\"space\\"
+    [triDropFlexContainerData]=\\"{'id':'15786492785660.41803516438866173','name':'Space','parentSlotId':'1'}\\"
+    (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+  >
+    <tri-card
+      uid=\\"Card\\"
+      _kitchenRuntime
+      _kitchenRuntimeComponentId=\\"ryh1rJX3Gkk9Pg-Gr3Jeh\\"
+      _kitchenRuntimeDefinitionId=\\"card\\"
+      triDrag
+      [triDragData]=\\"{'id':'ryh1rJX3Gkk9Pg-Gr3Jeh','name':'Card','parentSlotId':'15786492785660.736525773611667'}\\"
+      [kitchenWithSize]=\\"{'widthValue':'100','widthUnit':'%','widthAuto':false,'heightValue':'300','heightUnit':'px','heightAuto':true}\\"
+      ><tri-card-header
+        class=\\"space direction-column\\"
+        cdkScrollable
+        uid=\\"UDFkg9xXOZyhpgRV-aK8S\\"
+        triDropFlexContainer
+        id=\\"UDFkg9xXOZyhpgRV-aK8S\\"
+        triDropFlexContainerOrientation=\\"vertical\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"UDFkg9xXOZyhpgRV-aK8S\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        ><div
+          class=\\"direction-row\\"
+          cdkScrollable
+          uid=\\"g2qrbvD2ZIkOfrXkjGhKm\\"
+          triDropFlexContainer
+          id=\\"g2qrbvD2ZIkOfrXkjGhKm\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"g2qrbvD2ZIkOfrXkjGhKm\\"
+          _kitchenRuntimeDefinitionId=\\"space\\"
+          triDrag
+          [triDragData]=\\"{'id':'g2qrbvD2ZIkOfrXkjGhKm','name':'Space4','parentSlotId':'UDFkg9xXOZyhpgRV-aK8S'}\\"
+          class=\\"space\\"
+          [triDropFlexContainerData]=\\"{'id':'g2qrbvD2ZIkOfrXkjGhKm','name':'Space4','parentSlotId':'UDFkg9xXOZyhpgRV-aK8S'}\\"
+          (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        >
+          <h6
+            uid=\\"Heading3\\"
+            _kitchenRuntime
+            _kitchenRuntimeComponentId=\\"UUdqcuIWMDbCG2wpxUk33\\"
+            _kitchenRuntimeDefinitionId=\\"heading\\"
+            triDrag
+            [triDragData]=\\"{'id':'UUdqcuIWMDbCG2wpxUk33','name':'Heading3','parentSlotId':'JDSw0q7Eji5CLMfCw-3Ut'}\\"
+          >
+            Card Headerlll
+          </h6>
+        </div></tri-card-header
+      ><tri-card-body
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"v0iBzyWMoGZ532tdQ76dX\\"
+        [triDropFlexContainerData]=\\"{'id':'LhJzILpx121ToMms8yK_Z','name':'space-feature','hostId':'v0iBzyWMoGZ532tdQ76dX','parentSlotId':'v0iBzyWMoGZ532tdQ76dX','slotId':'v0iBzyWMoGZ532tdQ76dX'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"v0iBzyWMoGZ532tdQ76dX\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"v0iBzyWMoGZ532tdQ76dX\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"v0iBzyWMoGZ532tdQ76dX\\"
+        [triDropFlexContainerData]=\\"{'id':'LhJzILpx121ToMms8yK_Z','name':'space-feature','hostId':'v0iBzyWMoGZ532tdQ76dX','parentSlotId':'v0iBzyWMoGZ532tdQ76dX','slotId':'v0iBzyWMoGZ532tdQ76dX'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        ><button
+          triButton
+          uid=\\"Button8\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"x1CEvk4V5TQMG5uId3BHg\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"primary\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Button456</button
+        ><button
+          triButton
+          uid=\\"Button7\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"006qEuawoT9mFRZMjhFfU\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"primary\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Button789
+        </button></tri-card-body
+      ><tri-card-footer
+        class=\\"space direction-column\\"
+        cdkScrollable
+        uid=\\"_i3qrx1AZMOFQj1pJVyTN\\"
+        triDropFlexContainer
+        id=\\"_i3qrx1AZMOFQj1pJVyTN\\"
+        triDropFlexContainerOrientation=\\"vertical\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"_i3qrx1AZMOFQj1pJVyTN\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        ><div
+          class=\\"direction-row\\"
+          cdkScrollable
+          uid=\\"iXC7O-MfrMQEh5vE3h6-9\\"
+          triDropFlexContainer
+          id=\\"iXC7O-MfrMQEh5vE3h6-9\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"iXC7O-MfrMQEh5vE3h6-9\\"
+          _kitchenRuntimeDefinitionId=\\"space\\"
+          triDrag
+          [triDragData]=\\"{'id':'iXC7O-MfrMQEh5vE3h6-9','name':'Space6','parentSlotId':'_i3qrx1AZMOFQj1pJVyTN'}\\"
+          class=\\"space\\"
+          [triDropFlexContainerData]=\\"{'id':'iXC7O-MfrMQEh5vE3h6-9','name':'Space6','parentSlotId':'_i3qrx1AZMOFQj1pJVyTN'}\\"
+          (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        >
+          <div class=\\"empty\\"></div></div></tri-card-footer></tri-card
+    ><tri-card
+      uid=\\"Card2\\"
+      _kitchenRuntime
+      _kitchenRuntimeComponentId=\\"Gb63MmCEbha-cNDiTjp8a\\"
+      _kitchenRuntimeDefinitionId=\\"card\\"
+      triDrag
+      [triDragData]=\\"{'id':'Gb63MmCEbha-cNDiTjp8a','name':'Card2','parentSlotId':'15786492785660.736525773611667'}\\"
+      [kitchenWithSize]=\\"{'widthValue':'100','widthUnit':'%','widthAuto':false,'heightValue':'300','heightUnit':'px','heightAuto':true}\\"
+      ><tri-card-header
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"_G9bdhAQN-iUu1Zr5TWya\\"
+        [triDropFlexContainerData]=\\"{'id':'6cMyMyIaI32dsldfPPHI2','name':'space-feature','hostId':'_G9bdhAQN-iUu1Zr5TWya','parentSlotId':'_G9bdhAQN-iUu1Zr5TWya','slotId':'_G9bdhAQN-iUu1Zr5TWya'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"_G9bdhAQN-iUu1Zr5TWya\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"_G9bdhAQN-iUu1Zr5TWya\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"_G9bdhAQN-iUu1Zr5TWya\\"
+        [triDropFlexContainerData]=\\"{'id':'6cMyMyIaI32dsldfPPHI2','name':'space-feature','hostId':'_G9bdhAQN-iUu1Zr5TWya','parentSlotId':'_G9bdhAQN-iUu1Zr5TWya','slotId':'_G9bdhAQN-iUu1Zr5TWya'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        ><h6
+          uid=\\"Heading2\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"0i4zYZ_D2bFSxNlw3TnMK\\"
+          _kitchenRuntimeDefinitionId=\\"heading\\"
+          triDrag
+          [triDragData]=\\"{'id':'0i4zYZ_D2bFSxNlw3TnMK','name':'Heading2','parentSlotId':'_G9bdhAQN-iUu1Zr5TWya'}\\"
+        >
+          Card Header
+        </h6></tri-card-header
+      ><tri-card-body
+        [ngClass]=\\"{'flex-nowrap':'true','direction-column':'true','flex-nowrap':'true','direction-column':'true'}\\"
+        triDropFlexContainer
+        id=\\"S2QonCCC_-94t-aiuwBeB\\"
+        [triDropFlexContainerData]=\\"{'id':'FFQDocQQajLsx2X2EuFw1','name':'space-feature','hostId':'S2QonCCC_-94t-aiuwBeB','parentSlotId':'S2QonCCC_-94t-aiuwBeB','slotId':'S2QonCCC_-94t-aiuwBeB'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"S2QonCCC_-94t-aiuwBeB\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"S2QonCCC_-94t-aiuwBeB\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"S2QonCCC_-94t-aiuwBeB\\"
+        [triDropFlexContainerData]=\\"{'id':'FFQDocQQajLsx2X2EuFw1','name':'space-feature','hostId':'S2QonCCC_-94t-aiuwBeB','parentSlotId':'S2QonCCC_-94t-aiuwBeB','slotId':'S2QonCCC_-94t-aiuwBeB'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        ><button
+          triButton
+          uid=\\"Button4\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"pNx3r_4IfjaMqnWpWnGF2\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"primary\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Button999</button
+        ><button
+          triButton
+          uid=\\"Button5\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"tkm50xPk9guNE3yw3H5b2\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"primary\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Buttonzzz
+        </button></tri-card-body
+      ><tri-card-footer
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"Oys8q1_-aQ-zIeihcuhiV\\"
+        [triDropFlexContainerData]=\\"{'id':'07zOrXvbNGK4w0o2WK1ne','name':'space-feature','hostId':'Oys8q1_-aQ-zIeihcuhiV','parentSlotId':'Oys8q1_-aQ-zIeihcuhiV','slotId':'Oys8q1_-aQ-zIeihcuhiV'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"Oys8q1_-aQ-zIeihcuhiV\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"Oys8q1_-aQ-zIeihcuhiV\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"Oys8q1_-aQ-zIeihcuhiV\\"
+        [triDropFlexContainerData]=\\"{'id':'07zOrXvbNGK4w0o2WK1ne','name':'space-feature','hostId':'Oys8q1_-aQ-zIeihcuhiV','parentSlotId':'Oys8q1_-aQ-zIeihcuhiV','slotId':'Oys8q1_-aQ-zIeihcuhiV'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        ><button
+          triButton
+          uid=\\"Button3\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"TZshbru7R-5lZOtYAiGas\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"danger\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Buttondg</button
+        ><button
+          triButton
+          uid=\\"Button1\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"WMT6kYoT_IEmNdi5eKy7c\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"warning\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Button2345
+        </button></tri-card-footer
+      ></tri-card
+    ><tri-card
+      uid=\\"Card3\\"
+      _kitchenRuntime
+      _kitchenRuntimeComponentId=\\"FoflPrF9JT4OTg_RNErdT\\"
+      _kitchenRuntimeDefinitionId=\\"card\\"
+      triDrag
+      [triDragData]=\\"{'id':'FoflPrF9JT4OTg_RNErdT','name':'Card3','parentSlotId':'15786492785660.736525773611667'}\\"
+      [kitchenWithSize]=\\"{'widthValue':'100','widthUnit':'%','widthAuto':false,'heightValue':'300','heightUnit':'px','heightAuto':true}\\"
+      ><tri-card-header
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"cwDyXmOciWxyD0-JmWCxp\\"
+        [triDropFlexContainerData]=\\"{'id':'qjteET_qkTLh512JlMLGk','name':'space-feature','hostId':'cwDyXmOciWxyD0-JmWCxp','parentSlotId':'cwDyXmOciWxyD0-JmWCxp','slotId':'cwDyXmOciWxyD0-JmWCxp'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"cwDyXmOciWxyD0-JmWCxp\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"cwDyXmOciWxyD0-JmWCxp\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"cwDyXmOciWxyD0-JmWCxp\\"
+        [triDropFlexContainerData]=\\"{'id':'qjteET_qkTLh512JlMLGk','name':'space-feature','hostId':'cwDyXmOciWxyD0-JmWCxp','parentSlotId':'cwDyXmOciWxyD0-JmWCxp','slotId':'cwDyXmOciWxyD0-JmWCxp'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+      ></tri-card-header
+      ><tri-card-body
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"FxKLEFS_f-pk-U60Mro32\\"
+        [triDropFlexContainerData]=\\"{'id':'LhJzILpx121ToMms8yU_I','name':'space-feature','hostId':'FxKLEFS_f-pk-U60Mro32','parentSlotId':'FxKLEFS_f-pk-U60Mro32','slotId':'FxKLEFS_f-pk-U60Mro32'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"FxKLEFS_f-pk-U60Mro32\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"FxKLEFS_f-pk-U60Mro32\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"FxKLEFS_f-pk-U60Mro32\\"
+        [triDropFlexContainerData]=\\"{'id':'LhJzILpx121ToMms8yU_I','name':'space-feature','hostId':'FxKLEFS_f-pk-U60Mro32','parentSlotId':'FxKLEFS_f-pk-U60Mro32','slotId':'FxKLEFS_f-pk-U60Mro32'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+      ></tri-card-body
+      ><tri-card-footer
+        [ngClass]=\\"{'flex-nowrap':'true','direction-row':'true','flex-nowrap':'true','direction-row':'true'}\\"
+        triDropFlexContainer
+        id=\\"Qm6H0N7R31W7sNHMoARi5\\"
+        [triDropFlexContainerData]=\\"{'id':'e_G8eg87o5qYyc--o0ec0','name':'space-feature','hostId':'Qm6H0N7R31W7sNHMoARi5','parentSlotId':'Qm6H0N7R31W7sNHMoARi5','slotId':'Qm6H0N7R31W7sNHMoARi5'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        cdkScrollable
+        uid=\\"Qm6H0N7R31W7sNHMoARi5\\"
+        _kitchenRuntime
+        _kitchenRuntimeComponentId=\\"Qm6H0N7R31W7sNHMoARi5\\"
+        _kitchenRuntimeDefinitionId=\\"slot\\"
+        triDropFlexContainer
+        id=\\"Qm6H0N7R31W7sNHMoARi5\\"
+        [triDropFlexContainerData]=\\"{'id':'e_G8eg87o5qYyc--o0ec0','name':'space-feature','hostId':'Qm6H0N7R31W7sNHMoARi5','parentSlotId':'Qm6H0N7R31W7sNHMoARi5','slotId':'Qm6H0N7R31W7sNHMoARi5'}\\"
+        (triDropFlexContainerDropped)=\\"onDragDropped($event)\\"
+        ><button
+          triButton
+          uid=\\"Button\\"
+          _kitchenRuntime
+          _kitchenRuntimeComponentId=\\"0gYcXB0cZOutRIlfsOt31\\"
+          _kitchenRuntimeDefinitionId=\\"button\\"
+          triDrag
+          triDragData=\\"[object Object]\\"
+          color=\\"info\\"
+          variant=\\"fill\\"
+          [disabled]=\\"false\\"
+          icon=\\"star\\"
+        >
+          Button
+        </button></tri-card-footer
+      ></tri-card
+    ><tri-accordion
+      uid=\\"Accordion\\"
+      triDrag
+      [triDragData]=\\"{'id':'hSqKZG_y_hB_r3E7-G6CD','name':'Accordion','parentSlotId':'15786492785660.736525773611667'}\\"
+      _kitchenRuntime
+      _kitchenRuntimeComponentId=\\"hSqKZG_y_hB_r3E7-G6CD\\"
+      _kitchenRuntimeDefinitionId=\\"accordion\\"
+    ></tri-accordion>
+  </div>
+</div>
+"
+`;

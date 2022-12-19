@@ -1,0 +1,17 @@
+<ub-workflow-list-header
+  (create)="createWorkflow.emit()"
+  (filterByName)="nameFilter.next($event)"
+></ub-workflow-list-header>
+
+<div class="list-block">
+  <ub-workflow-list-item
+    *ngFor="let workflow of filteredWorkflowList$ | async; let i = index; trackBy: trackById"
+    [workflow]="workflow"
+    [assigned]="workflow.assigned"
+    [selected]="workflow.selected"
+    (click)="selectWorkflow(workflow)"
+    (delete)="deleteWorkflow.emit(workflow)"
+    (duplicate)="duplicateWorkflow.emit(workflow)"
+  >
+  </ub-workflow-list-item>
+</div>

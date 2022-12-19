@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background: #15171f
+}
+
+h2 {
+  margin-top: 3.75rem;
+  margin-bottom: 1.75rem
+}
+
+img, p, picture {
+  width: 36.875rem
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center
+}
+
+.nav-links a {
+  margin: 0 .5rem
+}
+
+@media (max-width: 43.75em) {
+  p, picture {
+    width: 90%
+  }
+  img {
+    width: 100%
+  }
+}

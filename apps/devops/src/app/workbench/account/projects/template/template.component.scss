@@ -1,0 +1,80 @@
+nb-card {
+  background: #f7f9fc
+}
+
+nb-card-body {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex
+}
+
+nb-card-footer {
+  display: flex;
+  border-top: 1px solid #e4e9f2;
+  justify-content: space-between;
+  padding: 1.125rem 1rem 1.25rem
+}
+
+.price-container {
+  margin-left: 1rem
+}
+
+.template-image {
+  width: 100%;
+  height: auto
+}
+
+.template-info {
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .16s ease-in
+}
+
+nb-card:focus .template-info, nb-card:hover .template-info {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1
+}
+
+.usages-icon {
+  font-size: 1.2em;
+  vertical-align: top
+}
+
+.template-description {
+  margin-top: 1rem
+}
+
+.template-actions {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  margin-bottom: -.5rem
+}
+
+.action {
+  flex: 1 1 auto;
+  margin: .25rem
+}
+
+.image-action {
+  flex: 0 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content
+}
+
+button.use-template {
+  width: 100%
+}

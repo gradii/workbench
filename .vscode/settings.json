@@ -1,0 +1,12 @@
+{
+    "sshfs.configs": [
+        {
+            "name": "bigmouse",
+            "host": "aliyun-sh.gradii.com",
+            "port": 8195,
+            "username": "bigmouse",
+            "label": "bigmouse",
+            "password": true
+        }
+    ]
+}

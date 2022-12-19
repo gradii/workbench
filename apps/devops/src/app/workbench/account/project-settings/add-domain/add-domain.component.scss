@@ -1,0 +1,28 @@
+nb-card-header {
+  border-bottom-width: 1px;
+  color: #1e89ef;
+  font-size: 1.1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center
+}
+
+nb-card-header bc-icon {
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem
+}
+
+.input-wrapper {
+  display: flex
+}
+
+.input-wrapper input {
+  margin-right: 1rem
+}
+
+.form-control-label {
+  font-size: .75rem;
+  font-weight: 700
+}

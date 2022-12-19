@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "required": [
+    "name",
+    "data"
+  ],
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": [
+        "number",
+        "string"
+      ],
+      "title": "The Name Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Countries"
+      ]
+    },
+    "data": {
+      "$id": "#/properties/data",
+      "type": "array",
+      "title": "The Data Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "items": {
+        "$id": "#/properties/data/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "value": 335,
+            "name": "Germany"
+          },
+          {
+            "value": 310,
+            "name": "France"
+          }
+        ],
+        "required": [
+          "value",
+          "name"
+        ],
+        "properties": {
+          "value": {
+            "$id": "#/properties/data/items/properties/value",
+            "type": [
+              "number",
+              "string"
+            ],
+            "title": "The Value Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              335
+            ]
+          },
+          "name": {
+            "$id": "#/properties/data/items/properties/name",
+            "type": [
+              "number",
+              "string"
+            ],
+            "title": "The Name Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "France"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

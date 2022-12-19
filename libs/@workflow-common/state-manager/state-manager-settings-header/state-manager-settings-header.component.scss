@@ -1,0 +1,14 @@
+
+
+:host {
+
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+
+  pf-notification-label {
+    flex-direction: row;
+    width: fit-content
+  }
+}

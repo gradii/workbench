@@ -1,0 +1,15 @@
+<div>
+  <tri-tag *ngIf="storeItem.valueScope == 'globalStore'" color="orange">G</tri-tag>
+  <tri-tag *ngIf="storeItem.valueScope != 'globalStore'" color="green">P</tri-tag>
+  <span class="store-item-name">{{ storeItem.name }}</span>
+</div>
+
+<div *ngIf="!createMode" class="action-controls">
+  <button triButton class="bakery-button workflow-icon" variant="text" ghost
+          (click)="duplicateWithoutPropagation($event)">
+    <tri-icon svgIcon="outline:copy"></tri-icon>
+  </button>
+  <button class="bakery-button workflow-icon" triButton variant="text" ghost (click)="deleteWithoutPropagation($event)">
+    <tri-icon svgIcon="outline:trash"></tri-icon>
+  </button>
+</div>

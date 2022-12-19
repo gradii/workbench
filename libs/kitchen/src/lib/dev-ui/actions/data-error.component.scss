@@ -1,0 +1,32 @@
+:host button {
+  padding: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ef4e3c;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border: none
+}
+
+:host button nb-icon {
+  color: #fff;
+  font-size: .75rem
+}
+
+:host button nb-icon svg {
+  width: auto;
+  height: auto
+}
+
+.data-tooltip-danger .arrow {
+  display: none
+}
+
+.data-tooltip-danger nb-tooltip {
+  background-color: #ef4e3c
+}

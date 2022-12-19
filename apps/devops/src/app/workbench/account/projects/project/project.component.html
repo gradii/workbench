@@ -1,0 +1,46 @@
+<tri-card class="project-card">
+  <tri-card-header>
+    <tri-card-header-extra>
+      <tri-tag color="blue">{{project.projectType === 'backend' ? 'B' : 'F'}}</tri-tag>
+    </tri-card-header-extra>
+    {{ project.name }}
+    <!-- <div *ngIf="project.locked" class="lock-container">
+       <nb-icon class="lock-icon" pack="eva" icon="lock"></nb-icon>
+       <span class="lock-description">
+         <span class="icon caption-3"><nb-icon pack="eva" icon="lock"></nb-icon> LOCKED</span>
+         <span class="text paragraph-2">
+           {{ plan$ | async | titlecase }} plan users can work on one project with up to 10 pages. The rest projects are
+           locked.
+         </span>
+       </span>
+     </div>-->
+  </tri-card-header>
+
+  <tri-card-body>
+    <img class="project-thumb" [src]="project.thumbnail" (click)="open.emit(project)" />
+  </tri-card-body>
+
+  <tri-card-footer class="project-info">
+    <div class="info no-margin">
+      <tri-icon *ngIf="project.sharedByMe" triTooltip="Shared" pack="eva" icon="share"></tri-icon>
+      <tri-icon *ngIf="project.sharedWithMe" triTooltip="Shared with you" pack="eva" icon="unlock-outline"></tri-icon>
+
+      <p class="caption-3 no-margin">Last Update {{ project.updatedAt | date }}</p>
+    </div>
+
+    <tri-icon
+      class="project-menu"
+      svgIcon="outline:ellipsis"
+      *ngIf="!project.sharedWithMe">
+      <!--      [triContextMenu]="actions | async"-->
+      <!--      [triContextMenuPlacement]="'bottom-right'"-->
+      <!--      [triContextMenuTag]="project.viewId"-->
+
+    </tri-icon>
+  </tri-card-footer>
+
+  <!-- <tri-card-actions>
+    <button triButton>按钮</button>
+    <button triButton>按钮</button>
+  </tri-card-actions> -->
+</tri-card>

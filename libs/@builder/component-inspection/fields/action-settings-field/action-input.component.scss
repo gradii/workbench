@@ -1,0 +1,40 @@
+
+
+:host {
+  display: block;
+
+  &:first-of-type {
+    margin-top: 0
+  }
+
+  .settings-field-label {
+    margin: 0
+  }
+
+  .heading-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem
+  }
+
+  button[nbButton].size-medium.appearance-ghost {
+    padding: 0;
+    border: none
+  }
+
+  .action-param-toggle nb-icon svg {
+    width: 1rem;
+    height: 1rem
+  }
+
+  & button[nbButton].status-basic.appearance-ghost:not([disabled]),
+  & button[nbButton].status-basic.appearance-ghost:not([disabled]):focus svg {
+    fill: #959dad
+  }
+
+  & button[nbButton].status-basic.appearance-ghost:not([disabled]).action-param-enabled,
+  & button[nbButton].status-basic.appearance-ghost:not([disabled]).action-param-enabled:focus svg {
+    fill: #8f5cff
+  }
+
+}

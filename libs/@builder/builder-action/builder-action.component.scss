@@ -1,0 +1,23 @@
+@use "@gradii/triangle/core/themes/theme";
+@use "@gradii/triangle/core/style/variables" as v;
+@use "@gradii/triangle/core/style/theming";
+
+@use "./builder-action-mixins";
+
+$primary-color : theme.$primary;
+$success-color : theme.$success;
+$info-color    : theme.$info;
+$border-radius : v.$border-radius-base;
+
+
+:host {
+  display        : flex;
+  flex-direction : column;
+  align-items    : stretch;
+  height         : 100%;
+}
+
+.action-diagram-canvas {
+  position : relative;
+}
+

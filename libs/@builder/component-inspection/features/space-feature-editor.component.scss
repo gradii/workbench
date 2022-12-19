@@ -1,0 +1,11 @@
+::ng-deep {
+  .size-small {
+    margin : 1rem 0;
+
+    .tri-button-toggle-label-content {
+      line-height : 1.5rem;
+      height      : 1.5rem;
+      padding     : 0 .5rem;
+    }
+  }
+}

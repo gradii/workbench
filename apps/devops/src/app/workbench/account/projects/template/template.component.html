@@ -1,0 +1,77 @@
+<tri-card>
+  <tri-card-body tabindex="0" [loading]="downloadState">
+    <img class="template-image" [src]="template.preview" role="presentation"/>
+
+    <div class="template-info">
+  <!--    <p class="caption-3 no-margin">
+        <nb-icon class="usages-icon" icon="person" pack="eva"></nb-icon>
+        <span>{{ template.usages }} usages</span>
+      </p>-->
+      <p class="template-description paragraph-2">{{ template.description }}</p>
+
+      <div class="template-actions">
+     <!--   <a
+          [href]="template.previewLink"
+          [disabled]="loading"
+          target="_blank"
+          nbButton
+          size="small"
+          class="action status-primary image-action"
+          nbTooltip="Preview"
+        >
+          <nb-icon icon="eye"></nb-icon>
+        </a>-->
+<!--        <button
+          [disabled]="loading"
+          (click)="download.emit()"
+          nbButton
+          status="primary"
+          size="small"
+          class="action image-action"
+          nbTooltip="Download"
+        >
+          <nb-icon icon="download-outline"></nb-icon>
+        </button>-->
+        <div
+          triTooltip="Projects limit reached"
+          [triTooltipDisabled]="!disableCreation || loading"
+          class="action"
+        >
+          <button
+            [disabled]="loading || disableCreation"
+            (click)="create.emit()"
+            nbButton
+            class="status-secondary use-template"
+            size="small"
+          >
+            Use this template
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </tri-card-body>
+
+  <tri-card-footer>
+    <div class="name-tag-container">
+      <p class="subtitle-2 no-margin">{{ template.name }}</p>
+      <p class="caption-3 no-margin">
+        <ng-container *ngFor="let tag of template.tags"> {{ tag }}</ng-container>
+      </p>
+    </div>
+ <!--   <div class="price-container">
+      <span *ngIf="template.availableFrom === 'FREE'" class="subtitle text-hint">
+        FREE
+      </span>
+      <span *ngIf="template.availableFrom === 'LIGHT' && template.locked" class="text-primary">
+        Available for <span class="p-bolder text-primary">Light</span> and <span class="p-bolder">Standard</span>
+      </span>
+      <span
+        *ngIf="template.availableFrom === 'STANDARD' && template.locked"
+        class="template-price text-primary paragraph-2"
+      >
+        Available for <span class="p-bolder text-primary">Standard</span>
+      </span>
+    </div>-->
+  </tri-card-footer>
+</tri-card>

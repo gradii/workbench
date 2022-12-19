@@ -1,0 +1,42 @@
+<div *ngIf="selectedNode">
+  <div>selectedNodeId: {{selectedNode.id}}</div>
+  <div>selectedNodeName: {{selectedNode.name}}</div>
+  <div>type: {{selectedNode.type}}</div>
+
+  <div>
+    <tri-accordion defaultExpanded size="small" [bordered]="false">
+      <tri-accordion-item *ngIf="selectedNode.portsIn.length">
+        <div accordion-title>in ports</div>
+        <div *ngFor="let port of selectedNode.portsIn">
+          <h5 style="font-size: 16px">in port name: {{port.name}}</h5>
+          <div *ngFor="let link of port.links.values()">
+            <div>linkId: {{link.id}}</div>
+            <div>linkSource: {{link.sourcePort.parent.name}}</div>
+          </div>
+        </div>
+      </tri-accordion-item>
+      <tri-accordion-item>
+        <div accordion-title>out ports</div>
+        <div *ngFor="let port of selectedNode.portsOut">
+          <h5 style="font-size: 16px">out port name: {{port.name}}</h5>
+          <div *ngFor="let link of port.links.values()">
+            <div>linkId: {{link.id}}</div>
+            <div>linkTarget: {{link.targetPort.parent.name}}</div>
+          </div>
+        </div>
+      </tri-accordion-item>
+    </tri-accordion>
+  </div>
+</div>
+<div *ngIf="!selectedNode">
+  <div>no select any node</div>
+</div>
+
+<div>
+  <button triButton size="xsmall" (click)="onHintLink()">link1 abcdefg-aaaa-bbbb-dddd</button>
+  <input triInput value="label1" />
+</div>
+<div>
+  <button triButton size="xsmall" (click)="onHintLink()">link2 abcdefg-aaaa-bbbb-dddd</button>
+  <input triInput value="label1" />
+</div>

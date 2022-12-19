@@ -1,0 +1,22 @@
+<len-subheader>
+  <a triButton ghost routerLink="../" aria-label="back" class="back-button">
+    <tri-icon svgIcon="arrow-back"></tri-icon>
+  </a>
+  <h1 class="h5 page-heading">{{ (project$ | async)?.name }}</h1>
+
+  <span class="action-buttons-wrapper">
+    <button (click)="deleteProject()" nbButton aria-label="delete project">
+      <tri-icon svgIcon="outline:trash"></tri-icon>
+    </button>
+    <a [routerLink]="builderLink$ | async" *ngIf="builderLink$ | async" nbButton status="primary">
+      Edit in Builder
+    </a>
+  </span>
+</len-subheader>
+
+<div
+  class="content-wrapper"
+  [class.pointer-disabled]="loading$ | async"
+>
+<!--  <nb-route-tabset [tabs]="tabs$ | async"></nb-route-tabset>-->
+</div>

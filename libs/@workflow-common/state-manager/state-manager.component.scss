@@ -1,0 +1,82 @@
+
+:host {
+  .workflow-label {
+    display        : flex;
+    flex-direction : column;
+    //color: black;
+    font-size      : .6875rem;
+    font-weight    : 700;
+    vertical-align : top
+  }
+
+  .workflow-label > input,
+  .workflow-label > nb-form-field,
+  .workflow-label > nb-select,
+  .workflow-label > ub-code-editor {
+    margin-top : .5rem
+  }
+
+  .workflow-label .errors {
+    min-height     : 1.125rem;
+    display        : flex;
+    flex-direction : column;
+    padding-top    : .25rem;
+    font-size      : 10px;
+    line-height    : 1;
+    color          : #ef4e3c
+  }
+
+  .workflow-title {
+    color       : #959dad;
+    font-size   : .6875rem;
+    font-weight : 600
+  }
+
+  .workflow-icon.bakery-button bc-icon svg {
+    width  : 1rem;
+    height : 1rem
+  }
+
+  .workflow-row {
+    display        : flex;
+    flex-direction : row
+  }
+
+  .workflow-row .workflow-column {
+    margin-right : 1rem;
+    flex         : 1
+  }
+
+  .workflow-row .workflow-column:last-child {
+    margin-right : 0
+  }
+
+  tri-card {
+    width         : 80vw;
+    height        : 80vh;
+    min-height    : 200px;
+  }
+
+  tri-card tri-card-body {
+    display                    : flex;
+    padding                    : 0;
+    border-bottom-left-radius  : .25rem;
+    border-bottom-right-radius : .25rem;
+    height                     : 0%;
+    flex                       : 1;
+  }
+
+  pf-state-variable-list, pf-variable-manage-form {
+    height : 100%
+  }
+
+  pf-state-variable-list {
+    width     : 100%;
+    max-width : 256px
+  }
+
+  ub-simple-code-editor {
+    font-size   : .9375rem;
+    font-weight : 400
+  }
+}

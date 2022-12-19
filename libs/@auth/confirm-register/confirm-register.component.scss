@@ -1,0 +1,12 @@
+nb-checkbox {
+  display: block
+}
+
+nb-checkbox:not(:last-child) {
+  margin-bottom: .5rem
+}
+
+nb-checkbox .custom-checkbox {
+  margin-top: .25rem;
+  margin-bottom: auto
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "lib": ["es2015", "dom", "es2016.array.include"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "../../dist/tools/gulp",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "target": "es5",
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@devops-tools/reiki-ast": ["../../libs/reiki-ast/src/index"]
+    }
+  },
+  "files": [
+    "gulpfile.ts"
+  ]
+}

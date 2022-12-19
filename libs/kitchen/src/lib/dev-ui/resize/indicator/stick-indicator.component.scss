@@ -1,0 +1,36 @@
+:host {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  transition: opacity .3s;
+  height: 20px
+}
+
+:host span {
+  width: 80px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #1e89ef;
+  font-size: 11px;
+  color: #fff;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  position: absolute;
+  left: calc(50% - 40px)
+}
+
+:host div {
+  border-top: 1px solid #1e89ef;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  margin: 0;
+  z-index: 1
+}
+
+.visible:host {
+  opacity: 1
+}

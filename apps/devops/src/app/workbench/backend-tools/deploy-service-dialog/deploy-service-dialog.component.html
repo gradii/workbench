@@ -1,0 +1,24 @@
+<!--<p>deploy-service-dialog works!</p>-->
+<tri-card>
+  <tri-card-header>
+    设置环境变量
+    <p class="font-weight-normal">启动服务后, 点击下面服务日志按钮刷新日志</p>
+  </tri-card-header>
+  <tri-card-body>
+
+    <!--    <form dForm [layout]="'vertical'">-->
+    <!--      <d-form-item>-->
+    <!--        <d-form-label>环境变量: </d-form-label>-->
+    <!--        <d-form-control>-->
+    <textarea tri-input type="textarea" name="env" [(ngModel)]="formData.envContent" placeholder="PORT=3333"></textarea>
+    <!--        </d-form-control>-->
+    <!--      </d-form-item>-->
+    <!--    </form>-->
+  </tri-card-body>
+  <tri-card-footer>
+
+    <!-- <button nbButton status="danger" (click)="cancel()">Cancel</button>
+     <button nbButton status="success" (click)="submit(name.value)">Submit</button>-->
+    <button triButton (click)="onRestart()">重启服务</button>
+  </tri-card-footer>
+</tri-card>

@@ -1,0 +1,91 @@
+
+:host {
+  display    : block;
+  column-gap : 1rem;
+
+  .inner-field {
+    margin : 1rem 0
+  }
+
+  &.row-field {
+    display     : flex;
+    align-items : center
+  }
+
+  &.column-field {
+    display        : flex;
+    flex-direction : column
+  }
+
+  &.no-top-margin,
+  & .no-top-margin,
+  &.no-top-margin ub-data-field,
+  & .no-top-margin ub-data-field {
+    margin-top : 0
+  }
+
+  .no-bottom-padding {
+    padding-bottom : 0
+  }
+
+  .settings-field-label {
+    color          : #000;
+    font-size      : .75rem;
+    text-transform : capitalize
+  }
+
+  .setting-hint {
+    color          : #959dad;
+    font-size      : .75rem;
+    vertical-align : top
+  }
+
+  &.row-field .settings-field-label {
+    margin-right : .5rem
+  }
+
+  &.column-field .settings-field-label {
+    display       : inline-block;
+    margin-bottom : .25rem
+  }
+
+  ub-code-editor.resizable {
+    min-height : 5rem
+  }
+
+  .code-highlight {
+    color            : #fff;
+    background-color : rgba(143, 92, 255, .32);
+    border-radius    : .25rem;
+    padding          : 1px
+  }
+
+  .data-source-container {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center
+  }
+
+  .data-source-container .data-source-main-label {
+    font-size   : .6875rem;
+    font-weight : 700
+  }
+
+  .data-source-sub-label {
+    font-size   : .6875rem;
+    line-height : 1rem;
+    display     : block;
+    margin      : 0;
+    color       : #959dad
+  }
+
+  .data-consumer {
+    color     : #959dad;
+    font-size : .75rem
+  }
+
+  ub-data-field {
+    margin-top : .25rem
+  }
+
+}

@@ -1,0 +1,40 @@
+<div>
+  <div #header class="modal-header">编辑角色</div>
+  <div class="modal-body">
+
+    <form triForm >
+      <tri-form-item>
+        <tri-form-label>accountName</tri-form-label>
+        <tri-form-control>
+          <input [(ngModel)]="formData.userInfo.accountName" tri-input disabled name="acountName"/>
+        </tri-form-control>
+      </tri-form-item>
+
+      <tri-form-item>
+        <tri-form-label>realName</tri-form-label>
+        <tri-form-control>
+          <input [(ngModel)]="formData.userInfo.realName" tri-input disabled name="realName"/>
+        </tri-form-control>
+      </tri-form-item>
+
+      <tri-form-item>
+        <tri-form-label>角色</tri-form-label>
+        <tri-form-control>
+          <tri-select
+            [(ngModel)]="formData.permissionRoles"
+            name="role"
+          >
+          </tri-select>
+          <!--          <input dTextInput disabled/>-->
+        </tri-form-control>
+      </tri-form-item>
+      <!--      <d-form-operation>-->
+      <!--        <d-button bsStyle="primary" circled="true" (click)="onEditRole()"> 修改</d-button>-->
+      <!--      </d-form-operation>-->
+    </form>
+
+  </div>
+  <div class="modal-footer">
+    <button triButton (click)="onEditRole()" color="primary" circled="true"> 修改</button>
+  </div>
+</div>

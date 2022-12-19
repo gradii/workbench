@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/kitchen-shell/src",
+  "prefix": "devops-tools",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/kitchen-shell"],
+      "options": {
+        "jestConfig": "libs/kitchen-shell/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/kitchen-shell/**/*.ts",
+          "libs/kitchen-shell/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

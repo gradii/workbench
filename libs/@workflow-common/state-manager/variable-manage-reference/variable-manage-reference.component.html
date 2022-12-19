@@ -1,0 +1,17 @@
+<tri-card [bordered]="false">
+  <tri-card-header>
+    <h5>Variable References</h5>
+  </tri-card-header>
+  <tri-card-body>
+
+    <tri-data-table [dataSource]="referenceList">
+      <tri-data-table-column field="componentType" title="component type">
+      </tri-data-table-column>
+      <tri-data-table-column field="component" title="component">
+      </tri-data-table-column>
+      <tri-data-table-column field="referenceProperty" title="reference property">
+      </tri-data-table-column>
+    </tri-data-table>
+
+  </tri-card-body>
+</tri-card>

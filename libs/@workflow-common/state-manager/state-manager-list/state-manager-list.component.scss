@@ -1,0 +1,21 @@
+@use '@gradii/triangle/core/themes/theme';
+
+
+:host {
+
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee;
+
+
+  .list-block {
+    padding: 1rem;
+    overflow-y: auto;
+    scrollbar-face-color: rgba(149, 157, 173, .16);
+    scrollbar-track-color: #15171f
+  }
+
+  .list-block::-webkit-scrollbar {
+    width: 0;
+  }
+}

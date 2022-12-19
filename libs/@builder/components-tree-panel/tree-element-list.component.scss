@@ -1,0 +1,14 @@
+:host {
+  padding   : 0 0 1rem;
+  display   : block;
+
+  flex-grow : 1;
+  overflow  : auto;
+
+  height: calc(100vh - 10rem);
+
+
+  &::-webkit-scrollbar {
+    width : 0;
+  }
+}

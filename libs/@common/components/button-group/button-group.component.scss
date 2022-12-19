@@ -1,0 +1,26 @@
+:host {
+  display: flex
+}
+
+:host > button[nbButton].button-group-item {
+  flex: 1;
+  border-radius: 0;
+  text-transform: none;
+  padding: .375rem .5rem;
+  line-height: 1.375;
+  transition-property: background-color, color, border
+}
+
+:host > button[nbButton].button-group-item, :host > button[nbButton].button-group-item:focus, :host > button[nbButton].button-group-item:hover {
+  background-color: transparent;
+  border-left-width: 0
+}
+
+:host > button[nbButton].button-group-item:not(:last-of-type), :host > button[nbButton].button-group-item:not(:last-of-type):focus, :host > button[nbButton].button-group-item:not(:last-of-type):hover {
+  border-right-width: 0
+}
+
+:host > button[nbButton].button-group-item bc-icon svg {
+  width: 1rem;
+  height: 1rem
+}

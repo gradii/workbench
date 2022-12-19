@@ -1,0 +1,95 @@
+<tri-card>
+  <tri-card-header>
+    <bc-icon [name]="icon"></bc-icon>
+    <span>{{ host }}</span>
+    <div class="status-wrapper">
+      <span class="status-text published" *ngIf="isPublished; else neverPublishedStatus">
+        <span>&#9679; Published</span>
+      </span>
+      <ng-template #neverPublishedStatus>
+        <span class="status-text">
+          Never Published
+        </span>
+      </ng-template>
+      <span *ngIf="isPublished" class="caption-2"> {{ hosting.publishedDeploymentDate | distanceToNow }} ago</span>
+    </div>
+
+    <button
+      ghost
+      class="delete"
+      *ngIf="!isDevEnvironment"
+      (click)="deleteDomain()"
+      triButton
+      [disabled]="isLoading"
+      aria-label="delete domain"
+    >
+      <tri-icon svgIcon="outline:trash"></tri-icon>
+    </button>
+  </tri-card-header>
+  <tri-card-body>
+    <tri-alert *ngFor="let error of errors" type="danger" outline="danger">
+      <tri-icon svgIcon="outline:alert-circle" class="alert-icon"></tri-icon>
+      {{ error }}
+    </tri-alert>
+    <tri-alert
+      *ngIf="!hosting.configured && errors.length === 0 && !isLoading"
+      class="no-margin"
+      type="primary"
+      outline
+    >
+      Please add the following record to your Domain Provider DNS settings.
+    </tri-alert>
+
+    <table *ngIf="!hosting.configured" class="paragraph-2">
+      <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>CHAME/ANAME/ALIAS</td>
+        <td>{{ host }}</td>
+        <td>{{ value }}</td>
+        <td class="status">
+          <button
+            nbButton
+            class="status-secondary"
+            size="small"
+            (click)="check()"
+            [disabled]="isLoading"
+            [nbSpinner]="checkStatusLoading"
+          >
+            Check Status
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table *ngIf="hosting.configured" class="paragraph-2">
+      <thead>
+      <tr>
+        <th>Environment</th>
+        <th>Domain</th>
+        <th class="status">Status</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>{{ hosting.environment }}</td>
+        <td>{{ host }}</td>
+        <td class="status configured">
+            <span class="status-text">
+              <bc-icon name="checkmark-outline"></bc-icon>
+              <span>Connected</span>
+            </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </tri-card-body>
+</tri-card>

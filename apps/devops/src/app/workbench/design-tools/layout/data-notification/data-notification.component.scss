@@ -1,0 +1,66 @@
+@import 'global/scss/mixins/breakpoints';
+
+
+:host {
+
+  margin-right: .625rem;
+
+  button[nbButton].notification-button {
+    padding: .225rem .5rem;
+    border-radius: 0
+  }
+
+  button[nbButton].notification-button:first-of-type {
+    margin-right: 1px;
+    padding-right: .25rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem
+  }
+
+  button[nbButton].notification-button:last-of-type {
+    padding-left: .25rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem
+  }
+
+  button[nbButton].notification-button.status-success {
+    color: #00c57e;
+    background-color: rgba(0, 197, 126, .16)
+  }
+
+  button[nbButton].notification-button.status-success:hover {
+    background-color: rgba(0, 197, 126, .32)
+  }
+
+  button[nbButton].notification-button.status-danger {
+    color: #ef4e3c;
+    background-color: rgba(239, 78, 60, .16)
+  }
+
+  button[nbButton].notification-button.status-danger:hover {
+    background-color: rgba(239, 78, 60, .32)
+  }
+
+  button[nbButton].notification-button .count-text {
+    line-height: .9375rem
+  }
+
+  ::ng-deep {
+    & button[nbButton].notification-button nb-icon svg,
+    & button[nbButton].notification-button nb-icon {
+      width: 1rem;
+      height: 1rem
+    }
+
+    //.status-danger & button[nbButton].notification-button nb-icon svg,
+    //.status-danger & button[nbButton].notification-button nb-icon {
+    //  fill: #ef4e3c
+    //}
+    //
+    //.status-success & button[nbButton].notification-button nb-icon svg,
+    //.status-success & button[nbButton].notification-button nb-icon {
+    //  fill: #00c57e
+    //}
+  }
+
+}

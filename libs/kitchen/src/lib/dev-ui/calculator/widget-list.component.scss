@@ -1,0 +1,43 @@
+:host {
+  width: 353px;
+  height: 20.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: .75rem 0;
+  padding: 0 .75rem;
+  align-content: flex-start;
+  overflow: auto
+}
+
+@media (max-height: 600px) {
+  :host {
+    height: 13.5rem
+  }
+}
+
+:host kitchen-widget-item {
+  margin: .25rem
+}
+
+:host::-webkit-scrollbar {
+  width: .3125rem;
+  height: .3125rem
+}
+
+:host::-webkit-scrollbar-thumb {
+  background: #3c424f;
+  cursor: pointer;
+  border-radius: .15625rem
+}
+
+:host::-webkit-scrollbar-track {
+  background: #15171f
+}
+
+.wide-scrollbar:host {
+  width: 369px
+}
+
+:host kitchen-no-items {
+  margin-top: 40%
+}

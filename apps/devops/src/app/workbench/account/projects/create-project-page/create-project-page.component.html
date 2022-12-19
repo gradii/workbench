@@ -1,0 +1,93 @@
+<len-subheader>
+  <a triButton ghost routerLink="../" aria-label="back" class="back-button">
+    <tri-icon svgIcon="eva-fill:arrow-back"></tri-icon>
+  </a>
+  <h1 class="h5 page-heading">{{ name }}</h1>
+</len-subheader>
+
+<div class="content-scroll-container">
+  <div class="content-wrapper">
+    <p class="content-header" *ngIf="!(templateListLoading$ | async)">
+      <ng-container *ngIf="templateListLoadingFailed$ | async" class="error">
+        Couldn't load templates
+      </ng-container>
+      <!-- <ng-template #chooseTemplate>
+         Choose a template to start from. Let us know if you need the more specific one.
+       </ng-template>-->
+    </p>
+
+    <div class="content-body" *ngIf="!(templateListLoading$ | async)">
+      <div class="sidebar-container">
+        <div class="tags-container">
+
+          <tri-input-group>
+            <input tri-input ngModel
+                   (ngModelChange)="nameFilter$.next($event)"
+                   [placeholder]="'Search for a template'">
+            <ng-template #prefix>
+              <tri-icon style="color: #8f9bb3; font-size:20px" svgIcon="eva-outline:search-outline"></tri-icon>
+            </ng-template>
+          </tri-input-group>
+
+          <!--<nb-form-field>
+            <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+            <input
+              type="text"
+              nbInput
+              status="basic"
+              ngModel
+              (ngModelChange)="nameFilter$.next($event)"
+              [placeholder]="'Search for a template'"
+            />
+          </nb-form-field>-->
+          <div class="tags">
+            <p class="category" i18n="category">
+              分类
+            </p>
+            <p
+              class="tag subtitle text-hint"
+              [ngClass]="{ selected: !selectedTag$.getValue() }"
+              (click)="selectTag('')"
+              i18n="All Template"
+            >
+              所有模板
+            </p>
+            <p
+              class="tag subtitle text-hint"
+              [ngClass]="{ selected: selectedTag$.getValue() == tag }"
+              *ngFor="let tag of templateTags$ | async"
+              (click)="selectTag(tag)"
+            >
+              {{ tag }}
+            </p>
+          </div>
+          <div class="tags-drop">
+            <p class="category" i18n="category">
+              分类
+            </p>
+            <tri-select [value]="selectedTag$ | async" (valueChange)="this.selectedTag$.next($event)">
+              <tri-option [value]="''">所有模板</tri-option>
+              <tri-option *ngFor="let tag of templateTags$ | async" [value]="tag">{{ tag }}</tri-option>
+            </tri-select>
+          </div>
+        </div>
+      </div>
+
+      <div class="templates">
+        <len-template
+          *ngFor="let template of filteredTemplates$ | async"
+          [template]="template"
+          [loading]="createLoading$ | async"
+          [downloadState]="template.id === (codeLoadingTemplateId$ | async) && (codeLoading$ | async)"
+          [disableCreation]="disableProjectCreation$ | async"
+          (create)="create(template)"
+          (upgrade)="upgrade()"
+          (download)="download(template)"
+        >
+        </len-template>
+      </div>
+    </div>
+
+  </div>
+</div>
+

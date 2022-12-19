@@ -1,0 +1,17 @@
+
+
+:host {
+  .add-new-action-button {
+    text-transform: capitalize;
+    width: 100%;
+    border-radius: .25em .25em 0 0
+  }
+
+  .add-new-action-button:hover {
+  }
+
+  button > bc-icon {
+    margin-left: .375rem
+  }
+
+}

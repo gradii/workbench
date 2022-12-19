@@ -1,0 +1,17 @@
+nb-card {
+  width: calc(100vw - 2rem);
+  max-width: 32em
+}
+
+nb-card-body {
+  padding: 2rem
+}
+
+.heading {
+  margin-bottom: 1.5rem
+}
+
+.bc-form .form-actions-group-inline {
+  margin-top: 2rem;
+  justify-content: flex-end
+}

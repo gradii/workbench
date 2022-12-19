@@ -1,0 +1,64 @@
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: .25rem;
+  transition: border .2s ease-in;
+
+
+  ub-theme-preview {
+    cursor: pointer
+  }
+
+  ub-theme-preview:hover + .description {
+    background-color: #313642
+  }
+
+  &.active {
+    border: 2px solid #47c256;
+    box-shadow: 0 0 2px #47c256
+  }
+
+  .description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: .5rem;
+    font-size: .6875rem;
+    font-weight: 600;
+    background-color: #232730;
+    transition: background-color .2s ease-in
+  }
+
+  .theme-name {
+    max-width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff
+  }
+
+  .action-container {
+    display: flex;
+    align-items: center
+  }
+
+  .description [nbButton] {
+    padding: .5rem .25rem .425rem;
+    font-size: .6875rem
+  }
+
+  & .description [nbButton] nb-icon,
+  & .description [nbButton] nb-icon svg {
+    font-size: 0;
+    width: 1rem;
+    height: 1rem
+  }
+
+  .description span {
+    padding: .325rem 0
+  }
+
+}

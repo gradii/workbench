@@ -1,0 +1,66 @@
+
+
+:host {
+  display: block;
+  padding: 1rem;
+  cursor: default;
+
+
+  & .checkbox-label,
+  & .message {
+    font-size: .6875rem
+  }
+
+  .message {
+    color: #959dad;
+    line-height: 1rem;
+    margin: 0 0 .5rem
+  }
+
+  .container-info-message {
+    margin-top: .5rem;
+    margin-bottom: 0
+  }
+
+  .name-settings {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+  }
+
+  .checkbox-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    height: 1rem
+  }
+
+  .checkbox-container nb-checkbox .text {
+    padding: 0
+  }
+
+  .checkbox-container .checkbox-label {
+    padding-left: .5rem;
+    cursor: pointer
+  }
+
+  .checkbox-container tri-icon {
+    margin-left: auto;
+    color: #959dad;
+    width: .875rem;
+    height: .875rem;
+    cursor: pointer
+  }
+
+  .validation-errors > div {
+    margin-top: .1rem;
+    font-size: .6875rem;
+    color: #ff4070
+  }
+
+  .component-name-settings-tooltip {
+    width: 10.5rem;
+    margin-right: -.325rem
+  }
+
+}

@@ -1,0 +1,51 @@
+.nb-theme-dark :host nb-card {
+  width: 20rem;
+  height: 25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #232730;
+  color: #fff;
+  border: 1px solid #313642;
+  box-shadow: 0 4px 16px 0 rgba(21, 23, 32, .7)
+}
+
+.nb-theme-dark :host nb-card nb-card-header {
+  padding: 0;
+  width: 100%;
+  height: 13rem
+}
+
+.nb-theme-dark :host nb-card nb-card-header img {
+  width: 100%;
+  height: 100%
+}
+
+.nb-theme-dark :host nb-card nb-card-body {
+  padding: 1rem
+}
+
+.nb-theme-dark :host nb-card nb-card-body p {
+  font-size: .813rem;
+  text-align: center;
+  line-height: 1.375rem;
+  margin: 0 0 1rem
+}
+
+.nb-theme-dark :host nb-card nb-card-body div {
+  display: flex;
+  justify-content: flex-end
+}
+
+.nb-theme-dark :host nb-card nb-card-body div button {
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host nb-card nb-card-body div button.color-white {
+  color: #fff;
+  font-weight: 700
+}
+
+.nb-theme-dark :host nb-card nb-card-body div button.text-capitalize {
+  text-transform: none
+}

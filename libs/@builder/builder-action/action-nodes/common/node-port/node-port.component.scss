@@ -1,0 +1,19 @@
+
+:host {
+  display          : flex;
+  background-image : linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+.portsContainer {
+  flex-grow      : 1;
+  display        : flex;
+  flex-direction : column;
+}
+
+.portsContainer:first-of-type {
+  margin-right : 10px;
+}
+
+.portsContainer:only-child {
+  margin-right : 0;
+}

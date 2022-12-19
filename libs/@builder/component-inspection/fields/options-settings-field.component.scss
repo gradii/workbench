@@ -1,0 +1,46 @@
+@use '@gradii/triangle/core/themes/theme';
+
+
+
+$label-color: null !default;
+@if(theme.$is-dark) {
+  $label-color: #fff !default;
+} @else {
+  $label-color: #222 !default;
+}
+
+:host {
+  .option {
+    margin-top: .8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap
+  }
+
+ .option-label {
+    color: $label-color;
+    font-size: .6875rem;
+    margin: .25rem 0
+  }
+
+ .add-container {
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+
+ .add-label {
+    font-size: .6875rem;
+    font-weight: 700
+  }
+
+ .add-container .clear-icon {
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: none
+  }
+
+}

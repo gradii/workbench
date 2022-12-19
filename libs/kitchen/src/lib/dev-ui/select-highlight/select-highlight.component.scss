@@ -1,0 +1,21 @@
+:host {
+  pointer-events : none
+}
+
+.component:host {
+  border : 1px solid var(--dev-ui-component-selected-border-color)
+}
+
+.space-highlight:host {
+  border : 1px solid var(--dev-ui-space-selected-border-color)
+}
+
+.space-highlight:host:before {
+  opacity : 0
+}
+
+.editable.component:host {
+  box-sizing : content-box;
+  padding    : 1px;
+  border     : 2px solid var(--dev-ui-component-selected-border-color)
+}

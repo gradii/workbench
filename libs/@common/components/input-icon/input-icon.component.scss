@@ -1,0 +1,20 @@
+:host {
+  position: relative;
+  display: flex;
+  align-items: center
+}
+
+nb-icon {
+  display: none
+}
+
+.show-icon:host nb-icon {
+  display: block;
+  position: absolute;
+  pointer-events: none
+}
+
+.show-icon:host nb-icon.clickable {
+  cursor: pointer;
+  pointer-events: auto
+}

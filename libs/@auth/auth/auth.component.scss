@@ -1,0 +1,33 @@
+nb-layout-column {
+  display: flex
+}
+
+.auth-content-wrapper {
+  width: 100%;
+  overflow-x: hidden
+}
+
+::ng-deep {
+  .auth-content-wrapper > :not(router-outlet) {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    width: 100%
+  }
+
+  .auth-content-wrapper > :not(router-outlet) .auth-wrapper {
+    padding: 1rem;
+    width: 100%;
+    margin: auto;
+    max-width: 25rem
+  }
+}
+
+@media (max-width: 62em) {
+  .hero-wrapper {
+    display: none
+  }
+  .auth-content-wrapper {
+    width: 100%
+  }
+}

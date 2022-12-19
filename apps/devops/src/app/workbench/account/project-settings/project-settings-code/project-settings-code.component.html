@@ -1,0 +1,11 @@
+<form [formGroup]="customCode" (ngSubmit)="save()" nbSpinnerStatus="primary" class="bc-form component-top-margin">
+  <h2 class="h6 heading-margin-bottom">Add code at the end of the &lt;head&gt; tag:</h2>
+  <p class="description">Custom code and scripts will only appear on the published project.</p>
+  <h2 class="h6">HTML</h2>
+  <len-simple-code-editor formControlName="code" syntax="html" theme="base16-light"></len-simple-code-editor>
+  <div class="form-actions-group actions">
+    <button nbButton class="status-secondary" [disabled]="loading$ | async" type="submit">
+      Save changes
+    </button>
+  </div>
+</form>

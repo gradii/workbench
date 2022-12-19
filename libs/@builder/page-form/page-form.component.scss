@@ -1,0 +1,73 @@
+
+
+:host {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+
+  .form-header button[nbButton] {
+    padding-right: 0
+  }
+
+  .form-title {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #959dad
+  }
+
+  label {
+    color: #959dad;
+    font-size: .6875rem;
+    font-weight: 700
+  }
+
+  .parent-select, .nb-theme-dark :host input {
+    margin: .25rem 0
+  }
+
+  .controls {
+    margin-top: 1rem;
+    display: flex
+  }
+
+  .controls button {
+    flex: 1
+  }
+
+  & button.cancel-btn,
+  & button.cancel-btn.appearance-filled {
+    margin-right: 1rem;
+    background-color: transparent;
+    //color: #959dad;
+    //opacity: .8;
+    text-transform: capitalize;
+    border: none
+  }
+
+  //& button.cancel-btn.appearance-filled:active,
+  //& button.cancel-btn.appearance-filled:focus,
+  //& button.cancel-btn.appearance-filled:hover,
+  //& button.cancel-btn:active,
+  //& button.cancel-btn:focus,
+  //& button.cancel-btn:hover {
+  //  background-color: transparent;
+  //  opacity: 1
+  //}
+
+  .validation-errors {
+    margin-top: .1rem
+  }
+
+  .validation-errors > div {
+    font-size: .6875rem;
+    color: #ff4070
+  }
+
+}

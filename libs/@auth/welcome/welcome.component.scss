@@ -1,0 +1,49 @@
+.link-skip {
+  position: absolute;
+  top: 1rem;
+  right: 1rem
+}
+
+.welcome-survey {
+  padding: 1rem;
+  width: 100%;
+  margin: auto;
+  max-width: 50rem
+}
+
+.inputs {
+  display: flex
+}
+
+.inputs .left-inputs {
+  margin-right: 2rem;
+  width: 100%
+}
+
+.inputs .right-inputs {
+  width: 100%
+}
+
+.inputs .right-inputs .form-submit {
+  margin-top: 3.25rem
+}
+
+.inputs .right-inputs .form-submit button {
+  margin-left: auto
+}
+
+.form-control-group nb-select {
+  max-width: 23rem
+}
+
+@media (max-width: 43.75rem) {
+  .welcome-survey {
+    max-width: 25rem
+  }
+  .inputs {
+    display: block
+  }
+  .inputs .left-inputs {
+    margin-bottom: 1.75rem
+  }
+}

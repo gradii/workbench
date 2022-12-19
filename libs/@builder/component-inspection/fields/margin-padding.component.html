@@ -1,0 +1,61 @@
+<div class="box margin-box" [class.box-disabled]="marginDisabled">
+  <span class="box-label margin-label">Margin</span>
+
+  <ng-container *ngFor="let side of orderedSides">
+    <div class="value {{ side.toLowerCase() }}" [class.value-disabled]="marginDisabled">
+      <ng-container
+        [ngTemplateOutlet]="marginDisabled ? disabledValue : marginEditor"
+        [ngTemplateOutletContext]="{ side: side }"
+      >
+      </ng-container>
+    </div>
+
+    <!-- Generate padding box after left margin for more or less expected tab order -->
+    <div #paddingBox *ngIf="side === 'Left'" class="box inner-box padding-box" [class.box-disabled]="paddingDisabled">
+      <span class="box-label padding-label">padding</span>
+
+      <div
+        *ngFor="let side of orderedSides"
+        class="value {{ side.toLowerCase() }}"
+        [class.value-disabled]="paddingDisabled"
+      >
+        <ng-container
+          [ngTemplateOutlet]="paddingDisabled ? disabledValue : paddingEditor"
+          [ngTemplateOutletContext]="{ side: side }"
+        >
+        </ng-container>
+      </div>
+
+      <div class="inner-box"></div>
+
+      <div class="decorative-lines">
+        <div class="decorative-line-vertical"></div>
+        <div class="decorative-line-horizontal"></div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #disabledValue>
+  none
+</ng-template>
+
+<ng-template #marginEditor let-side="side">
+  <ub-margin-field
+    [value]="getMarginValue(side)"
+    (valueChange)="updateMarginValue(side, $event)"
+    [unit]="getMarginUnit(side)"
+    (unitChange)="updateMarginUnit(side, $event)"
+  >
+  </ub-margin-field>
+</ng-template>
+
+<ng-template #paddingEditor let-property="property" let-side="side">
+  <ub-padding-field
+    [value]="getPaddingValue(side)"
+    (valueChange)="updatePaddingValue(side, $event)"
+    [unit]="getPaddingUnit(side)"
+    (unitChange)="updatePaddingUnit(side, $event)"
+  >
+  </ub-padding-field>
+</ng-template>

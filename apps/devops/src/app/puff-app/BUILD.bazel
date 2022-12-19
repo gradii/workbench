@@ -1,0 +1,26 @@
+load("//tools:defaults.bzl", "ng_module", "sass_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_module(
+    name = "puff-app",
+    srcs = glob(["**/*.ts"], exclude = ["**/*.spec.ts"]),
+    assets = [
+      ":puff_app_layout_scss"
+    ] + glob(["**/*.html"]),
+    deps = [
+        "//src/puff-app/nav-bar",
+        "//src/triangle/core",
+        "//src/triangle/button",
+        "//src/triangle/navbar",
+        "//src/triangle/sidenav",
+        "//src/triangle/icon",
+        "@npm//@angular/core",
+        "@npm//@angular/router",
+    ],
+)
+
+sass_binary(
+    name = "puff_app_layout_scss",
+    src = "puff-app-layout.scss",
+)

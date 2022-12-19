@@ -1,0 +1,30 @@
+<h3>角色列表</h3>
+
+<button triButton (click)="onAddRole()">添加角色</button>
+<tri-data-table [dataSource]="items"
+              [scrollable]="true">
+  <tri-data-table-column field="id" header="id"></tri-data-table-column>
+  <tri-data-table-column [editable]="true" field="roleCode" header="role_code"></tri-data-table-column>
+  <tri-data-table-column [editable]="true" field="name" header="name"></tri-data-table-column>
+  <!--  <d-column field="role" header="role"></d-column>-->
+  <tri-data-table-column [editable]="true" field="description" header="description"></tri-data-table-column>
+  <tri-data-table-column field="created_at" header="创建时间">
+    <ng-template triGridCellTemplate let-cellValue="cellValue">
+      {{cellValue|date:'yyyy-MM-dd HH:mm:ssZ'}}
+    </ng-template>
+  </tri-data-table-column>
+  <tri-data-table-column field="updated_at" header="修改时间">
+    <ng-template triGridCellTemplate let-cellValue="cellValue">
+      {{cellValue|date:'yyyy-MM-dd HH:mm:ssZ'}}
+    </ng-template>
+  </tri-data-table-column>
+  <tri-data-table-column>
+      <ng-template triGridCellTemplate let-rowItem="rowItem">
+
+        <button triButton #popOrign="nbPopover" [nbPopover]="pop" bsSize="sm" bsStyle="danger">删除</button>
+        <ng-template #pop>
+          <button triButton size="sm" color="danger" (click)="onRemoveRole(rowItem.id);popOrign.hide()">确定删除</button>
+        </ng-template>
+      </ng-template>
+  </tri-data-table-column>
+</tri-data-table>

@@ -1,0 +1,14 @@
+<div class="image-wrapper" [style.width.px]="previewWrapperSize.width" [style.height.px]="previewWrapperSize.height">
+  <img
+    *ngIf="src; else placeholder"
+    [src]="src"
+    [style.width.px]="previewSize.width"
+    [style.height.px]="previewSize.height"
+  />
+</div>
+
+<ng-template #placeholder>
+  <div [style.width.px]="previewSize.width" [style.height.px]="previewSize.height">
+    <bc-icon name="favicon-placeholder"></bc-icon>
+  </div>
+</ng-template>

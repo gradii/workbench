@@ -1,0 +1,56 @@
+
+
+:host {
+  .refresh-button[nbButton].appearance-ghost.size-small {
+    text-transform: none;
+    font-size: .6875rem;
+    justify-content: space-between;
+    padding: .375rem 1rem;
+    margin: .375rem 0
+  }
+
+ .refresh-button[nbButton].appearance-ghost.size-small nb-icon svg {
+    width: 1rem;
+    height: 1rem
+  }
+
+ ub-color-input {
+    margin: 0 .25rem 1rem 1rem
+  }
+
+ .refresh-button.loading nb-icon {
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite
+  }
+
+ .refresh-button nb-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+    40% {
+      transform: rotate(230deg)
+    }
+    to {
+      transform: rotate(1turn)
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+    40% {
+      transform: rotate(230deg)
+    }
+    to {
+      transform: rotate(1turn)
+    }
+  }
+
+}

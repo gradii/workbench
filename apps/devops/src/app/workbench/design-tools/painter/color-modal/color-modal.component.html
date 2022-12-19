@@ -1,0 +1,19 @@
+<tri-tab-group class="sub-tabs">
+  <tri-tab title="Custom">
+    <len-color-picker [color]="color" (colorChange)="updateColor($event, 'picker', null)"></len-color-picker>
+  </tri-tab>
+  <tri-tab title="Palettes">
+    <len-color-palette [color]="color" (colorChange)="updateColor($event, 'palette', null)"></len-color-palette>
+  </tri-tab>
+  <tri-tab *ngIf="includeLogo" title="From logo">
+    <len-color-logo [color]="color" (colorChange)="updateColor($event.color, 'logo', $event.logo)"></len-color-logo>
+  </tri-tab>
+</tri-tab-group>
+<div class="controls">
+  <button triButton size="small" ghost class="basic" (click)="cancel.emit()">
+    Cancel
+  </button>
+  <button triButton size="small" color="primary" (click)="done()">
+    Done
+  </button>
+</div>

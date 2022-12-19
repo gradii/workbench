@@ -1,0 +1,24 @@
+<div class="auth-wrapper">
+  <img src="assets/logo.svg" class="logo-image" alt="Devops" />
+
+  <h1 class="h2">Email change confirmation</h1>
+
+  <div *ngIf="hasErrors || messages.length" role="alert">
+    <tri-alert *ngIf="!token || isTokenExpired" type="danger" outline="danger">
+      <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+      Email change request expired or not found!
+    </tri-alert>
+
+    <tri-alert *ngFor="let error of errors" type="danger" outline="danger">
+      <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+      {{ error }}
+    </tri-alert>
+
+    <tri-alert *ngFor="let message of messages" type="success" outline="success">
+      <tri-icon svgIcon="eva:checkmark-circle-2" class="alert-icon"></tri-icon>
+      {{ message }}
+    </tri-alert>
+  </div>
+
+  <a routerLink="/" *ngIf="!loading" triButton color="primary">Go Home</a>
+</div>

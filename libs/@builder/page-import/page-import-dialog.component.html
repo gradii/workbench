@@ -1,0 +1,62 @@
+<tri-card>
+  <tri-card-header>
+    <h3 class="modal-title">Import Pages</h3>
+  </tri-card-header>
+
+  <tri-card-body [loading]="loading">
+    <tri-accordion *ngIf="projects.length">
+      <tri-accordion-item *ngFor="let project of projects" expanded>
+        <tri-checkbox accordion-title
+                      class="project-name"
+                      [checked]="project.checked"
+                      [indeterminate]="project.indeterminate"
+                      (checkedChange)="checkProject(project, $event)"
+                      (click)="stopEvent($event)"
+        >
+          {{ project.name }}
+        </tri-checkbox>
+        <ub-page-import-page-tree
+          [pages]="project.pageList"
+          (checkedChange)="checkPage($event, project)"
+        ></ub-page-import-page-tree>
+      </tri-accordion-item>
+    </tri-accordion>
+
+    <div *ngIf="!projects.length" class="cannot-load-projects">
+      Unable to load your projects
+    </div>
+  </tri-card-body>
+
+  <tri-card-footer>
+    <span>
+      <span class="total-label">{{ checkedPageCount }} selected pages</span>
+    </span>
+    <div *ngIf="!loading" class="controls">
+      <button triButton ghost size="small" shape="rectangle" class="cancel-btn bakery-button" (click)="close()">
+        Cancel
+      </button>
+      <button
+        *ngIf="projects.length"
+        triButton
+        size="small"
+        shape="rectangle"
+        color="primary"
+        class="bakery-button"
+        (click)="import()"
+      >
+        Import
+      </button>
+      <button
+        *ngIf="!projects.length"
+        triButton
+        size="small"
+        shape="rectangle"
+        color="primary"
+        class="bakery-button"
+        (click)="load()"
+      >
+        Try again
+      </button>
+    </div>
+  </tri-card-footer>
+</tri-card>

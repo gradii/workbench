@@ -1,0 +1,41 @@
+<tri-navbar>
+  <tri-navbar-row style="margin: .6rem 0;gap: 0.5rem">
+    <button tri-button style="border:none" (click)="sideNav.toggle()">
+      <tri-icon svgIcon="outline:menu"></tri-icon>
+    </button>
+    <a triButton routerLink="hello-world">开始</a>
+    <a triButton routerLink="/ui/sf/builder">模板中心</a>
+    <button triButton>解决方案</button>
+    <button triButton>应用中心</button>
+    <a triButton routerLink="workflow-history/1">workflow history</a>
+    <a triButton routerLink="/workbench/projects">我的应用</a>
+  </tri-navbar-row>
+</tri-navbar>
+<tri-sidenav-container triNavBar
+                       [hasBackdrop]="false"
+                       class="puff-navbar">
+  <tri-sidenav #sideNav="triSidenav">
+    <ul>
+      <li>
+        <a tri-button routerLink="/projects">Projects</a>
+      </li>
+      <li>sidenav2</li>
+      <li>sidenav3</li>
+      <li>sidenav4</li>
+      <li>sidenav5</li>
+      <li>sidenav6</li>
+      <li>sidenav7</li>
+      <li>sidenav8</li>
+      <li>sidenav9</li>
+    </ul>
+  </tri-sidenav>
+  <main>
+    <div>
+      <ng-content></ng-content>
+    </div>
+  </main>
+  <footer style="display: flex;flex-direction: column;height: 200px;background-color: #313233">
+
+  </footer>
+</tri-sidenav-container>
+

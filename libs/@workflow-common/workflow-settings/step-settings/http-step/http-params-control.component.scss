@@ -1,0 +1,62 @@
+
+
+:host {
+  .param-row {
+    align-items: center;
+    margin-bottom: .25rem
+  }
+
+  .param-row .param-column {
+    margin-bottom: 0;
+    margin-right: .25rem
+  }
+
+  .param-row .param-column:last-of-type {
+    margin-right: 0;
+    width: calc(100% - 230px - 2rem)
+  }
+
+  .param-row .param-column:first-child {
+    flex-grow: 0;
+    flex-basis: 230px
+  }
+
+  .param-row [nbInput] {
+    padding: .465rem .5rem
+  }
+
+  .add-param-button {
+    margin-right: 1.45rem;
+    color: #959dad;
+    background-color: rgba(149, 157, 173, .08);
+    font-weight: 700;
+    text-transform: capitalize
+  }
+
+  .add-param-button nb-icon {
+    width: 1rem;
+    height: 1rem
+  }
+
+  .add-param-button:hover {
+    background-color: rgba(149, 157, 173, .16)
+  }
+
+  .add-param-button :active, .add-param-button:focus {
+    background-color: rgba(149, 157, 173, .24)
+  }
+
+  .add-param-button:disabled {
+    color: rgba(149, 157, 173, .48);
+    background-color: rgba(149, 157, 173, .16)
+  }
+
+  @media (max-width: 65em) {
+    .param-row .param-column:first-child {
+      flex-basis: 130px
+    }
+    .param-row .param-column:last-of-type {
+      width: calc(100% - 130px - 2rem)
+    }
+  }
+}
