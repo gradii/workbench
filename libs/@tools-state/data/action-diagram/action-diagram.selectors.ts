@@ -1,6 +1,6 @@
 import { ActionDiagram } from '@common/public-api';
 import { select } from '@ngneat/elf';
-import { selectAll, selectEntity } from '@ngneat/elf-entities';
+import { selectAllEntities, selectEntity } from '@ngneat/elf-entities';
 import { fromActionDiagram } from '@tools-state/data/action-diagram/action-diagram.reducer';
 import { getActivePageId } from '@tools-state/page/page.selectors';
 import { Observable } from 'rxjs';
@@ -8,7 +8,7 @@ import { map, withLatestFrom } from 'rxjs/operators';
 
 export const getActionDiagramState = fromActionDiagram.fromActionDiagramStore;
 
-export const getActionDiagramList = getActionDiagramState.pipe(selectAll());
+export const getActionDiagramList = getActionDiagramState.pipe(selectAllEntities());
 
 export const getActionDiagram = (actionDiagramId) => getActionDiagramState.pipe(
   selectEntity(actionDiagramId)

@@ -1,5 +1,5 @@
 import { KitchenComponent } from '@common/public-api';
-import { isBoolean, isString } from '@gradii/check-type';
+import { isBoolean, isString } from '@gradii/nanofn';
 import { BaseVisitor } from '../base-visitor';
 import { PureElementNode } from '../builder/builder-node/pure-node';
 import { binding } from '../builder/template-builder';

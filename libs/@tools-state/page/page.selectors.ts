@@ -1,5 +1,5 @@
 import { select } from '@ngneat/elf';
-import { selectAll, selectEntity } from '@ngneat/elf-entities';
+import { selectAllEntities, selectEntity } from '@ngneat/elf-entities';
 import { PuffComponent } from '@tools-state/component/component.model';
 import { getComponentList } from '@tools-state/component/component.selectors';
 import { PageTreeHelper } from '@tools-state/page/page-tree.helper';
@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 
 export const getPagesState = fromPages.fromPagesStore;
 
-export const getPageList = getPagesState.pipe(selectAll());
+export const getPageList = getPagesState.pipe(selectAllEntities());
 
 export const getPageTree = getPageList.pipe(select((pageList: Page[]) => PageTreeHelper.buildPageTree(pageList)));
 

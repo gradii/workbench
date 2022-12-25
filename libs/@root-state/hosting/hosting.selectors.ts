@@ -1,11 +1,11 @@
 import { select } from '@ngneat/elf';
-import { selectAll } from '@ngneat/elf-entities';
+import { selectAllEntities } from '@ngneat/elf-entities';
 
 import { fromHosting } from '@root-state/hosting/hosting.reducer';
 
 export const getHostingState = fromHosting.fromHostingStore;
 
-export const getHostings = getHostingState.pipe(selectAll());
+export const getHostings = getHostingState.pipe(selectAllEntities());
 
 export const getHostingProjectId = getHostingState.pipe(select((state: fromHosting.State) => state.projectId));
 

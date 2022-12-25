@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageItem, StoreItem } from '@common/public-api';
-import { camelCase } from '@gradii/pinara/to-case';
+import { camelCase } from '@gradii/nanofn';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 

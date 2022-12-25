@@ -1,6 +1,6 @@
 import { ComponentLogicPropName, KitchenType, SequenceProperty, uiDataSourceElements } from '@common/public-api';
 import { select } from '@ngneat/elf';
-import { selectAll } from '@ngneat/elf-entities';
+import { selectAllEntities } from '@ngneat/elf-entities';
 import { PuffComponentOrDirective } from '@tools-state/common.model';
 
 import { PuffComponent } from '@tools-state/component/component.model';
@@ -21,7 +21,7 @@ export interface ComponentSubEntities {
 
 export const getComponentsState = fromComponents.fromComponentsStore;
 
-export const getComponentList = getComponentsState.pipe(selectAll());
+export const getComponentList = getComponentsState.pipe(selectAllEntities());
 export const getComponentMap  = getComponentsState.pipe(select((state: fromComponents.State) => state.entities));
 
 export const getRootComponentIdAndSlotIdLists = (pageIdList: string[]) => combineLatest(

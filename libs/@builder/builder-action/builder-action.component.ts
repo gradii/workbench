@@ -145,7 +145,7 @@ export class BuilderActionComponent implements OnInit {
         clientX: evt.elementPosition.x,
         clientY: evt.elementPosition.y
       };
-      const droppedPoint = canvasManager.getRelativeMousePoint(pointer);
+      const droppedPoint = canvasManager.getRelativePointFromClientRect(pointer);
 
       // const nodeType = evt.item.data.name;
       // const color    = evt.item.data.color;

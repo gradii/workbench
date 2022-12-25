@@ -3914,14 +3914,14 @@
   resolved "https://registry.npmmirror.com/@gradii/annotation/-/annotation-1.1.4.tgz#32b34e22c860091a1300ecdb2eaea1f1ef83b6d3"
   integrity sha512-xK7Q/0oFq1MN9qm9d/1uW5O2Tdpi+i1aXIz3SnrKUx4r2Ry8JZkxg4BXvH4tdY+WNkAjryhoUvNwGVARz201kQ==
 
-"@gradii/nanofn@^0.0.6":
+"@gradii/nanofn@^1.0.5":
   version "1.0.5"
   resolved "https://registry.npmmirror.com/@gradii/nanofn/-/nanofn-1.0.5.tgz#270acbc6c96ba4e5981eb11e1b606946b91bf677"
   integrity sha512-8apO0GYGsZ/o0D7tuBaVeB3OIpQGbn2PC2MXlE6olN2/oCk36x7G9jYs0Kf1xcvqhEROw9GCtYKTyFKBQDj7DQ==
   dependencies:
     tslib "^2.3.0"
 
-"@gradii/stream-buffer@^1.1.0-beta.4-sha-b7ce8e35":
+"@gradii/stream-buffer@^0.0.1":
   version "0.0.1"
   resolved "https://registry.npmmirror.com/@gradii/stream-buffer/-/stream-buffer-0.0.1.tgz#abb771015bba0b78b398c2c0efa408763be33558"
   integrity sha512-vjaIT6+yWvcP+VctegIN20qNlVzXH2pa6IGvCPB75gK4lGyDkEWXFilwBtlyNSM9s1c3MFj3Z5ObFabV/e1snA==
@@ -3940,14 +3940,14 @@
   dependencies:
     tslib "^2.3.0"
 
-"@gradii/vector-math@^2.2.1":
+"@gradii/vector-math@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmmirror.com/@gradii/vector-math/-/vector-math-1.0.0.tgz#b1c740b9356ccd6bf7428e08f702dc3df500971d"
   integrity sha512-vbpP7cn0StwkHcj0KDyjCN7Kor7IoFkfLB1l8mcLc8g6qy3r/biJ4Xfpbh360Tmu+WJRJkAbwPZ25hK6AmAiAQ==
   dependencies:
     tslib "^2.3.0"
 
-"@gradii/websocket-client@^0.0.0-beta.2":
+"@gradii/websocket-client@^0.0.0-beta.1":
   version "0.0.0-beta.1"
   resolved "https://registry.npmmirror.com/@gradii/websocket-client/-/websocket-client-0.0.0-beta.1.tgz#408c4b9627176511ae0efb9a339ba3e3e7cfa470"
   integrity sha512-sw7jh6wp2pOucobVRx11HqnmJBWZdcsuhN5xQUUzcJC/nQIYUVUTKFB9NG2+c4biPsdCb7vIUWK/8YRX0bwtXg==
@@ -4361,25 +4361,25 @@
   resolved "https://registry.npmmirror.com/@ngneat/elf-devtools/-/elf-devtools-1.2.1.tgz#8b137328df8a328cc472f9609477282dc506883b"
   integrity sha512-emoTCmOxzFI3H04HGpagfaMY9OzmoCvTLoKGvTtN0Fx+JHLhj/HXzSzirAxrkWUwmNTAhCcOmbPPNjAeL1QAuA==
 
-"@ngneat/elf-entities@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/@ngneat/elf-entities/-/elf-entities-2.1.0.tgz#f15ab9785afaf9987c4b0ffae87fe77283bd5720"
-  integrity sha512-9zzd8CUYEdLjTZWpigw2uRdUidYe+ouvladatdFij1vibKmsF7RBkSbwe8YyTDv34+BLGwJ6B99KnWqn5kypTA==
+"@ngneat/elf-entities@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.npmmirror.com/@ngneat/elf-entities/-/elf-entities-4.4.3.tgz#67f2d8173a0cb72bbdae9bde17b54999099463a1"
+  integrity sha512-BbP0qx6jzXh3cmyw1wNdQIFRrUvsrwLZYCvf5W6e8S8rA3wUPsNe9dBMhXrq7WueB7pbHolJJ1DTEnlvhHTz8g==
 
-"@ngneat/elf-persist-state@^1.0.0":
+"@ngneat/elf-persist-state@^1.1.6":
   version "1.1.6"
   resolved "https://registry.npmmirror.com/@ngneat/elf-persist-state/-/elf-persist-state-1.1.6.tgz#fdeceeb902937898aee2fdaa594275e9bdbb075a"
   integrity sha512-tcyRvruCPa/0WPW66fsaFAM8KIhg79bGVASdEHIGbu3JKepdfSMDhXdJFMWkyknva2NMIDPGqhjbzC0ovKqPaQ==
 
-"@ngneat/elf-state-history@^1.0.1":
+"@ngneat/elf-state-history@^1.3.0":
   version "1.3.0"
   resolved "https://registry.npmmirror.com/@ngneat/elf-state-history/-/elf-state-history-1.3.0.tgz#b6f8ecc02cb6c3e50217165fa0b1de968ddfe14f"
   integrity sha512-fJtDjINMhWpmoE0TP3ktPBusyj+DUpnjPeiZxzctDp4rFEPbxxQY0yWTt+2cuTSeW+6+NhwAgX39eHKa+L8KWA==
 
-"@ngneat/elf@^1.0.2":
-  version "1.5.6"
-  resolved "https://registry.npmmirror.com/@ngneat/elf/-/elf-1.5.6.tgz#63e684a89433f65883ee505cc2c747b7c5abc14f"
-  integrity sha512-1k9QezigcasLZNLCRHB1VZU42aeZWkujp96L+RwWtZvjOTKpz7hqP0ZtddW/C4j8gF42lUcE/MlaBExTGZo3Og==
+"@ngneat/elf@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npmmirror.com/@ngneat/elf/-/elf-2.3.0.tgz#c046b0344b05ffdd2e0735122a31dfa2d67c6794"
+  integrity sha512-uGoKOHu1T4KPKJSAf6y1VHi43eWaYe8Tx+J+o4R8Wki8gpeQUGlQz04qZoPllysLbqetDVXTMmMbQdostgG8Og==
 
 "@ngtools/webpack@14.0.3":
   version "14.0.3"

@@ -1,5 +1,5 @@
 import { select } from '@ngneat/elf';
-import { selectAll } from '@ngneat/elf-entities';
+import { selectAllEntities } from '@ngneat/elf-entities';
 import { fromComponents } from '@tools-state/component/component.reducer';
 import { PuffSlot } from '@tools-state/slot/slot.model';
 import { fromSlots } from '@tools-state/slot/slot.reducer';
@@ -9,7 +9,7 @@ import fromSlotsStore = fromSlots.fromSlotsStore;
 
 export const getSlotState = fromSlots.fromSlotsStore;
 
-export const getSlotList = getSlotState.pipe(selectAll());
+export const getSlotList = getSlotState.pipe(selectAllEntities());
 
 export const getSlotMap = getSlotState.pipe(select((state: fromSlots.State) => state.entities));
 

@@ -1,6 +1,6 @@
 import { TriggeredAction, WorkflowInfo } from '@common/public-api';
 import { select } from '@ngneat/elf';
-import { selectAll, selectEntity } from '@ngneat/elf-entities';
+import { selectAllEntities, selectEntity } from '@ngneat/elf-entities';
 import { PuffComponent } from '@tools-state/component/component.model';
 import { getComponentList } from '@tools-state/component/component.selectors';
 
@@ -9,7 +9,7 @@ import { combineLatest } from 'rxjs';
 
 export const getWorkflowState = fromWorkflow.fromWorkflowStore;
 
-export const getWorkflowList = getWorkflowState.pipe(selectAll());
+export const getWorkflowList = getWorkflowState.pipe(selectAllEntities());
 
 export const getActiveWorkflowId = getWorkflowState.pipe(select(({ activeWorkflowId }) => activeWorkflowId));
 
@@ -19,7 +19,7 @@ export const getActiveWorkflow = getWorkflowState.pipe(select(
 
 export const getActiveStepId = getWorkflowState.pipe(select(({ activeStepId }) => activeStepId));
 
-export const getWorkflowEntities = getWorkflowState.pipe(selectAll());
+export const getWorkflowEntities = getWorkflowState.pipe(selectAllEntities());
 
 export const getWorkflowNameById = (id: string) => getWorkflowState.pipe(
   selectEntity(id, { pluck: 'name' })
