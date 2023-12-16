@@ -4,10 +4,10 @@
 `yarn install`
 
 ### live demo
-`design:serve`
-`workbench:serve`
-`backend:serve`
-open `localhost:4200`
+`yarn design:serve`
+`yarn workbench:serve`
+`yarn backend:serve`
+then open `localhost:4200` to visit
 
 ### snapshot
 ![snapshot](snapshot.png)
