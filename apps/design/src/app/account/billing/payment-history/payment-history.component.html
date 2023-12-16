@@ -1,0 +1,37 @@
+<section [nbSpinner]="paymentHistoryLoading$ | async" nbSpinnerStatus="primary">
+  <h2 class="h6 heading-margin-bottom">Payment History</h2>
+
+  <table
+    *ngIf="(paymentHistory$ | async).length; else noInfo"
+    [class.disabled]="paymentHistoryLoading$ | async"
+    class="paragraph-2"
+  >
+    <thead>
+    <tr>
+      <th>Date</th>
+
+      <th>Plan</th>
+
+      <th>Payment</th>
+
+      <th class="method">Payment Method</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let payment of paymentHistory$ | async">
+      <td>{{ payment.date | date: 'shortDate' }}</td>
+
+      <td>{{ payment.plan | plan }}</td>
+
+      <td>{{ payment.amount | amount }}</td>
+
+      <td class="method">{{ payment.cardBrand }} (**** {{ payment.cardLast4 }})</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noInfo>
+    <span class="caption-2">No payment history available.</span>
+  </ng-template>
+</section>

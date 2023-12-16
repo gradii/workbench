@@ -1,0 +1,42 @@
+<nb-card [nbSpinner]="updateLoading$ | async" nbSpinnerStatus="danger">
+  <nb-card-body>
+    <h2 class="h5 heading">Update your project</h2>
+
+    <form (submit)="update()" class="bc-form">
+      <div class="form-control-group">
+        <label class="form-control-label" for="project">Project name</label>
+        <input
+          nbInput
+          bcTrim
+          fullWidth
+          name="name"
+          placeholder="My project"
+          [formControl]="name"
+          [status]="name.dirty && name.errors ? 'danger' : 'basic'"
+          id="project"
+        />
+        <span class="form-control-message-container">
+          <ng-container *ngIf="name.dirty && name.errors">
+            <span *ngIf="name.errors?.taken" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name is already taken!
+            </span>
+            <span *ngIf="name.errors?.notEnoughChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should contain at least 4 letters!
+            </span>
+            <span *ngIf="name.errors?.tooManyChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain more than 250 symbols!
+            </span>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="form-actions-group-inline component-list-margin-sm">
+        <button nbButton type="button" (click)="cancel()">Cancel</button>
+        <button nbButton type="submit" [disabled]="name.errors" status="primary">Update</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

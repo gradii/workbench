@@ -1,0 +1,36 @@
+.nb-theme-dark :host {
+  justify-content: space-between;
+  margin-bottom: 1rem
+}
+
+.nb-theme-dark :host, .nb-theme-dark :host .input-container {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host input[nbInput].size-medium {
+  max-width: 5.5rem;
+  margin: 0 .5rem
+}
+
+.nb-theme-dark :host label {
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]).disabled.locked {
+  opacity: .5
+}
+
+.nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:hover svg, .nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]):hover svg {
+  fill: #959dad
+}
+
+.nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:active svg, .nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:focus svg, .nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked svg {
+  fill: #ffc94d
+}
+
+.nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]):active svg, .nb-theme-dark :host .lock[nbButton].basic.appearance-ghost:not([disabled]):focus svg {
+  fill: #fff
+}

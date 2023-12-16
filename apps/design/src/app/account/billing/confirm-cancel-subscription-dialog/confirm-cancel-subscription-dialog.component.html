@@ -1,0 +1,32 @@
+<nb-card
+  [nbSpinner]="changePlanLoading$ | async"
+  nbSpinnerStatus="primary"
+  [class.pointer-disabled]="changePlanLoading$ | async"
+>
+  <nb-card-body>
+    <form [formGroup]="downgradeForm" (ngSubmit)="changePlan()" class="bc-form">
+      <h3 class="h5 heading-margin-bottom">Cancel Subscription</h3>
+      <p>
+        Do you want to cancel subscription and use FREE plan? Some of your functionality can be missed on FREE plan.
+      </p>
+      <p>Please let us know why you unsubscribed.</p>
+
+      <div class="reason">
+        <textarea formControlName="reason" nbInput fullWidth placeholder=""></textarea>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="reason.dirty">
+            <p class="form-error-message" *ngIf="reason.errors?.notEnoughChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Please enter the reason why you unsubscribe. We really need it to make the product better.
+            </p>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="actions component-list-margin-sm">
+        <button nbButton type="button" (click)="closeDialog()">Cancel</button>
+        <button nbButton status="primary" type="submit" [disabled]="downgradeForm.invalid">Downgrade</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

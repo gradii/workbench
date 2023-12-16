@@ -1,0 +1,21 @@
+.nb-theme-dark :host {
+  display: block
+}
+
+.nb-theme-dark :host .title {
+  display: flex;
+  justify-content: space-between;
+  font-size: .6875rem;
+  padding: .125rem .5rem;
+  color: #959dad;
+  background-color: #232730;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  border-bottom: 1px solid #313642;
+  align-items: center
+}
+
+.nb-theme-dark :host .title button {
+  text-transform: none;
+  font-size: .6875rem
+}

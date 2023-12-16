@@ -1,0 +1,10 @@
+<span class="store-item-name">{{ storeItem.name }}</span>
+
+<div *ngIf="!createMode" class="action-controls">
+  <button nbButton class="bakery-button workflow-icon" ghost (click)="duplicateWithoutPropagation($event)">
+    <nb-icon icon="copy-outline"></nb-icon>
+  </button>
+  <button class="bakery-button workflow-icon" nbButton ghost (click)="deleteWithoutPropagation($event)">
+    <nb-icon icon="trash-2"></nb-icon>
+  </button>
+</div>

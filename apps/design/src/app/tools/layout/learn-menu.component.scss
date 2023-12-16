@@ -1,0 +1,106 @@
+.nb-theme-dark :host {
+  position: absolute;
+  bottom: 0;
+  height: 160px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #15171f;
+  border-right: 1px solid #313642
+}
+
+.nb-theme-dark :host a, .nb-theme-dark :host button {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.nb-theme-dark :host bc-icon svg {
+  height: 1.5rem;
+  width: 1.5rem
+}
+
+@-webkit-keyframes change-fill {
+  0% {
+    fill: #76c7fa
+  }
+  50% {
+    fill: #1e89ef
+  }
+  to {
+    fill: #fff
+  }
+}
+
+@keyframes change-fill {
+  0% {
+    fill: #76c7fa
+  }
+  50% {
+    fill: #1e89ef
+  }
+  to {
+    fill: #fff
+  }
+}
+
+@-webkit-keyframes shake {
+  0%, to {
+    transform: translateZ(0)
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-3px, 0, 0)
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate3d(3px, 0, 0)
+  }
+}
+
+@keyframes shake {
+  0%, to {
+    transform: translateZ(0)
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-3px, 0, 0)
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate3d(3px, 0, 0)
+  }
+}
+
+.nb-theme-dark :host .should-shake bc-icon {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.nb-theme-dark :host .should-shake bc-icon svg {
+  -webkit-animation-name: change-fill;
+  animation-name: change-fill;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.tutorial-popover {
+  display: flex;
+  align-items: center;
+  padding: 1rem
+}
+
+.tutorial-popover > div {
+  margin-right: .5rem
+}
+
+.divider {
+  align-self: stretch;
+  border-top: .0625rem solid #313642
+}

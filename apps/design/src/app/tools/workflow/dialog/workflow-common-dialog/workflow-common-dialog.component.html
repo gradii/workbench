@@ -1,0 +1,25 @@
+<nb-card>
+  <nb-card-body>
+    <h2 class="h5 heading">{{ content.headerText }}</h2>
+
+    <form class="bc-form">
+      <div class="text-content">{{ content.bodyText }}</div>
+
+      <div class="form-actions-group-inline component-list-margin-sm">
+        <ng-container *ngFor="let control of content.controls">
+          <button
+            nbButton
+            class="control"
+            (click)="submit(control.type)"
+            size="small"
+            type="button"
+            [appearance]="control.appearance || 'filled'"
+            [status]="control.status || 'basic'"
+          >
+            {{ control.text }}
+          </button>
+        </ng-container>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

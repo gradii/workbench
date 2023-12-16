@@ -1,0 +1,96 @@
+.nb-theme-dark :host nb-card {
+  width: 280px;
+  margin-bottom: 0;
+  box-shadow: 0 4px 20px 0 rgba(38, 46, 67, .2);
+  background-color: #313642;
+  border: 0
+}
+
+.nb-theme-dark :host nb-card-header {
+  padding: 1rem;
+  border: 0
+}
+
+.nb-theme-dark :host nb-card-header h3 {
+  font-size: 1.125rem;
+  line-height: 28px;
+  margin-bottom: .5rem
+}
+
+.nb-theme-dark :host nb-card-header p {
+  font-size: 13px;
+  margin: 0
+}
+
+.nb-theme-dark :host nb-card-body {
+  padding: 0;
+  background-color: #232730
+}
+
+.nb-theme-dark :host nb-card-footer {
+  padding: 1rem;
+  border: 0
+}
+
+.nb-theme-dark :host .caption-2 {
+  color: #47c256
+}
+
+.nb-theme-dark :host ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.nb-theme-dark :host li {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 10px 10px 10px 0;
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host li.active {
+  padding-left: 2.5rem;
+  justify-content: space-between;
+  background-color: #47c256
+}
+
+.nb-theme-dark :host li.with-padding {
+  padding-left: 2.5rem
+}
+
+.nb-theme-dark :host .completed {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #47c256;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .completed svg {
+  height: .75rem;
+  width: .75rem
+}
+
+.nb-theme-dark :host .skip {
+  padding: 0;
+  color: #fff
+}
+
+.nb-theme-dark :host nb-progress-bar.size-tiny .progress-container {
+  height: .5rem
+}
+
+.tour-progress-popover nb-popover {
+  border: none
+}
+
+.tour-progress-popover nb-popover .arrow {
+  display: none
+}

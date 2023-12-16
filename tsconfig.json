@@ -1,8 +1,114 @@
 {
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom",
+      "es2019.array"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@workbench-design/oven": [
+        "libs/oven/src/index.ts"
+      ],
+      "@workbench-design/common": [
+        "libs/common/src/index.ts"
+      ],
+      "@common": [
+        "libs/common/src/index.ts"
+      ],
+      "@oven": [
+        "libs/oven/src/index.ts"
+      ],
+      "@adonis/core": [
+        "libs/@adonis/core/src/index.ts"
+      ],
+      "@adonis/core/*": [
+        "libs/@adonis/core/src/lib/*"
+      ],
+      "@adonis/lucid": [
+        "libs/@adonis/lucid/src/index.ts"
+      ],
+      "@adonis/lucid/*": [
+        "libs/@adonis/lucid/src/lib/*"
+      ],
+      "@core/*": [
+        "apps/design/src/app/@core/*"
+      ],
+      "@root-state/*": [
+        "apps/design/src/app/@root-state/*"
+      ],
+      "@shared/*": [
+        "apps/design/src/app/@shared/*"
+      ],
+      "@tools-state/*": [
+        "apps/design/src/app/tools/@tools-state/*"
+      ],
+      "@tools-shared/*": [
+        "apps/design/src/app/tools/@tools-shared/*"
+      ],
+      "@account-state/*": [
+        "apps/design/src/app/account/@account-state/*"
+      ],
+      "@uibakery/kit": [
+        "libs/@uibakery/kit/src/index.ts"
+      ],
+      "@gradii/utils": [
+        "libs/@gradii/utils/src/index.ts"
+      ],
+      "@auth/*": [
+        "libs/@auth/*"
+      ],
+      "@environments/*": [
+        "libs/@environments/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
   "files": [],
   "references": [
     {
-      "path": "./tsconfig.base.json"
+      "path": "./apps/workbench/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/workbench/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/design/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/design/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/oven/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/common/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/backend/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/backend/tsconfig.spec.json"
     }
   ]
 }

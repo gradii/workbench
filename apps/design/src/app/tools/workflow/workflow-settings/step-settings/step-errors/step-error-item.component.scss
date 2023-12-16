@@ -1,0 +1,21 @@
+.nb-theme-dark :host {
+  display: flex;
+  padding: .125rem .3125rem;
+  font-size: .6875rem;
+  background-color: rgba(239, 78, 60, .08);
+  border-bottom: 1px solid rgba(239, 78, 60, .24)
+}
+
+.nb-theme-dark :host .alert {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  margin-top: .15rem;
+  color: #ef4e3c
+}
+
+.nb-theme-dark :host .message {
+  color: #f5846b;
+  word-break: break-all
+}

@@ -1,0 +1,117 @@
+.nb-theme-dark :host nb-tabset.step-settings-tabset .tabset {
+  margin-bottom: .5rem
+}
+
+.nb-theme-dark :host nb-tabset.step-settings-tabset .tab-text {
+  text-transform: none;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host nb-tabset.step-settings-tabset .tab .tab-link {
+  padding: .425rem .5rem
+}
+
+.nb-theme-dark :host .workflow-label {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 700;
+  vertical-align: top
+}
+
+.nb-theme-dark :host .workflow-label > input, .nb-theme-dark :host .workflow-label > nb-form-field, .nb-theme-dark :host .workflow-label > nb-select, .nb-theme-dark :host .workflow-label > ub-code-editor {
+  margin-top: .5rem
+}
+
+.nb-theme-dark :host .workflow-label .errors {
+  min-height: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: .25rem;
+  font-size: 10px;
+  line-height: 1;
+  color: #ef4e3c
+}
+
+.nb-theme-dark :host .workflow-title {
+  color: #959dad;
+  font-size: .6875rem;
+  font-weight: 600
+}
+
+.nb-theme-dark :host .workflow-icon.bakery-button bc-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .workflow-row {
+  display: flex;
+  flex-direction: row
+}
+
+.nb-theme-dark :host .workflow-row .workflow-column {
+  margin-right: 1rem;
+  flex: 1
+}
+
+.nb-theme-dark :host .workflow-row .workflow-column:last-child {
+  margin-right: 0
+}
+
+.nb-theme-dark :host nb-card {
+  width: 80vw;
+  height: 80vh;
+  min-height: 200px;
+  margin: 0;
+  box-shadow: 0 .25rem 1rem 0 rgba(21, 23, 32, .7);
+  border: 1px solid #313642;
+  border-radius: .25rem;
+  background-color: #232730
+}
+
+.nb-theme-dark :host nb-card nb-card-header {
+  position: relative;
+  margin-right: .5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #313642;
+  height: 48px;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host nb-card nb-card-header nb-icon {
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host nb-card nb-card-header nb-icon[icon=close] {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  color: #959dad
+}
+
+.nb-theme-dark :host nb-card nb-card-header nb-icon[icon=close]:hover {
+  color: #fff
+}
+
+.nb-theme-dark :host nb-card nb-card-body {
+  display: flex;
+  padding: 0;
+  border-bottom-left-radius: .25rem;
+  border-bottom-right-radius: .25rem
+}
+
+.nb-theme-dark :host ub-state-manager-list, .nb-theme-dark :host ub-state-manager-settings {
+  height: 100%
+}
+
+.nb-theme-dark :host ub-state-manager-list {
+  width: 100%;
+  max-width: 256px
+}
+
+.nb-theme-dark :host ub-simple-code-editor {
+  font-size: .9375rem;
+  font-weight: 400
+}

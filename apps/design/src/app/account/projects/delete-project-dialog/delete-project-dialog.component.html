@@ -1,0 +1,19 @@
+<nb-card [nbSpinner]="deleteLoading$ | async" nbSpinnerStatus="danger" nbSpinnerSize="tiny">
+  <nb-card-body>
+    <h2 class="h5 heading">Delete from your projects?</h2>
+
+    <form (submit)="delete()" class="bc-form">
+      <div class="form-control-groupl">
+        <label class="form-control-label" for="project">
+          Type project name <span class="text-danger">{{ project.name }}</span> below
+        </label>
+        <input nbInput fullWidth bcTrim name="name" [(ngModel)]="name" id="project"/>
+      </div>
+
+      <div class="form-actions-group-inline component-list-margin-sm">
+        <button nbButton type="button" (click)="cancel()">Cancel</button>
+        <button nbButton type="submit" status="danger" [disabled]="!this.validNameEntered()">Delete</button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

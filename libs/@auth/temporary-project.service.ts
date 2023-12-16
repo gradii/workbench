@@ -1,44 +1,44 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { NB_WINDOW, NbToastrService } from '@nebular/theme';
 import { Router } from '@angular/router';
-import { TriNotificationService } from '@gradii/triangle/notification';
 
 const LOCAL_STORAGE_TOKEN = 'temporaryProjectToken';
 const LOCAL_STORAGE_TEMPLATE_TOKEN = 'templateViewIdToOpen';
 
 @Injectable({ providedIn: 'root' })
 export class TemporaryProjectService {
-  constructor(private router: Router, private toastrService: TriNotificationService) {
+  constructor(@Inject(NB_WINDOW) private window, private router: Router, private toastrService: NbToastrService) {
   }
 
   public viewIdToOpen: string;
   public temporaryRejectMessage: string;
 
   getTemplateViewIdToOpen(): string {
-    return sessionStorage.getItem(LOCAL_STORAGE_TEMPLATE_TOKEN);
+    return this.window.sessionStorage.getItem(LOCAL_STORAGE_TEMPLATE_TOKEN);
   }
 
   setTemplateViewIdToOpen(token: string) {
     if (token) {
-      sessionStorage.setItem(LOCAL_STORAGE_TEMPLATE_TOKEN, token);
+      this.window.sessionStorage.setItem(LOCAL_STORAGE_TEMPLATE_TOKEN, token);
     }
   }
 
   dropTemplateViewIdToOpen() {
-    sessionStorage.removeItem(LOCAL_STORAGE_TEMPLATE_TOKEN);
+    this.window.sessionStorage.removeItem(LOCAL_STORAGE_TEMPLATE_TOKEN);
   }
 
   getTemporaryProjectToken(): string {
-    return sessionStorage.getItem(LOCAL_STORAGE_TOKEN);
+    return this.window.sessionStorage.getItem(LOCAL_STORAGE_TOKEN);
   }
 
   setTemporaryProjectToken(token: string) {
     if (token) {
-      sessionStorage.setItem(LOCAL_STORAGE_TOKEN, token);
+      this.window.sessionStorage.setItem(LOCAL_STORAGE_TOKEN, token);
     }
   }
 
   dropTemporaryToken() {
-    sessionStorage.removeItem(LOCAL_STORAGE_TOKEN);
+    this.window.sessionStorage.removeItem(LOCAL_STORAGE_TOKEN);
   }
 
   public naviagateToProject() {
@@ -47,8 +47,9 @@ export class TemporaryProjectService {
 
   public showProjectCreationErrorIfNeed() {
     if (this.temporaryRejectMessage) {
-      this.toastrService.error(this.temporaryRejectMessage, 'Project creation error', {
+      this.toastrService.danger(this.temporaryRejectMessage, 'Project creation error', {
         duration: 3500,
+        destroyByClick: true
       });
       this.temporaryRejectMessage = '';
     }

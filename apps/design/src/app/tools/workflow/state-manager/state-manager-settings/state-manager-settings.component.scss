@@ -1,0 +1,78 @@
+:host {
+  flex-grow: 1;
+  padding: 0 1rem 1rem;
+  background-color: #15171f;
+  overflow: auto
+}
+
+:host .boolean-value {
+  display: flex;
+  margin-left: .625rem
+}
+
+:host .boolean-value nb-radio label {
+  padding-right: 1rem;
+  cursor: pointer
+}
+
+:host .boolean-value nb-radio .text {
+  text-transform: none;
+  font-size: .6875rem;
+  margin-left: 1rem
+}
+
+:host .boolean-value nb-radio .inner-circle, :host .boolean-value nb-radio .outer-circle {
+  width: .75rem;
+  height: .75rem
+}
+
+.store-item-name, .values {
+  margin-top: .25rem
+}
+
+.name-label {
+  max-width: 20rem
+}
+
+.workflow-label {
+  margin-bottom: 1rem
+}
+
+.workflow-label.no-margin {
+  margin: 0
+}
+
+.store-item-overview {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 170px;
+  overflow: auto;
+  margin-top: .25rem;
+  border-radius: .25rem;
+  min-height: 2rem;
+  background-color: #232730;
+  color: #959dad;
+  font-size: .6875rem;
+  letter-spacing: 0;
+  line-height: 1rem;
+  padding: .5rem
+}
+
+.workflow-label.array, .workflow-label.object {
+  margin-bottom: 0
+}
+
+.empty-setting {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.empty-setting .content p {
+  line-height: .5rem;
+  display: flex;
+  justify-content: center;
+  font-size: .8125rem;
+  color: #959dad
+}

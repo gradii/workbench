@@ -1,0 +1,66 @@
+<nb-card>
+  <nb-card-header>
+    <h3 class="modal-title">Import Pages</h3>
+  </nb-card-header>
+
+  <nb-card-body [nbSpinner]="loading">
+    <nb-accordion multi *ngIf="projects.length">
+      <nb-accordion-item *ngFor="let project of projects" expanded>
+        <nb-accordion-item-header>
+          <nb-checkbox
+            class="project-name"
+            [checked]="project.checked"
+            [indeterminate]="project.indeterminate"
+            (checkedChange)="checkProject(project, $event)"
+            (click)="stopEvent($event)"
+          >
+            {{ project.name }}
+          </nb-checkbox>
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <ub-page-import-page-tree
+            [pages]="project.pageList"
+            (checkedChange)="checkPage($event, project)"
+          ></ub-page-import-page-tree>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+
+    <div *ngIf="!projects.length" class="cannot-load-projects">
+      Unable to load your projects
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <span>
+      <span class="total-label">{{ checkedPageCount }} selected pages</span>
+    </span>
+    <div *ngIf="!loading" class="controls">
+      <button nbButton ghost size="small" shape="rectangle" class="cancel-btn bakery-button" (click)="close()">
+        Cancel
+      </button>
+      <button
+        *ngIf="projects.length"
+        nbButton
+        size="small"
+        shape="rectangle"
+        status="primary"
+        class="bakery-button"
+        (click)="import()"
+      >
+        Import
+      </button>
+      <button
+        *ngIf="!projects.length"
+        nbButton
+        size="small"
+        shape="rectangle"
+        status="primary"
+        class="bakery-button"
+        (click)="load()"
+      >
+        Try again
+      </button>
+    </div>
+  </nb-card-footer>
+</nb-card>

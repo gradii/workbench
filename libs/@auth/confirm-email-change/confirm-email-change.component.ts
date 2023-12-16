@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, ɵmarkDirty, Component, Inject, OnInit } from '@angular/core';
-import { TRI_AUTH_OPTIONS, TriAuthResult, TriAuthService, TriTokenService } from '@gradii/triangle/auth';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
+import { NB_AUTH_OPTIONS, NbAuthResult, NbAuthService, NbTokenService } from '@nebular/auth';
 import { ActivatedRoute } from '@angular/router';
 import { finalize, map, mergeMap } from 'rxjs/operators';
 
@@ -24,12 +24,12 @@ export class ConfirmEmailChangeComponent implements OnInit {
 
   constructor(
     protected route: ActivatedRoute,
-    @Inject(TRI_AUTH_OPTIONS) protected options = {},
+    @Inject(NB_AUTH_OPTIONS) protected options = {},
     private userService: UserService,
-    private authService: TriAuthService,
-    private tokenService: TriTokenService,
+    private authService: NbAuthService,
+    private tokenService: NbTokenService,
     private strategy: UbAuthStrategy,
-    
+    private cd: ChangeDetectorRef
   ) {
   }
 
@@ -57,16 +57,16 @@ export class ConfirmEmailChangeComponent implements OnInit {
       .confirmEmailChange(this.token)
       .pipe(
         map(token => {
-          return new TriAuthResult(true, token, '', [], '', this.strategy.createToken(token, true));
+          return new NbAuthResult(true, token, '', [], '', this.strategy.createToken(token, true));
         }),
-        mergeMap((result: TriAuthResult) => {
+        mergeMap((result: NbAuthResult) => {
           if (result.isSuccess() && result.getToken()) {
             return this.tokenService.set(result.getToken());
           }
         }),
         finalize(() => {
           this.loading = false;
-          ɵmarkDirty(this);
+          this.cd.markForCheck();
         })
       )
       .subscribe(

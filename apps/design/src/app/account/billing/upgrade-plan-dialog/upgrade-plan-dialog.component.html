@@ -1,0 +1,40 @@
+<nb-card [nbSpinner]="changePlanLoading$ | async" nbSpinnerStatus="primary">
+  <nb-card-body [class.pointer-disabled]="changePlanLoading$ | async">
+    <div class="donut-container">
+      <img class="donut-image" [src]="plan.image.big" role="presentation"/>
+    </div>
+
+    <div class="form-container">
+      <h2 class="h5 heading-margin-bottom">
+        Upgrade plan to {{ plan.title | uppercase }} {{ plan.billingPeriod | titlecase }}
+      </h2>
+
+      <div class="receipt">
+        <span class="price h6 text-primary">
+          TOTAL AMOUNT: <span class="">${{ plan.price | discount: plan.discountResistant | async }}</span>
+        </span>
+      </div>
+
+      <div class="form-control-group" *ngIf="errors$ | async as errors">
+        <nb-alert status="danger" outline="danger">
+          <nb-icon class="alert-icon" icon="alert-triangle" pack="eva"></nb-icon>
+          {{ errors }}
+        </nb-alert>
+      </div>
+
+      <ub-card (card)="changePlan($event)" (error$)="handleError($event)">
+        <div class="form-control-group">
+          <label>
+            <span class="form-control-label">Coupon</span>
+            <ub-coupon class="coupon" [formControl]="coupon"></ub-coupon>
+          </label>
+        </div>
+
+        <button nbButton type="button" (click)="close()">Cancel</button>
+        <button nbButton status="primary" type="submit" (click)="showLoader()" [disabled]="!!(errors$ | async)">
+          Pay and upgrade
+        </button>
+      </ub-card>
+    </div>
+  </nb-card-body>
+</nb-card>

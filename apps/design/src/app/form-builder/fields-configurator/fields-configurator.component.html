@@ -1,0 +1,64 @@
+<h3 class="title">Configure fields</h3>
+
+<app-field
+  [components]="images"
+  groupName="Image URL"
+  [styleKey]="['src', 'url']"
+  (valueChange)="updateImage($event, images)"
+></app-field>
+
+<app-field
+  [components]="spaceWithBackground"
+  groupName="Background Image URL"
+  [styleKey]="['background', 'imageSrc', 'url']"
+  (valueChange)="updateBackgroundImage($event, spaceWithBackground)"
+></app-field>
+
+<app-field
+  [components]="headings"
+  groupName="Form Heading Text"
+  bindingKey="text"
+  (valueChange)="updateComponentText($event, headings)"
+></app-field>
+
+<app-field
+  [components]="links"
+  groupName="Link Text"
+  bindingKey="text"
+  (valueChange)="updateComponentText($event, links)"
+></app-field>
+
+<app-field
+  [components]="labels"
+  groupName="Input Label Text"
+  bindingKey="text"
+  (valueChange)="updateComponentText($event, labels)"
+></app-field>
+
+<app-field
+  [components]="inputs"
+  groupName="Input Placeholder Text"
+  bindingKey="placeholder"
+  (valueChange)="updateComponentProperty($event, inputs, 'placeholder')"
+></app-field>
+
+<app-field
+  [components]="buttons"
+  groupName="Button Text"
+  bindingKey="text"
+  (valueChange)="updateComponentText($event, buttons)"
+></app-field>
+
+<app-field
+  [components]="checkboxes"
+  groupName="Checkbox Text"
+  bindingKey="label"
+  (valueChange)="updateComponentLabel($event, checkboxes)"
+></app-field>
+
+<app-field
+  [components]="radios"
+  groupName="Radio Text"
+  bindingKey="label"
+  (valueChange)="updateComponentLabel($event, radios)"
+></app-field>

@@ -1,0 +1,10 @@
+.nb-theme-dark :host .settings-field-label {
+  display: block;
+  margin-top: .5rem
+}
+
+.nb-theme-dark :host .validation-errors > div {
+  margin-top: .1rem;
+  font-size: .6875rem;
+  color: #ff4070
+}

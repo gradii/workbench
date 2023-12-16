@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem
+}
+
+img {
+  opacity: .9;
+  cursor: pointer
+}
+
+img:hover {
+  opacity: 1
+}

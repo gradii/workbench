@@ -1,0 +1,9 @@
+.nb-theme-dark :host .nested-step-list-groups {
+  width: auto;
+  display: flex;
+  justify-content: space-between
+}
+
+.nb-theme-dark :host .nested-step-list-groups ub-step-list-group {
+  width: 48%
+}

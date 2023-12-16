@@ -1,0 +1,10 @@
+FROM nginx:alpine
+
+EXPOSE 80
+
+WORKDIR /var/www
+
+COPY dist/apps/design /var/www/design
+COPY dist/apps/workbench /var/www/workbench
+
+ENTRYPOINT nginx -g "daemon off;"

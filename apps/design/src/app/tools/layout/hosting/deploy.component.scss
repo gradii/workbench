@@ -1,0 +1,11 @@
+.nb-theme-dark :host .header-button bc-icon.success svg {
+  fill: #47c256
+}
+
+.nb-theme-dark :host .header-button bc-icon.error svg {
+  fill: #ff4070
+}
+
+.nb-theme-dark :host nb-spinner {
+  left: unset
+}

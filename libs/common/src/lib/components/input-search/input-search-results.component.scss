@@ -1,0 +1,30 @@
+:host {
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column
+}
+
+:host .option {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0
+}
+
+:host .option:hover nb-icon.end-icon svg {
+  fill: #a4dffe
+}
+
+:host .option nb-icon.end-icon {
+  margin: 0 0 0 auto
+}
+
+:host .option nb-icon.end-icon svg {
+  fill: #959dad;
+  width: 1rem;
+  height: 1rem
+}
+
+.empty:host {
+  display: none
+}

@@ -1,0 +1,10 @@
+<nb-card [nbSpinner]="updatePaymentMethodLoading$ | async" nbSpinnerStatus="primary">
+  <nb-card-body [class.pointer-disabled]="updatePaymentMethodLoading$ | async">
+    <h3 class="h5 heading-margin-bottom">Edit Payment Method</h3>
+
+    <ub-card (card)="updatePaymentMethod($event)">
+      <button nbButton type="button" (click)="close()">Cancel</button>
+      <button nbButton status="primary" type="submit" class="submit">Save</button>
+    </ub-card>
+  </nb-card-body>
+</nb-card>

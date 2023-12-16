@@ -1,0 +1,41 @@
+<nb-card>
+  <nb-card-header>
+    <h3>It’s your Tour Progress.</h3>
+    <p>
+      It will help you to stay in touch with your progress during your way and return to previous lessons. Pass all
+      steps to learn all nessecary things about UI Builder.
+    </p>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ul>
+      <li
+        *ngFor="let lesson of lessons; index as i"
+        [class.active]="i === activeLessonIndex"
+        [class.with-padding]="i > activeLessonIndex"
+      >
+        <div class="completed" *ngIf="i < activeLessonIndex">
+          <bc-icon name="checkmark-outline"></bc-icon>
+        </div>
+
+        {{ lesson.title }}
+
+        <button
+          nbButton
+          size="tiny"
+          appearance="ghost"
+          class="skip"
+          *ngIf="i === activeLessonIndex"
+          (click)="skip.emit()"
+        >
+          Skip
+        </button>
+      </li>
+    </ul>
+  </nb-card-body>
+
+  <nb-card-footer>
+    <span class="caption-2">Overall Progress: {{ progress }}%</span>
+    <nb-progress-bar [value]="progress" status="success" size="tiny"></nb-progress-bar>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,25 @@
+<nb-card>
+  <nb-card-body>
+    <ub-card-icon [brand]="cardBrand$ | async"></ub-card-icon>
+
+    <div class="card-data paragraph-2">
+      <ng-container *ngIf="cardInfoExist$ | async; else noCard">
+        <div class="paragraph-2"><span aria-hidden="true">xxxx xxxx xxxx</span> {{ last4$ | async }}</div>
+
+        <div>Exp. {{ expiration$ | async }}</div>
+      </ng-container>
+
+      <ng-template #noCard>no card</ng-template>
+    </div>
+
+    <div class="card-actions">
+      <button (click)="edit()" nbButton ghost aria-label="edit card">
+        <nb-icon icon="edit-2"></nb-icon>
+      </button>
+
+      <button *ngIf="last4$ | async" (click)="remove()" nbButton ghost aria-label="remove card">
+        <nb-icon icon="trash-2"></nb-icon>
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card>

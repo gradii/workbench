@@ -1,0 +1,14 @@
+:host {
+  padding: 1rem;
+  border-bottom: 1px solid #313642;
+  display: flex;
+  align-items: center
+}
+
+:host .component-type-name {
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding-left: .25rem;
+  font-size: .6875rem
+}

@@ -1,0 +1,9 @@
+<div class="header-row">
+  <h3 class="workflow-title">ACTION LIST</h3>
+  <button nbButton class="bakery-button workflow-icon" size="tiny" ghost (click)="create.emit()">
+    <span class="text">Add New</span>
+    <nb-icon icon="plus-outline"></nb-icon>
+  </button>
+</div>
+
+<ub-workflow-list-filter (filterByName)="filterByName.emit($event)"></ub-workflow-list-filter>

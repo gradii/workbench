@@ -1,0 +1,21 @@
+nb-card {
+  max-width: 30rem;
+  width: 100vw;
+  margin: 0
+}
+
+nb-card-body {
+  padding: 2rem
+}
+
+nb-card-body .reason {
+  height: 6rem
+}
+
+nb-card-body .reason textarea {
+  resize: none
+}
+
+.actions {
+  justify-content: flex-end
+}

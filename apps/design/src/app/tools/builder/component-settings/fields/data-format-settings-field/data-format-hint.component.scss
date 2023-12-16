@@ -1,0 +1,12 @@
+.nb-theme-dark :host button[nbButton] {
+  margin-right: -.325rem;
+  padding: .325rem
+}
+
+.nb-theme-dark :host button[nbButton]:hover {
+  color: #fff
+}
+
+.nb-theme-dark :host nb-icon {
+  font-size: 1rem
+}

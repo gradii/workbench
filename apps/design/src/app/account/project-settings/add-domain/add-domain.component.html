@@ -1,0 +1,27 @@
+<form class="bc-form" [formGroup]="form" (ngSubmit)="add()">
+  <nb-card>
+    <nb-card-header>
+      <bc-icon name="domain-add"></bc-icon>
+      <span>Add Custom Domain</span></nb-card-header>
+    <nb-card-body>
+      <div class="form-control-group">
+        <div>
+          <label class="form-control-label" for="domain">Your domain</label>
+          <div class="input-wrapper">
+            <input nbInput fullWidth bcTrim placeholder="Domain name" formControlName="domain" id="name"/>
+            <button nbButton status="primary" [disabled]="form.invalid">Add Domain</button>
+          </div>
+
+          <span class="form-control-message-container">
+            <ng-container *ngIf="form.dirty">
+              <p class="form-error-message" *ngIf="domain.errors?.invalidDomain">
+                <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+                Domain is invalid!
+              </p>
+            </ng-container>
+          </span>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</form>

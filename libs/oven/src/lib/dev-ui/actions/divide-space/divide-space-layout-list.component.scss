@@ -1,0 +1,44 @@
+:host {
+  width: 13rem;
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+:host .title {
+  padding: .25rem 1rem;
+  font-size: .6875rem;
+  color: #959dad;
+  background-color: #313642;
+  border-bottom: 1px solid #313642
+}
+
+:host .layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem;
+  background-color: #3c424f
+}
+
+:host .layout-container [nbButton] {
+  padding: .5rem
+}
+
+:host .layout-container [nbButton].clear-icon.appearance-filled:not([disabled]) svg path {
+  fill: #959dad
+}
+
+:host .layout-container [nbButton].clear-icon.appearance-filled:not([disabled]) svg use {
+  stroke: #959dad
+}
+
+:host .layout-container [nbButton].clear-icon.appearance-filled:not([disabled]):hover svg path {
+  fill: #fff
+}
+
+:host .layout-container [nbButton].clear-icon.appearance-filled:not([disabled]):hover svg use {
+  stroke: #fff
+}
+
+:host .layout-container [nbButton].clear-icon.appearance-filled:not([disabled]):active svg path:first-of-type {
+  fill: #fff
+}

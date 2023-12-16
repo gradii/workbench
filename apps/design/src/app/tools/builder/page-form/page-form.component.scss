@@ -1,0 +1,77 @@
+.nb-theme-dark :host {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  flex: 1;
+  flex-direction: column;
+  background: rgba(21, 23, 31, .48)
+}
+
+.nb-theme-dark :host form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem;
+  background: #232730;
+  border-bottom: 1px solid #313642
+}
+
+.nb-theme-dark :host .form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.nb-theme-dark :host .form-header button[nbButton] {
+  padding-right: 0
+}
+
+.nb-theme-dark :host .form-title {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #959dad
+}
+
+.nb-theme-dark :host label {
+  color: #959dad;
+  font-size: .6875rem;
+  font-weight: 700
+}
+
+.nb-theme-dark :host .parent-select, .nb-theme-dark :host input {
+  margin: .25rem 0
+}
+
+.nb-theme-dark :host .controls {
+  margin-top: 1rem;
+  display: flex
+}
+
+.nb-theme-dark :host .controls button {
+  flex: 1
+}
+
+.nb-theme-dark :host button[nbButton].cancel-btn, .nb-theme-dark :host button[nbButton].cancel-btn.appearance-filled {
+  margin-right: 1rem;
+  background-color: transparent;
+  color: #959dad;
+  opacity: .8;
+  text-transform: capitalize;
+  border: none
+}
+
+.nb-theme-dark :host button[nbButton].cancel-btn.appearance-filled:active, .nb-theme-dark :host button[nbButton].cancel-btn.appearance-filled:focus, .nb-theme-dark :host button[nbButton].cancel-btn.appearance-filled:hover, .nb-theme-dark :host button[nbButton].cancel-btn:active, .nb-theme-dark :host button[nbButton].cancel-btn:focus, .nb-theme-dark :host button[nbButton].cancel-btn:hover {
+  background-color: transparent;
+  opacity: 1
+}
+
+.nb-theme-dark :host .validation-errors {
+  margin-top: .1rem
+}
+
+.nb-theme-dark :host .validation-errors > div {
+  font-size: .6875rem;
+  color: #ff4070
+}

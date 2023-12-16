@@ -1,0 +1,37 @@
+.nb-theme-dark :host .option {
+  margin-top: .8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+.nb-theme-dark :host .option-label {
+  color: #fff;
+  font-size: .6875rem;
+  margin: .25rem 0
+}
+
+.nb-theme-dark :host .add-container {
+  margin-top: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.nb-theme-dark :host .add-label {
+  font-size: .6875rem;
+  font-weight: 700
+}
+
+.nb-theme-dark :host button.clear-icon {
+  margin-right: -.5rem
+}
+
+.nb-theme-dark :host .add-container .clear-icon {
+  flex: 1;
+  justify-content: space-between;
+  padding-left: 0;
+  align-items: center;
+  text-transform: none
+}

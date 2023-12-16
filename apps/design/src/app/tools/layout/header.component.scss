@@ -1,0 +1,83 @@
+.nb-theme-dark :host {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-right: .2rem;
+  border-bottom: 1px solid #313642
+}
+
+.nb-theme-dark :host, .nb-theme-dark :host .header-controls {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .header-controls.centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.nb-theme-dark :host .header-controls.end {
+  margin-left: auto
+}
+
+.nb-theme-dark :host .dashboard-link {
+  border-radius: 0;
+  height: 100%;
+  width: 2.5rem;
+  border-bottom: none
+}
+
+.nb-theme-dark :host .dashboard-link, .nb-theme-dark :host .dashboard-link:focus, .nb-theme-dark :host .dashboard-link:hover {
+  border-right: 1px solid #313642
+}
+
+.nb-theme-dark :host .dashboard-link bc-icon {
+  position: relative;
+  top: -1px
+}
+
+.nb-theme-dark :host ub-breakpoints-container, .nb-theme-dark :host ub-data-unavailability-notice, .nb-theme-dark :host ub-toggle-structure-panel, .nb-theme-dark :host ub-workflow-state-manager-button {
+  display: none;
+  pointer-events: none
+}
+
+.nb-theme-dark :host ub-breakpoints-container.visible, .nb-theme-dark :host ub-data-unavailability-notice.visible, .nb-theme-dark :host ub-toggle-structure-panel.visible, .nb-theme-dark :host ub-workflow-state-manager-button.visible {
+  display: flex;
+  pointer-events: auto
+}
+
+.nb-theme-dark :host .divider {
+  border-right: .0625rem solid #313642;
+  align-self: stretch;
+  margin: -.1875rem 0
+}
+
+@media (max-width: 62.5rem) {
+  .nb-theme-dark :host .header-controls.centered {
+    position: relative;
+    left: 0;
+    transform: none;
+    flex: 1;
+    align-items: center;
+    justify-content: center
+  }
+}
+
+@media (max-width: 47.5rem) {
+  .nb-theme-dark :host ub-data-notification {
+    display: none
+  }
+}
+
+@media (max-width: 40rem) {
+  .nb-theme-dark :host ub-download {
+    display: none
+  }
+}
+
+@media (max-width: 30rem) {
+  .nb-theme-dark :host .dashboard-link, .nb-theme-dark :host ub-share-button {
+    display: none
+  }
+}

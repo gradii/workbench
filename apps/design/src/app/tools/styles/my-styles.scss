@@ -1,0 +1,41 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes';
+
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+
+@import "extra";
+
+$theme: (
+  layout-window-mode-min-width: 23.4375rem,
+  header-height: 2rem,
+  //layout-background-color: #fff,
+  //layout-text-color: #232730,
+  //footer-text-highlight-color: #53aff4,
+  layout-padding: 0,
+  layout-medium-padding: 0,
+  //header-background-color: #15171f,
+  //header-text-color: #232730,
+  //sidebar-text-color: #232730
+  tabset-content-padding: 0,
+  sidebar-padding:0
+);
+
+$nb-themes: nb-register-theme($theme, dark, dark);
+
+$nb-enabled-themes: (dark);
+
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-auth-global();
+
+  @include extra();
+}
+
+* {
+  outline: none;
+}
+
+.z-index-999 {
+  z-index: 999;
+}

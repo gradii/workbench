@@ -1,0 +1,15 @@
+.nb-theme-dark :host .footer {
+  padding: 1rem;
+  background-color: #232730
+}
+
+:host {
+  display: flex;
+  flex-direction: column
+}
+
+ub-step {
+  min-width: 480px;
+  min-height: 420px;
+  background-color: #232730
+}

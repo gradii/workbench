@@ -1,12 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TriAuthModule } from '@gradii/triangle/auth';
-import { TriButtonModule } from '@gradii/triangle/button';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NbAuthModule } from '@nebular/auth';
 
 import { AuthRoutingModule } from './auth-routing.module';
 
-import { BakeryCommonModule } from '@common/public-api';
+import {
+  NbAlertModule,
+  NbButtonModule,
+  NbCardModule,
+  NbCheckboxModule,
+  NbIconModule,
+  NbInputModule,
+  NbLayoutModule,
+  NbSelectModule,
+  NbSpinnerModule
+} from '@nebular/theme';
+import { BakeryCommonModule } from '@common';
 
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
@@ -16,38 +27,30 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ConfirmEmailChangeComponent } from './confirm-email-change/confirm-email-change.component';
+import { OAuth2CallbackComponent } from './oauth2/oauth2-callback.component';
 import { ConfirmRegisterComponent } from './confirm-register/confirm-register.component';
-import { TriAlertModule } from '@gradii/triangle/alert';
-import { TriInputModule } from '@gradii/triangle/input';
-import { TriCheckboxModule } from '@gradii/triangle/checkbox';
-import { TriSelectModule } from '@gradii/triangle/select';
-import { TriLayoutModule } from '@gradii/triangle/layout';
-import { TriIconModule } from '@gradii/triangle/icon';
-import { TriCardModule } from '@gradii/triangle/card';
-
+import { CouponModule } from '@shared/redeem-coupon/coupon.module';
+import { TutorialSharedModule } from '@shared/tutorial/tutorial-shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    TriAlertModule,
-    TriInputModule,
-    TriSelectModule,
-    TriButtonModule,
-    TriCheckboxModule,
+    NbAlertModule,
+    NbInputModule,
+    NbSelectModule,
+    NbButtonModule,
+    NbCheckboxModule,
     AuthRoutingModule,
-    TriLayoutModule,
+    NbLayoutModule,
     BakeryCommonModule,
-    TriAuthModule,
-    // TriSpinnerModule,
-    TriIconModule,
-    TriCardModule
-    // CouponModule,
-
-  ],
-  exports: [
-    AuthComponent
+    NbAuthModule,
+    NbSpinnerModule,
+    NbIconModule,
+    NbCardModule,
+    CouponModule,
+    TutorialSharedModule
   ],
   declarations: [
     AuthComponent,
@@ -58,6 +61,7 @@ import { TriCardModule } from '@gradii/triangle/card';
     WelcomeComponent,
     LogoutComponent,
     ConfirmEmailChangeComponent,
+    OAuth2CallbackComponent,
     ConfirmRegisterComponent
   ]
 })

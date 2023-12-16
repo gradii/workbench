@@ -1,0 +1,288 @@
+@media screen and (max-width: 48em) {
+  :host nb-layout.with-scroll > div.scrollable-container {
+    overflow: hidden
+  }
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding {
+  background-color: #15171f;
+  display: flex;
+  flex-direction: row;
+  padding: 0
+}
+
+@media screen and (max-width: 48em) {
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding {
+    flex-direction: column
+  }
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column {
+  width: 20rem;
+  background-color: #15171f
+}
+
+@media screen and (max-width: 48em) {
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column {
+    width: 100%
+  }
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column nb-sidebar {
+  background-color: #15171f;
+  max-width: 20rem;
+  width: 100%;
+  margin: 0
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column nb-sidebar.collapsed {
+  width: 0
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column nb-sidebar.expanded {
+  width: 100%
+}
+
+@media screen and (max-width: 48em) {
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column nb-sidebar {
+    min-height: calc(100vh - 5rem);
+    position: absolute;
+    z-index: 1
+  }
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column nb-sidebar .main-container {
+  width: 100%;
+  height: auto
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column h1 {
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  margin: 1.5rem
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column a.tab-link:before {
+  z-index: 2
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column ul.tabset {
+  position: relative
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column ul.tabset li a {
+  height: 3.5rem;
+  align-items: center
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column ul.tabset:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #313642;
+  left: 0;
+  right: 0;
+  bottom: -2.5px;
+  height: 1px;
+  z-index: 1;
+  box-sizing: content-box;
+  border-top: 2px solid #15182a
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column div.column-header {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(315deg, #252933, #414756);
+  display: flex;
+  flex-grow: 1
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column div.column-header .menu-toggle {
+  display: none
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column div.column-header a.logo {
+  display: block;
+  margin: 1.938rem auto 1.5rem
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column div.column-header a.logo img.logo-img {
+  height: 1.563rem;
+  width: 15rem;
+  display: block
+}
+
+@media screen and (max-width: 48em) {
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .left-column div.column-header .menu-toggle {
+    display: block;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column {
+  background-color: #15171f;
+  width: calc(100vw - 20rem)
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column div.preview {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  border: 1px solid #313642;
+  box-sizing: border-box;
+  border-radius: .25rem;
+  box-shadow: 0 2px 20px 0 #000;
+  position: relative
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column div.preview .madein-logo {
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem
+}
+
+:host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column div.preview iframe {
+  border-radius: .25rem
+}
+
+@media screen and (max-width: 48em) {
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column {
+    width: 100%;
+    height: calc(100vh - 9rem)
+  }
+  :host div.layout-container > div.content > div.columns > nb-layout-column.without-padding .content-column div.preview {
+    height: 100%
+  }
+}
+
+.footer {
+  height: 4rem;
+  display: flex;
+  position: relative;
+  padding: .75rem 0;
+  background-color: #15171f
+}
+
+.footer .footer-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative
+}
+
+.footer .footer-wrapper .buttons {
+  width: 10.1875rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+.footer .footer-wrapper .buttons [nbButton]:first-child {
+  margin-right: .5rem
+}
+
+.footer .footer-wrapper .logo {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -.3rem;
+  color: #fff;
+  cursor: pointer
+}
+
+.footer .footer-wrapper .logo .logo-powered {
+  display: block;
+  font-weight: 300;
+  opacity: .85;
+  margin-right: .5rem;
+  margin-top: .6rem
+}
+
+:host nb-dialog-container {
+  overflow: auto;
+  box-shadow: 0 4px 20px 0 rgba(21, 23, 31, .2)
+}
+
+div.dialog {
+  border-radius: .25rem;
+  background-color: #15171f;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center
+}
+
+div.dialog nb-spinner span.message {
+  margin-left: .5rem;
+  font-size: .8rem;
+  margin-top: .2rem
+}
+
+div.dialog div.dialog-description {
+  width: 100%
+}
+
+div.dialog img.dialog-logo {
+  width: 19rem;
+  height: 5rem;
+  margin: 1rem 0 0
+}
+
+div.dialog h2 {
+  padding: 0 .5rem;
+  margin: 1rem 0;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: 700
+}
+
+div.dialog p {
+  margin: 0;
+  font-size: .8125rem;
+  line-height: 1.25rem
+}
+
+div.dialog button {
+  font-size: .875rem;
+  line-height: 1rem
+}
+
+div.dialog button:first-of-type {
+  margin-top: 1.5rem;
+  margin-bottom: .5rem
+}
+
+div.dialog button:disabled {
+  color: rgba(149, 157, 173, .48);
+  background-color: rgba(149, 157, 173, .24)
+}
+
+div.dialog button.appearance-ghost {
+  border: none;
+  text-transform: capitalize
+}
+
+div.dialog button.appearance-ghost:hover {
+  background-color: rgba(149, 157, 173, .08)
+}
+
+div.dialog button.appearance-ghost:active {
+  background-color: rgba(149, 157, 173, .16)
+}
+
+.product-hunt-banner {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem
+}

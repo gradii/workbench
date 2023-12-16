@@ -1,5 +1,5 @@
 export const environment = {
   name: 'prod',
-  production: false,
+  production: true,
   baseHref: '/workbench/'
 };

@@ -1,0 +1,41 @@
+.nb-theme-dark :host {
+  display: flex;
+  width: 390px;
+  cursor: pointer;
+  align-items: center
+}
+
+.nb-theme-dark .selected:host {
+  background-color: #1e89ef
+}
+
+.nb-theme-dark :host .step-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .625rem .5rem .625rem .4rem
+}
+
+.nb-theme-dark :host .item-text {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-evenly
+}
+
+.nb-theme-dark :host .item-name {
+  margin: 0;
+  font-size: .8125rem
+}
+
+.nb-theme-dark :host .item-description {
+  color: #959dad;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-dark .selected:host .item-description {
+  color: #fff
+}

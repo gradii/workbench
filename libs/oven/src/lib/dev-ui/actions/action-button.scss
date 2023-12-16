@@ -1,0 +1,75 @@
+.data-tooltip-info .arrow {
+  display: none
+}
+
+.data-tooltip-info nb-tooltip {
+  background-color: #8f5cff
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled {
+  border-radius: .125rem;
+  padding: .1875rem;
+  background-color: var(--dev-ui-action-background-color);
+  font-size: 9px;
+  color: var(--dev-ui-action-color);
+  font-weight: 400;
+  text-transform: none;
+  cursor: pointer
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled.info {
+  background-color: #8f5cff
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled bc-icon svg {
+  width: .75rem;
+  height: .75rem;
+  fill: var(--dev-ui-action-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:hover {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--dev-ui-hover-action-color);
+  background-color: var(--dev-ui-hover-background-action-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:hover.info {
+  background-color: #c29dff
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:hover bc-icon svg {
+  fill: var(--dev-ui-hover-action-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:focus {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--dev-ui-action-color);
+  background-color: var(--dev-ui-action-background-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:focus.info {
+  background-color: #8f5cff
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:focus bc-icon svg {
+  fill: var(--dev-ui-action-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:active {
+  color: var(--dev-ui-hover-action-color);
+  background-color: var(--dev-ui-active-background-action-color)
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:active.info {
+  background-color: #502eb7
+}
+
+:host .action-button[nbButton].clear-icon.appearance-filled:active bc-icon svg {
+  fill: var(--dev-ui-hover-action-color)
+}

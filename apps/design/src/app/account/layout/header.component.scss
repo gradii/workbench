@@ -1,0 +1,89 @@
+.nb-theme-light :host {
+  display: flex;
+  width: 100%
+}
+
+.nb-theme-light :host .whats-new-action > a {
+  color: #47c256;
+  font-size: 1rem;
+  line-height: 20px
+}
+
+.nb-theme-light :host .whats-new-action > a:hover {
+  color: #72da75
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 0 1rem;
+  margin: -.75rem -1rem;
+  color: #959dad;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  transition-duration: .1s;
+  transition-property: color, background-color;
+  transition-timing-function: ease-in
+}
+
+.nav-link.nav-link-active, .nav-link:focus, .nav-link:hover {
+  color: #fff
+}
+
+.home-action {
+  margin-right: 1rem
+}
+
+.home-action .nav-link {
+  padding: .625rem 1.125rem .875rem;
+  border-right: .0625rem solid #313642
+}
+
+.home-action .nav-link:hover {
+  background: #232730
+}
+
+.logo-img {
+  height: auto;
+  width: 1.75rem
+}
+
+.account-actions {
+  margin-left: auto;
+  margin-right: 1rem
+}
+
+.avatar-action {
+  padding-right: 0
+}
+
+nb-action nb-icon.account-menu-icon {
+  font-size: 1.25rem;
+  margin-left: -.3rem
+}
+
+@media (max-width: 57em) {
+  .account-actions {
+    margin-right: 0
+  }
+}
+
+@media (max-width: 38em) {
+  .whats-new-action {
+    display: none
+  }
+}
+
+@media (max-width: 32em) {
+  .academy-action {
+    display: none
+  }
+}
+
+@media (max-width: 25em) {
+  .projects-action {
+    display: none
+  }
+}

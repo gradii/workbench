@@ -1,0 +1,117 @@
+<form
+  [formGroup]="user"
+  (ngSubmit)="save()"
+  [nbSpinner]="showLoader$ | async"
+  nbSpinnerStatus="primary"
+  class="bc-form profile-form component-top-margin"
+>
+  <nb-alert
+    *ngIf="showCantLoadAlert$ | async"
+    status="danger"
+    outline="danger"
+    closable
+    (close)="closeLoadingFailedAlert$.next(false)"
+  >
+    <nb-icon class="alert-icon" icon="alert-triangle" pack="eva"></nb-icon>
+    Can't load profile data
+  </nb-alert>
+
+  <nb-alert
+    *ngIf="showCantUpdateAlert$ | async as err"
+    status="danger"
+    outline="danger"
+    closable
+    (close)="closeUpdateFailedAlert$.next(false)"
+  >
+    <nb-icon class="alert-icon" icon="alert-triangle" pack="eva"></nb-icon>
+    {{ err.error }}
+  </nb-alert>
+
+  <nb-alert
+    *ngIf="showEmailChangeRequestedAlert$ | async"
+    status="success"
+    outline="success"
+    closable
+    (close)="closeEmailChangeRequestedAlert$.next(false)"
+  >
+    Email change requested. Please, check your new mailbox ({{ user.value.email }})
+  </nb-alert>
+
+  <div [class.pointer-disabled]="formDisabled$ | async">
+    <div class="form-row">
+      <div class="form-control-group">
+        <label class="form-control-label" for="name">Name</label>
+        <input nbInput fullWidth bcTrim placeholder="Name" formControlName="name" id="name"/>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="name.dirty && name.errors">
+            <p class="form-error-message" *ngIf="name.errors?.required">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name is required!
+            </p>
+            <p class="form-error-message" *ngIf="name.errors?.tooManyChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain more than 250 symbols!
+            </p>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="form-control-group">
+        <label class="form-control-label" for="email">Email</label>
+        <input nbInput fullWidth bcTrim bcEmailValidator placeholder="Email" formControlName="email" id="email"/>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="email.dirty">
+            <p class="form-error-message" *ngIf="email.errors?.required">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Email is required!
+            </p>
+            <p class="form-error-message" *ngIf="!email.errors?.required && email.errors?.email">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Email should be the real one!
+            </p>
+            <p class="form-error-message" *ngIf="email.errors?.tooManyChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Email should not contain more than 250 symbols!
+            </p>
+          </ng-container>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-control-group">
+        <label class="form-control-label" for="company">Company</label>
+        <input nbInput fullWidth bcTrim placeholder="Company" formControlName="company" id="company"/>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="company.dirty">
+            <p class="form-error-message" *ngIf="company.errors?.tooManyChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Company should not contain more than 250 symbols!
+            </p>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="form-control-group">
+        <label class="form-control-label" for="role">Role</label>
+        <input nbInput fullWidth bcTrim placeholder="Role" formControlName="role" id="role"/>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="role.dirty">
+            <p class="form-error-message" *ngIf="role.errors?.tooManyChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Role should not contain more than 250 symbols!
+            </p>
+          </ng-container>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-actions-group">
+      <button nbButton class="status-secondary" [disabled]="user.invalid">Save changes</button>
+    </div>
+  </div>
+</form>
+
+<a routerLink="/auth/forgot-password" class="reset-link">
+  <span class="subtitle-2 text-primary">Reset Password</span>
+</a>

@@ -1,0 +1,9 @@
+<div class="header-row">
+  <h3 class="workflow-title">VARIABLE LIST</h3>
+  <button nbButton class="bakery-button workflow-icon" size="tiny" ghost (click)="create.emit()">
+    <span class="text">Add New</span>
+    <nb-icon icon="plus-outline"></nb-icon>
+  </button>
+</div>
+
+<ub-state-manager-list-filter (filterByName)="filterByName.emit($event)"></ub-state-manager-list-filter>

@@ -1,0 +1,15 @@
+.nb-theme-dark :host .style-row {
+  display: flex
+}
+
+.nb-theme-dark :host .style-row ub-button-group-settings-field {
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .style-row ub-button-group-settings-field bc-button-group {
+  width: 6.25rem
+}
+
+.nb-theme-dark :host .style-row ub-dropdown-settings-field .select-button {
+  min-width: 7.25rem
+}

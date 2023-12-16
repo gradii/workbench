@@ -1,0 +1,18 @@
+.nb-theme-dark :host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #15171f;
+  border-bottom: 1px solid #313642;
+  padding-left: 1rem
+}
+
+.nb-theme-dark :host .label {
+  flex-grow: 1;
+  font-size: .6875rem;
+  font-weight: 600
+}
+
+.nb-theme-dark :host ub-position-group-settings-field {
+  padding: .4rem .4rem .4rem 0
+}

@@ -1,0 +1,61 @@
+<form [formGroup]="pageForm" (ngSubmit)="onSubmit()" #formElement="ngForm">
+  <div class="form-header">
+    <h6 class="form-title">{{ formTitle }}</h6>
+    <button
+      *ngIf="showImport"
+      class="bakery-button icon-padding"
+      nbButton
+      ghost
+      size="tiny"
+      type="reset"
+      (click)="importPage.emit()"
+    >
+      <bc-icon name="cloud-download-outline"></bc-icon>
+      IMPORT PAGES
+    </button>
+  </div>
+
+  <label>
+    Page Name
+    <input placeholder="name" #nameInput nbInput fullWidth formControlName="name"/>
+    <div *ngIf="isFieldInvalid('name')" class="validation-errors">
+      <div *ngIf="isFieldHasError('name', 'required')">Page name is required</div>
+      <div *ngIf="isFieldHasError('name', 'pattern')">
+        Page name can contain only words, numbers and spaces and should start with a word.
+      </div>
+      <div *ngIf="isFieldHasError('name', 'unique')">Page or Component with that name already exists.</div>
+    </div>
+  </label>
+  <label>
+    Page URL
+    <input placeholder="url" nbInput fullWidth formControlName="url" (keyup)="detachUrlFromName()"/>
+    <div *ngIf="isFieldInvalid('url')" class="validation-errors">
+      <div *ngIf="isFieldHasError('url', 'required')">Page url is required</div>
+      <div *ngIf="isFieldHasError('url', 'pattern')">Page url can contain only words, numbers and spaces</div>
+      <div *ngIf="isFieldHasError('url', 'unique')">Page with that url already exists.</div>
+    </div>
+  </label>
+
+  <label>
+    Parent Page
+    <nb-select
+      *ngIf="pages?.length"
+      class="parent-select bakery-dropdown"
+      shape="rectangle"
+      fullWidth
+      placeholder="None"
+      formControlName="parentPageId"
+    >
+      <nb-option>None</nb-option>
+      <nb-option *ngFor="let parentPage of pages" [value]="parentPage.id">{{ parentPage.name }}</nb-option>
+    </nb-select>
+  </label>
+  <div class="controls">
+    <button nbButton size="small" shape="rectangle" class="cancel-btn" type="reset" (click)="cancel.emit()">
+      Cancel
+    </button>
+    <button nbButton size="small" shape="rectangle" status="primary" type="submit">
+      {{ buttonLabel }}
+    </button>
+  </div>
+</form>

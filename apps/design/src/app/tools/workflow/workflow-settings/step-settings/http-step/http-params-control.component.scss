@@ -1,0 +1,58 @@
+.nb-theme-dark :host .param-row {
+  align-items: center;
+  margin-bottom: .25rem
+}
+
+.nb-theme-dark :host .param-row .param-column {
+  margin-bottom: 0;
+  margin-right: .25rem
+}
+
+.nb-theme-dark :host .param-row .param-column:last-of-type {
+  margin-right: 0;
+  width: calc(100% - 230px - 2rem)
+}
+
+.nb-theme-dark :host .param-row .param-column:first-child {
+  flex-grow: 0;
+  flex-basis: 230px
+}
+
+.nb-theme-dark :host .param-row [nbInput] {
+  padding: .465rem .5rem
+}
+
+.nb-theme-dark :host .add-param-button {
+  margin-right: 1.45rem;
+  color: #959dad;
+  background-color: rgba(149, 157, 173, .08);
+  font-weight: 700;
+  text-transform: capitalize
+}
+
+.nb-theme-dark :host .add-param-button nb-icon {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .add-param-button:hover {
+  background-color: rgba(149, 157, 173, .16)
+}
+
+.nb-theme-dark :host .add-param-button :active, .nb-theme-dark :host .add-param-button:focus {
+  background-color: rgba(149, 157, 173, .24)
+}
+
+.nb-theme-dark :host .add-param-button:disabled {
+  color: rgba(149, 157, 173, .48);
+  background-color: rgba(149, 157, 173, .16)
+}
+
+@media (max-width: 65em) {
+  .nb-theme-dark :host .param-row .param-column:first-child {
+    flex-basis: 130px
+  }
+  .nb-theme-dark :host .param-row .param-column:last-of-type {
+    width: calc(100% - 130px - 2rem)
+  }
+}

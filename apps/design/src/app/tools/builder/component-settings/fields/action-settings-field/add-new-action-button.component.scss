@@ -1,0 +1,16 @@
+.nb-theme-dark :host .add-new-action-button {
+  color: #959dad;
+  background-color: #313642;
+  text-transform: capitalize;
+  width: 100%;
+  border-radius: .25em .25em 0 0
+}
+
+.nb-theme-dark :host .add-new-action-button:hover {
+  color: #fff;
+  background-color: #3c424f
+}
+
+.nb-theme-dark :host button > bc-icon {
+  margin-left: .375rem
+}

@@ -1,0 +1,9 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 13px
+}
+
+.nb-theme-dark :host ub-color-preview {
+  margin: 3px
+}

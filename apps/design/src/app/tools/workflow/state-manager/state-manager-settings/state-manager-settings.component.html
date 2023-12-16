@@ -1,0 +1,84 @@
+<div *ngIf="noItems && !createMode" class="empty-setting">
+  <span class="content">
+    <p>You have no variable items.</p>
+    <p>Click “Add New“ to create a variable.</p>
+  </span>
+</div>
+
+<ng-container *ngIf="!noItems || createMode">
+  <ub-state-manager-settings-header
+    [createMode]="createMode"
+    [unSaved]="unSaved"
+    (save)="saveStoreItem()"
+    (delete)="deleteStoreItem()"
+    (duplicate)="duplicateStoreItem()"
+  ></ub-state-manager-settings-header>
+
+  <form [formGroup]="formGroup">
+    <label class="workflow-label name-label no-margin">
+      Variable Name
+      <bc-input-icon icon="workflow-save-step" iconPack="bakery" class="store-item-name">
+        <input #nameInput nbInput fullWidth placeholder="Enter name" [formControl]="name"/>
+      </bc-input-icon>
+      <div class="errors">
+        <span *ngIf="name.errors?.required">Name is required.</span>
+        <span *ngIf="name.errors?.pattern"
+        >Name should start with a letter and contain letters, numbers and underscores.</span
+        >
+        <span *ngIf="name.errors?.unique">Variable with this name already exists.</span>
+      </div>
+    </label>
+
+    <label class="workflow-label">
+      Type
+
+      <nb-select formControlName="type" class="bakery-dropdown" shape="rectangle">
+        <nb-option class="settings-option-item" *ngFor="let typeOption of storeItemTypes" [value]="typeOption">
+          {{ typeOption | titlecase }}
+        </nb-option>
+      </nb-select>
+    </label>
+
+    <label class="workflow-label" [class]="type.value">
+      Initial value
+
+      <div [ngSwitch]="type.value" class="values">
+        <ng-container *ngSwitchCase="storeItemType.STRING">
+          <input nbInput fullWidth class="string-value" formControlName="initialValueString"/>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="storeItemType.NUMBER">
+          <input nbInput type="number" fullWidth formControlName="initialValueNumber"/>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="storeItemType.BOOLEAN">
+          <nb-radio-group class="boolean-value" formControlName="initialValueBoolean">
+            <nb-radio [value]="true">True</nb-radio>
+            <nb-radio [value]="false">False</nb-radio>
+          </nb-radio-group>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="storeItemType.OBJECT">
+          <ub-simple-code-editor syntax="json" formControlName="initialValueObject" [lineNumbers]="false">
+          </ub-simple-code-editor>
+          <div class="errors">
+            <span *ngIf="initialValueObject.errors?.invalid">Object isn't valid.</span>
+          </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="storeItemType.ARRAY">
+          <ub-simple-code-editor syntax="json" formControlName="initialValueArray" [lineNumbers]="false">
+          </ub-simple-code-editor>
+          <div class="errors">
+            <span *ngIf="initialValueArray.errors?.invalid">Array isn't valid.</span>
+          </div>
+        </ng-container>
+      </div>
+    </label>
+
+    <label class="workflow-label" *ngIf="!createMode">
+      Current value:
+      <pre class="store-item-overview">{{ storeItemValue }}</pre>
+    </label>
+  </form>
+</ng-container>

@@ -1,0 +1,11 @@
+.nb-theme-dark :host p.description {
+  padding-bottom: .5rem;
+  margin: 0;
+  font-size: .6875rem;
+  color: #959dad
+}
+
+.nb-theme-dark :host p.description span.code-sample {
+  color: #f7a258;
+  font-family: Roboto Mono, monospace
+}

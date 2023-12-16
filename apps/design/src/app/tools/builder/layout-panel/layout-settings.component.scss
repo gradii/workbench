@@ -1,0 +1,33 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host ub-layout-type {
+  margin-bottom: 1rem
+}
+
+.nb-theme-dark :host nb-accordion {
+  border-top: 1px solid #313642;
+  border-radius: 0
+}
+
+.nb-theme-dark :host .label {
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-dark :host .type-label {
+  margin: 1rem 1rem .5rem
+}
+
+.nb-theme-dark :host .header-label {
+  margin-top: 1rem;
+  margin-bottom: .5rem
+}
+
+.nb-theme-dark :host .disabled {
+  opacity: .5;
+  pointer-events: none
+}

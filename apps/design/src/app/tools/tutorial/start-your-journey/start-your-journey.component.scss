@@ -1,0 +1,20 @@
+.nb-theme-dark :host {
+  display: block;
+  background: #232730;
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+.footer {
+  display: flex;
+  padding: 1rem
+}
+
+.footer button:first-child {
+  margin-left: auto;
+  margin-right: 1rem
+}
+
+.skip[nbButton].appearance-ghost {
+  text-transform: none
+}

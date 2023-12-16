@@ -1,0 +1,59 @@
+<div [ngSwitch]="state" class="auth-wrapper">
+  <img src="assets/logo.svg" class="logo-image" alt="UI Bakery"/>
+
+  <ng-container *ngSwitchCase="componentStates.LOADING" [ngTemplateOutlet]="loadingTmp"></ng-container>
+
+  <ng-container *ngSwitchCase="componentStates.CONFIRM" [ngTemplateOutlet]="confirmTmp"></ng-container>
+
+  <ng-container *ngSwitchCase="componentStates.ERROR" [ngTemplateOutlet]="errorTmp"></ng-container>
+</div>
+
+<!-- Loading template -->
+<ng-template #loadingTmp>
+  <div class="loading-message" [nbSpinner]="true" nbSpinnerStatus="primary" nbSpinnerSize="large">
+    Authenticating...
+  </div>
+</ng-template>
+
+<!-- Confirmation template -->
+<ng-template #confirmTmp>
+  <form (ngSubmit)="confirm()" #form="ngForm" aria-labelledby="title" class="bc-form">
+    <h1 id="title" class="form-heading">Complete registration</h1>
+
+    <div class="form-control-group no-errors">
+      <ub-confirm-register (valueChange)="onConfirmChange($event)"></ub-confirm-register>
+    </div>
+
+    <div class="form-actions-group">
+      <button
+        [disabled]="!data.terms"
+        nbButton
+        status="primary"
+        [type]="confirmSubmitted ? 'button' : 'submit'"
+        [class.spinner-button]="confirmSubmitted"
+        [nbSpinner]="confirmSubmitted"
+        nbSpinnerStatus="control"
+      >
+        Confirm
+      </button>
+    </div>
+  </form>
+</ng-template>
+
+<!-- Error template -->
+<ng-template #errorTmp>
+  <form (ngSubmit)="back()" class="bc-form">
+    <h1 class="form-heading h2">Authentication error</h1>
+
+    <nb-alert status="danger" outline="danger" role="alert">
+      <nb-icon class="alert-icon" icon="alert-circle" pack="eva"></nb-icon>
+      Error while provider authenticating
+    </nb-alert>
+
+    <div class="form-actions-group">
+      <button nbButton status="primary">
+        Back
+      </button>
+    </div>
+  </form>
+</ng-template>

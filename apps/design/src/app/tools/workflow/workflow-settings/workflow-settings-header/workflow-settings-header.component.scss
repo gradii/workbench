@@ -1,0 +1,94 @@
+.nb-theme-dark :host {
+  display: flex;
+  height: 3rem;
+  background-color: #232730;
+  box-sizing: border-box;
+  padding: .625rem 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #313642
+}
+
+.nb-theme-dark :host label.workflow-label {
+  flex-direction: row
+}
+
+.nb-theme-dark :host label.workflow-label span {
+  display: flex;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  font-size: .6875rem;
+  margin-right: .5rem;
+  align-items: center
+}
+
+.nb-theme-dark :host label.workflow-label input {
+  margin: 0;
+  max-width: 23.125rem;
+  min-width: 23.125rem
+}
+
+.nb-theme-dark :host label.workflow-label div.errors {
+  padding: 0
+}
+
+.nb-theme-dark :host label.workflow-label div.errors span {
+  margin: 0 0 0 .5rem;
+  height: 100%
+}
+
+.nb-theme-dark :host .notification-label {
+  display: flex;
+  margin: 0 1rem 0 auto;
+  width: auto;
+  padding: .25rem .5rem;
+  text-align: center;
+  align-items: center;
+  color: #e8ba06;
+  border-radius: .625rem;
+  border: 1px solid rgba(149, 157, 173, .16);
+  background-color: rgba(255, 170, 0, .16);
+  font-size: .6875rem;
+  line-height: .8125rem
+}
+
+.nb-theme-dark :host .action-controls {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .save-button {
+  display: flex;
+  align-items: center;
+  margin-left: .5rem;
+  padding: .325rem;
+  font-size: .6875rem;
+  text-transform: none
+}
+
+.nb-theme-dark :host .save-button bc-icon {
+  margin-right: .325rem
+}
+
+.nb-theme-dark :host .save-button bc-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+@media screen and (max-width: 86rem) {
+  .nb-theme-dark :host label.workflow-label input {
+    flex-grow: 0;
+    min-width: 16rem;
+    width: auto
+  }
+}
+
+@media screen and (max-width: 65em) {
+  .nb-theme-dark :host label.workflow-label div.errors {
+    max-width: 13rem;
+    flex-grow: 1
+  }
+  .nb-theme-dark :host label.workflow-label input {
+    min-width: 8rem
+  }
+}

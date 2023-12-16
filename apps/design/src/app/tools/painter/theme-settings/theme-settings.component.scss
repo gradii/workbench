@@ -1,0 +1,115 @@
+.nb-theme-dark :host {
+  position: absolute;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: #15171f
+}
+
+.nb-theme-dark :host .upgrade-link-container {
+  margin: .5rem 1rem 1rem
+}
+
+.nb-theme-dark :host ub-palette-settings, .nb-theme-dark :host ub-shape-settings, .nb-theme-dark :host ub-theme-text-settings {
+  border-top: 1px solid #313642;
+  display: block
+}
+
+.nb-theme-dark :host .theme-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #313642
+}
+
+.nb-theme-dark :host .theme-name {
+  margin: 0 1rem;
+  font-size: .8125rem;
+  font-weight: 700;
+  color: #959dad
+}
+
+.nb-theme-dark :host .back-button.icon-end:not(.icon-start) {
+  text-transform: none;
+  font-size: .8125rem;
+  font-weight: 700
+}
+
+.nb-theme-dark :host .back-button.icon-end:not(.icon-start) nb-icon, .nb-theme-dark :host .back-button.icon-end:not(.icon-start) svg {
+  width: 1.5rem;
+  height: 1.5rem
+}
+
+.nb-theme-dark :host .coming-soon-label {
+  border-top: 1px solid #313642;
+  padding: .5rem 1rem;
+  color: #fff;
+  font-size: .8125rem
+}
+
+.nb-theme-dark :host nb-accordion-item-body:not(.no-padding) > div > :first-child {
+  padding-top: 1rem
+}
+
+.nb-theme-dark :host .label {
+  color: #959dad;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-dark :host .description {
+  display: inline-block;
+  margin-bottom: 1rem
+}
+
+.nb-theme-dark :host .back-button.icon-end:not(.icon-start) nb-icon {
+  margin-left: 0
+}
+
+.nb-theme-dark :host .back-button.icon-end:not(.icon-start) nb-icon, .nb-theme-dark :host .back-button.icon-end:not(.icon-start) nb-icon svg {
+  width: 2rem;
+  height: 2rem
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] {
+  margin: .75rem .5rem
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab.active[class] {
+  background-color: #313642
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab.active[class], .nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab.active[class] .tab-link[class] {
+  color: #fff
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab[class] {
+  flex: 1;
+  margin: 0 .25rem;
+  border-radius: .25rem;
+  background-color: #232730
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab.disabled {
+  opacity: .5
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab[class] .tab-link[class] {
+  flex-direction: column;
+  padding: .25rem;
+  font-size: .6875rem;
+  font-weight: 700;
+  color: #959dad
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab[class] .tab-link[class]:before {
+  display: none
+}
+
+.nb-theme-dark :host nb-tabset.settings-tabset[class] > .tabset[class] .tab[class] .tab-link[class] nb-icon + span {
+  margin-top: .1rem;
+  margin-left: 0;
+  margin-right: 0
+}

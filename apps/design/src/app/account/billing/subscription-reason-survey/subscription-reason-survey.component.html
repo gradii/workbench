@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-body>
+    <h2 class="h5 heading"><b>Please, select the reason why you've bought UI Builder subscription:</b></h2>
+
+    <div class="reasons">
+      <div class="reason-card" (click)="onSelect(reason)" *ngFor="let reason of reasons">
+        <img class="reason-image" [src]="imgPath(reason.img)" [alt]="reason.text"/>
+        <span class="reason-text">{{ reason.text }}</span>
+      </div>
+      <div class="reason-card" (click)="onOtherReason()">
+        <img class="reason-image" [src]="imgPath(otherReason.img)" [alt]="otherReason.text"/>
+        <span class="reason-text">{{ otherReason.text }}</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

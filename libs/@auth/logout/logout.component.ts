@@ -2,22 +2,22 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { TRI_AUTH_OPTIONS, TriAuthResult, TriAuthService, getDeepFromObject } from '@gradii/triangle/auth';
+import { NB_AUTH_OPTIONS, NbAuthResult, NbAuthService, getDeepFromObject } from '@nebular/auth';
 
 import { RootFacade } from '@root-state/root-facade.service';
 
 @Component({
-  selector   : 'pf-logout',
+  selector: 'nb-logout',
   templateUrl: './logout.component.html',
-  styleUrls  : ['./logout.component.scss']
+  styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent implements OnInit, OnDestroy {
   private strategy = '';
   private destroy$ = new Subject<void>();
 
   constructor(
-    protected service: TriAuthService,
-    @Inject(TRI_AUTH_OPTIONS) protected options = {},
+    protected service: NbAuthService,
+    @Inject(NB_AUTH_OPTIONS) protected options = {},
     protected router: Router,
     private rootFacade: RootFacade
   ) {
@@ -36,7 +36,7 @@ export class LogoutComponent implements OnInit, OnDestroy {
     this.service
       .logout(strategy)
       .pipe(takeUntil(this.destroy$))
-      .subscribe((result: TriAuthResult) => {
+      .subscribe((result: NbAuthResult) => {
         const redirect = result.getRedirect();
         if (redirect) {
           this.rootFacade.clearStore();

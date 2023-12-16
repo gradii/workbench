@@ -1,0 +1,35 @@
+.nb-theme-form-builder :host {
+  justify-content: space-between;
+  margin-bottom: 1rem
+}
+
+.nb-theme-form-builder :host, .nb-theme-form-builder :host .input-container, .nb-theme-form-builder :host label {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-form-builder :host input[nbInput].size-medium {
+  margin: 0 .5rem
+}
+
+.nb-theme-form-builder :host label {
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]).disabled.locked {
+  opacity: .5
+}
+
+.nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:hover svg, .nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]):hover svg {
+  fill: #959dad
+}
+
+.nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:active svg, .nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked:focus svg, .nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]).locked svg {
+  fill: #ffc94d
+}
+
+.nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]):active svg, .nb-theme-form-builder :host .lock[nbButton].basic.appearance-ghost:not([disabled]):focus svg {
+  fill: #fff
+}

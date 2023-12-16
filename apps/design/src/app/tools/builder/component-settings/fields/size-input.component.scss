@@ -1,0 +1,11 @@
+.nb-theme-dark :host .size-label {
+  color: #fff;
+  font-size: .6875rem;
+  vertical-align: top;
+  text-transform: capitalize;
+  font-weight: 700
+}
+
+.nb-theme-dark :host .size-label.disabled {
+  color: rgba(149, 157, 173, .48)
+}

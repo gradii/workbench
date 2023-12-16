@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "description": "An explanation about the purpose of this instance.",
+    "default": {},
+    "examples": [
+      {
+        "longitude": 90,
+        "latitude": 24,
+        "name": "Bangladesh",
+        "value": 150493658
+      }
+    ],
+    "required": [
+      "name",
+      "value",
+      "latitude",
+      "longitude"
+    ],
+    "properties": {
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": [
+          "number",
+          "string"
+        ],
+        "title": "The Name Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": "",
+        "examples": [
+          "Bangladesh"
+        ]
+      },
+      "color": {
+        "$id": "#/items/properties/color",
+        "type": "string",
+        "title": "The Color Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": "",
+        "examples": [
+          "red"
+        ]
+      },
+      "value": {
+        "$id": "#/items/properties/value",
+        "type": [
+          "number",
+          "string"
+        ],
+        "title": "The Value Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": 0,
+        "examples": [
+          150493658
+        ]
+      },
+      "latitude": {
+        "$id": "#/items/properties/latitude",
+        "type": "number",
+        "title": "The Latitude Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": 0,
+        "examples": [
+          24
+        ]
+      },
+      "longitude": {
+        "$id": "#/items/properties/longitude",
+        "type": "number",
+        "title": "The Longitude Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": 0,
+        "examples": [
+          90
+        ]
+      }
+    }
+  }
+}

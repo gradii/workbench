@@ -1,7 +1,13 @@
+# WorkbenchDesign
 
+### install
+`yarn install`
 
-### Workbench
+### live demo
+`design:serve`
+`workbench:serve`
+`backend:serve`
+open `localhost:4200`
 
-A visual design editor for angular
-
+### snapshot
 ![snapshot](snapshot.png)

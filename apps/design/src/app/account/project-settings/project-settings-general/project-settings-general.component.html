@@ -1,0 +1,67 @@
+<form [formGroup]="project" (ngSubmit)="save()" class="bc-form component-top-margin">
+  <div>
+    <h2 class="h6 heading-margin-bottom">General Settings</h2>
+    <div class="form-row">
+      <div class="form-control-group">
+        <input
+          nbInput
+          fullWidth
+          bcTrim
+          placeholder="Project Name"
+          formControlName="name"
+          id="name"
+          class="name-input"
+        />
+        <span class="form-control-message-container">
+          <ng-container *ngIf="name.dirty && name.errors">
+            <p class="form-error-message" *ngIf="name.errors?.required">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name is required!
+            </p>
+            <p class="form-error-message" *ngIf="name.errors?.notEnoughChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain less than 4 symbols!
+            </p>
+            <p class="form-error-message" *ngIf="name.errors?.tooManyChars">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain more than 250 symbols!
+            </p>
+          </ng-container>
+        </span>
+      </div>
+      <p class="name-caption caption-2">
+        Project name can contain letters A-Z, in lower or uppercase, numbers, spaces and symblos: -_()[]. Project name
+        cannot exceed 250 symbols. Project name cannot be less than 4 symbols.
+      </p>
+    </div>
+    <h2 class="h6 heading-margin-bottom">Icons</h2>
+    <ub-image-upload
+      formControlName="favicon"
+      title="Favicon"
+      description="Upload an image (256x256 ICO, PNG, JPG, JPEG and SVG) to display in browser tabs. File should be less than 5mb."
+      [acceptMimeTypes]="faviconMimeTypes"
+    >
+      <ub-image-preview
+        [src]="faviconSrc$ | async | safe: 'resourceUrl'"
+        [previewSize]="{ width: 64, height: 64 }"
+      ></ub-image-preview>
+      <div class="validation-messages">
+        <ng-container *ngIf="favicon.dirty && favicon.errors">
+          <p class="form-error-message" *ngIf="favicon.errors?.maxImageSize">
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+            Your file is bigger than 5mb.
+          </p>
+          <p class="form-error-message" *ngIf="favicon.errors?.imageDimensions">
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+            Image dimensions should be 256x256.
+          </p>
+        </ng-container>
+      </div>
+    </ub-image-upload>
+    <div class="form-actions-group actions">
+      <button nbButton class="status-secondary" [disabled]="isSaveDisabled || (loading$ | async)" type="submit">
+        Save changes
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+<nb-card>
+  <nb-card-body>
+    <div class="plan-info">
+      <p class="paragraph-2 no-margin">
+        Your current plan: <span class="subtitle">{{ plan$ | async }}</span>
+      </p>
+      <p class="paragraph-2 no-margin" *ngIf="expiryDate$ | async as expiryDate">
+        {{ (willBeCancelled$ | async) ? 'Expiry date:' : 'Next Payment:' }} {{ expiryDate | date }}
+        <ng-container *ngIf="willBeCancelled$ | async"> (Will be cancelled after expiry date)</ng-container>
+      </p>
+    </div>
+
+    <a routerLink="/plans" class="change-plan-link" nbButton status="primary">Change plan</a>
+  </nb-card-body>
+</nb-card>

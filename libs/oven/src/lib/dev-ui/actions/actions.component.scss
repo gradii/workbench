@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  margin-top: calc(var(--header-height) + 2.5rem)
+}
+
+:host .action-button, :host oven-divide-space-button {
+  margin-left: .125rem
+}
+
+:host .action-button, :host oven-breadcrumbs, :host oven-data-error, :host oven-divide-space-button {
+  pointer-events: auto
+}
+
+.top :host {
+  align-items: flex-end
+}
+
+.bottom-inset :host, .bottom :host {
+  margin-top: 0;
+  align-items: flex-start
+}
+
+.bottom-inset :host {
+  padding-right: .5rem
+}
+
+oven-data-error {
+  margin-left: .125rem
+}
+
+.data-tooltip-info nb-tooltip {
+  border-radius: .25rem
+}

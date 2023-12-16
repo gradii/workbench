@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { enterLeaveFadeTrigger, enterLeaveSlideInOutTrigger } from './route-animation';
 
 @Component({
-  selector: 'tri-auth',
+  selector: 'ub-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
   animations: [enterLeaveFadeTrigger, enterLeaveSlideInOutTrigger]

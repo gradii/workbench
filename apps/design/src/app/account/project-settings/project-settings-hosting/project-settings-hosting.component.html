@@ -1,0 +1,21 @@
+<div
+  class="project-settings-hosting-wrapper"
+  [nbSpinner]="loading$ | async"
+  nbSpinnerStatus="primary"
+  [class.pointer-disabled]="loading$ | async"
+>
+  <div class="component-top-margin" *ngFor="let hosting of hostings$ | async">
+    <h2 class="h6 heading-margin-bottom">{{ hosting.environment }}</h2>
+    <ub-add-domain *ngIf="!hosting.domain; else withDomain" (addDomain)="addDomain($event, hosting)"></ub-add-domain>
+    <ng-template #withDomain>
+      <ub-domain-card
+        [hosting]="hosting"
+        (checkStatus)="assignDomain(hosting)"
+        (delete)="deleteDomain(hosting)"
+        [deleteLoading]="(hostingView$ | async)[hosting.id]?.deleteDomainLoading"
+        [checkStatusLoading]="(hostingView$ | async)[hosting.id]?.assignDomainLoading"
+        [errors]="getErrorsByHostingId(hosting.id) | async"
+      ></ub-domain-card>
+    </ng-template>
+  </div>
+</div>

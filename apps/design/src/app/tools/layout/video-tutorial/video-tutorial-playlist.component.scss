@@ -1,0 +1,38 @@
+.nb-theme-dark :host .playlist {
+  min-width: 200px;
+  width: 20vw;
+  max-width: 300px
+}
+
+.nb-theme-dark :host .video-element {
+  background-color: #232730;
+  display: flex;
+  padding: .5rem .75rem;
+  font-size: .675rem;
+  align-items: center;
+  border-bottom: 1px solid #3c424f;
+  color: #959dad;
+  cursor: pointer
+}
+
+.nb-theme-dark :host .video-element bc-icon {
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .video-element bc-icon svg {
+  width: 1rem;
+  fill: #fff
+}
+
+.nb-theme-dark :host .video-element .time {
+  margin-left: auto
+}
+
+.nb-theme-dark :host .video-element.current {
+  background-color: #1e89ef;
+  color: #fff
+}
+
+.nb-theme-dark :host .video-element.current bc-icon svg {
+  fill: #fff
+}

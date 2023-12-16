@@ -1,0 +1,33 @@
+<form (ngSubmit)="submit()" class="bc-form">
+  <div class="form-control-group no-errors">
+    <label>
+      <span class="form-control-label">Card Number</span>
+      <div class="card-field">
+        <ub-card-icon [brand]="brand$ | async" aria-hidden="true"></ub-card-icon>
+        <div class="card-number status-basic size-medium shape-rectangle" #cardNumber></div>
+      </div>
+    </label>
+  </div>
+
+  <div class="form-row-margin-sm">
+    <div class="form-control-group no-errors">
+      <label>
+        <span class="form-control-label">Expiration Date</span>
+        <div class="status-basic size-medium shape-rectangle" #cardExpiry></div>
+      </label>
+    </div>
+
+    <div class="form-control-group no-errors">
+      <label>
+        <span class="form-control-label">CVC</span>
+        <div class="status-basic size-medium shape-rectangle" #cardCvc></div>
+      </label>
+    </div>
+  </div>
+
+  <ng-content select=".form-control-group"></ng-content>
+
+  <div class="actions form-actions-group-inline component-list-margin-sm">
+    <ng-content select="button"></ng-content>
+  </div>
+</form>

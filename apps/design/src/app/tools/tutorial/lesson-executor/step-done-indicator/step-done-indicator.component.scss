@@ -1,0 +1,85 @@
+:host {
+  pointer-events: none;
+  background-color: transparent;
+  transition: background-color .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.visible:host {
+  background-color: rgba(49, 54, 66, .9)
+}
+
+.visible:host .checkmark__circle {
+  -webkit-animation: stroke .3s cubic-bezier(.65, 0, .45, 1) forwards;
+  animation: stroke .3s cubic-bezier(.65, 0, .45, 1) forwards
+}
+
+.visible:host .checkmark {
+  -webkit-animation: scale .3s ease-in-out .3s both;
+  animation: scale .3s ease-in-out .3s both
+}
+
+.visible:host .checkmark__check {
+  -webkit-animation: stroke .3s cubic-bezier(.65, 0, .45, 1) .3s forwards;
+  animation: stroke .3s cubic-bezier(.65, 0, .45, 1) .3s forwards
+}
+
+:host .checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  fill: none
+}
+
+:host .checkmark, :host .checkmark__circle {
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142
+}
+
+:host .checkmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  margin-top: -4rem;
+  box-shadow: inset 0 0 0 #7ac142
+}
+
+:host .checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke-linecap: round
+}
+
+@-webkit-keyframes stroke {
+  to {
+    stroke-dashoffset: 0
+  }
+}
+
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0
+  }
+}
+
+@-webkit-keyframes scale {
+  0%, to {
+    transform: none
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1)
+  }
+}
+
+@keyframes scale {
+  0%, to {
+    transform: none
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1)
+  }
+}

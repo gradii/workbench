@@ -1,0 +1,27 @@
+.nb-theme-dark :host {
+  flex-grow: 1;
+  padding: 0 1rem 1rem
+}
+
+.nb-theme-dark :host .row {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: .5rem
+}
+
+.nb-theme-dark :host .action-controls, .nb-theme-dark :host .row {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .workflow-title {
+  margin: 0 .25rem 0 0
+}
+
+.nb-theme-dark :host .select-type-label, .nb-theme-dark :host ub-step-type-select {
+  margin: 1rem 0
+}
+
+.nb-theme-dark :host nb-tab {
+  margin-top: 1rem
+}

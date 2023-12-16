@@ -1,0 +1,36 @@
+.nb-theme-dark :host {
+  position: absolute;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  flex-direction: column
+}
+
+.nb-theme-dark :host ub-theme-item {
+  flex-shrink: 0;
+  margin: 0 1rem 1rem
+}
+
+.nb-theme-dark :host ub-theme-item:first-of-type {
+  margin-top: .5rem
+}
+
+.nb-theme-dark :host .add-theme-button {
+  border-bottom: none
+}
+
+.nb-theme-dark :host .divider {
+  border-top: 1px solid #313642
+}
+
+.nb-theme-dark :host .add-theme-button[nbButton] {
+  text-transform: none;
+  justify-content: space-between;
+  padding: .625rem 1rem
+}
+
+.nb-theme-dark :host .add-theme-button[nbButton] nb-icon, .nb-theme-dark :host .add-theme-button[nbButton] nb-icon svg {
+  width: 1rem;
+  height: 1rem
+}

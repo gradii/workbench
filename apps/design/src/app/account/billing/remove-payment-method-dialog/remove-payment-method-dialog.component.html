@@ -1,0 +1,13 @@
+<nb-card [nbSpinner]="deletePaymentMethodLoading$ | async" nbSpinnerStatus="primary">
+  <nb-card-body [class.pointer-disabled]="deletePaymentMethodLoading$ | async">
+    <h3 class="h5 heading-margin-bottom">Are you sure you want to delete payment method?</h3>
+
+    If you delete your payment method we'll not be able to charge you at the end of the billing period. And then your
+    subscription will be cancelled.
+
+    <div class="actions component-list-margin-sm component-top-margin">
+      <button nbButton (click)="cancel()">Cancel</button>
+      <button nbButton status="danger" (click)="remove()">Remove</button>
+    </div>
+  </nb-card-body>
+</nb-card>

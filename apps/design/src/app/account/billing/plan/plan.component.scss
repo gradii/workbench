@@ -1,0 +1,113 @@
+:host {
+  display: block;
+  min-height: 35.625rem
+}
+
+nb-card {
+  background: #f7f9fc;
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  width: 270px
+}
+
+nb-card-header {
+  padding: 0
+}
+
+nb-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  text-align: center
+}
+
+.text-max-width {
+  max-width: 16rem
+}
+
+.plan-image-container {
+  position: relative;
+  height: 8.75rem
+}
+
+.plan-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%
+}
+
+.plan-title {
+  margin-bottom: 1rem
+}
+
+.prices-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%
+}
+
+.prices-container.with-margin-bottom {
+  margin-bottom: 1.25rem
+}
+
+.prices-container .annually-price {
+  margin: 0;
+  color: #959dad
+}
+
+.month-prices {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin: 0 1rem 0 0
+}
+
+.price.discounted, .price.discounted span {
+  color: #47c256
+}
+
+.enterprise-pricing {
+  display: flex;
+  align-items: center;
+  min-height: 3rem
+}
+
+.discounts:host .enterprise-pricing {
+  min-height: 4.5rem
+}
+
+.divider {
+  border-bottom: 1px solid #e4e9f2;
+  margin: 1rem -1rem;
+  width: calc(100% + 2rem)
+}
+
+.features {
+  padding: 0;
+  margin-bottom: 1rem
+}
+
+.feature {
+  list-style-type: none;
+  margin-bottom: .5rem
+}
+
+.plan-button {
+  margin-top: auto;
+  width: 100%
+}
+
+.heading-margin-bottom {
+  margin-bottom: .5rem
+}

@@ -1,0 +1,58 @@
+<nb-layout withScroll>
+  <nb-layout-column class="without-padding">
+    <div class="left-column">
+      <div class="column-header">
+        <a class="logo" href="https://uibakery.io/" target="_blank">
+          <img class="logo-img" src="assets/sign-up-form-builder-logo.svg" alt="UI Builder"/>
+        </a>
+        <button (click)="toggleSidebar()" class="menu-toggle" nbButton ghost>
+          <nb-icon icon="menu"></nb-icon>
+        </button>
+      </div>
+      <nb-sidebar
+        [containerFixed]="false"
+        [fixed]="false"
+        [responsive]="true"
+        [collapsedBreakpoints]="[]"
+        [compactedBreakpoints]="[]"
+      >
+        <a
+          class="product-hunt-banner"
+          href="https://www.producthunt.com/posts/sign-up-form-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-sign-up-form-generator"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=186636&theme=light"
+            alt="Sign-Up Form Generator - Free Online Sign-Up Form Generator by UI Builder | Product Hunt Embed"
+            style="width: auto; height: 58px;"
+          />
+        </a>
+        <app-builder-tabs
+          [templates]="templates$ | async"
+          [selectedTemplate]="selectedTemplate"
+          (changeTemplate)="changeTemplate($event)"
+          (selectTemplate)="selectTemplate($event)"
+        >
+        </app-builder-tabs>
+      </nb-sidebar>
+    </div>
+    <div class="content-column">
+      <div class="preview">
+        <img class="madein-logo" src="assets/made_in_light.svg" alt="made in uibakery"/>
+        <ub-preview *ngIf="selectedTemplate" [app]="selectedTemplate.app" (loaded)="loaderService.hide()"></ub-preview>
+      </div>
+      <div class="footer">
+        <div class="footer-wrapper">
+          <div class="buttons" *ngIf="selectedTemplate">
+            <button nbButton outline status="info" (click)="openDialog(0)" [size]="buttonSize">
+              Download Form
+            </button>
+            <button nbButton status="info" (click)="openDialog(1)" [size]="buttonSize">
+              Continue Editing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

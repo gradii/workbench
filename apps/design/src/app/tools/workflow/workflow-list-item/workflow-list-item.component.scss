@@ -1,0 +1,91 @@
+.nb-theme-dark :host {
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: .5rem;
+  padding-right: .25rem;
+  border-radius: .25rem;
+  font-size: .6875rem;
+  color: #fff
+}
+
+.nb-theme-dark :host .left-container {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden
+}
+
+.nb-theme-dark :host:not(.selected) .left-container.error {
+  color: #ef4e3c
+}
+
+.nb-theme-dark :host .workflow-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
+
+.nb-theme-dark :host:not(:first-child) {
+  margin-top: .25rem
+}
+
+.nb-theme-dark :host:hover {
+  background-color: rgba(149, 157, 173, .08)
+}
+
+.nb-theme-dark .selected:host {
+  background-color: #1e89ef
+}
+
+.nb-theme-dark .selected:host .action-controls nb-icon svg {
+  transition: none;
+  fill: #a4dffe
+}
+
+.nb-theme-dark .selected:host .action-controls .bakery-button:not(.not-hidden) {
+  display: block
+}
+
+.nb-theme-dark .selected:host .action-controls .bakery-button:not(.not-hidden):hover nb-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark :host:not(.selected) {
+  cursor: pointer
+}
+
+.nb-theme-dark :host ub-error-notification {
+  margin-left: .25rem;
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .action-controls {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .action-controls .bakery-button {
+  padding: .125rem
+}
+
+.nb-theme-dark :host .action-controls .bakery-button:not(.not-hidden) {
+  display: none
+}
+
+.nb-theme-dark :host nb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.nb-theme-dark :host nb-icon svg {
+  fill: #959dad;
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .not-hidden {
+  margin-right: .25rem
+}

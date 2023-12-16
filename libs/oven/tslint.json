@@ -1,0 +1,22 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "workbenchDesign",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "workbench-design",
+      "kebab-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "!**/*"
+    ]
+  }
+}

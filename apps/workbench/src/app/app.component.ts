@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   ActiveSetting,
@@ -12,27 +7,27 @@ import {
   getModelVersion,
   FeatureHiderService,
   MessageAction,
-  KitchenApp,
-  KitchenSettings,
-  KitchenUserNotifications,
+  OvenApp,
+  OvenSettings,
+  OvenUserNotifications,
   SentryInfo,
-  LocalStorageItem,
+  LocalStorageItem
 } from '@common';
 import * as Sentry from '@sentry/browser';
 import { Observable, Subject } from 'rxjs';
 import { delay, startWith, takeUntil } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
-import { BackspaceService } from '@workbench-core/backspace.service';
-import { CommunicationService } from '@workbench-core/communication/communication.service';
-import { ShortcutService } from '@workbench-core/shortcut.service';
-import { ThumbnailService } from '@workbench-core/thumbnail.service';
+import { BackspaceService } from './@core/backspace.service';
+import { CommunicationService } from './@core/communication/communication.service';
+import { ShortcutService } from './@core/shortcut.service';
+import { ThumbnailService } from './@core/thumbnail.service';
 
 @Component({
   selector: 'wb-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <kitchen-preview
+    <oven-preview
       [state]="state$ | async"
       [selectedComponents]="selectedComponents$ | async"
       [hoveredComponent]="hoveredComponent$ | async"
@@ -46,25 +41,20 @@ import { ThumbnailService } from '@workbench-core/thumbnail.service';
       (message)="sendMessage($event)"
       (ready)="ready()"
     >
-    </kitchen-preview>
-  `,
+    </oven-preview>
+  `
 })
 export class AppComponent implements OnInit, OnDestroy {
-  state$: Observable<KitchenApp> = this.communication.state$;
-  selectedComponents$: Observable<string[]> =
-    this.communication.selectedComponents$;
+  state$: Observable<OvenApp> = this.communication.state$;
+  selectedComponents$: Observable<string[]> = this.communication.selectedComponents$;
   hoveredComponent$: Observable<string> = this.communication.hoveredComponent$;
   showDevUI$: Observable<boolean> = this.communication.showDevUI$;
   privileges$: Observable<string[]> = this.communication.privileges$;
   breakpoint$: Observable<BreakpointWidth> = this.communication.breakpoint$;
   activeSetting$: Observable<ActiveSetting> = this.communication.activeSetting$;
-  settings$: Observable<KitchenSettings> = this.communication.settings$.pipe(
-    startWith(DEFAULT_SETTINGS)
-  );
-  userNotifications$: Observable<KitchenUserNotifications> =
-    this.communication.userNotifications$;
-  localStorageItems$: Observable<LocalStorageItem[]> =
-    this.communication.localStorageItems$;
+  settings$: Observable<OvenSettings> = this.communication.settings$.pipe(startWith(DEFAULT_SETTINGS));
+  userNotifications$: Observable<OvenUserNotifications> = this.communication.userNotifications$;
+  localStorageItems$: Observable<LocalStorageItem[]> = this.communication.localStorageItems$;
 
   private destroyed = new Subject<void>();
 
@@ -76,7 +66,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private shortcutService: ShortcutService,
     private thumbnailService: ThumbnailService,
     private featureHider: FeatureHiderService
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.sendVersion();
@@ -116,15 +107,13 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private detachKeyboardInPreview() {
-    this.showDevUI$
-      .pipe(takeUntil(this.destroyed))
-      .subscribe((show: boolean) => {
-        if (show) {
-          this.attachKeyboardServices();
-        } else {
-          this.detachKeyboardServices();
-        }
-      });
+    this.showDevUI$.pipe(takeUntil(this.destroyed)).subscribe((show: boolean) => {
+      if (show) {
+        this.attachKeyboardServices();
+      } else {
+        this.detachKeyboardServices();
+      }
+    });
   }
 
   private subscribeOnSentryInfo() {
@@ -136,9 +125,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private sendVersion() {
-    this.communication.sendMessageWithPayload(
-      MessageAction.WORKBENCH_MODEL_VERSION,
-      getModelVersion()
-    );
+    this.communication.sendMessageWithPayload(MessageAction.WORKBENCH_MODEL_VERSION, getModelVersion());
   }
 }

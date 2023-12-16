@@ -1,0 +1,30 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { NbCardComponent } from '@nebular/theme';
+
+import { createWidgetMetaDefinitionProvider, WidgetMetaDefinition } from '../../definition';
+import { CardDefinitionComponent } from '../../components-definitions/card/card-definition';
+import { contactsFactory } from './contacts.factory';
+
+const metaDefinition: WidgetMetaDefinition = {
+  definition: {
+    id: 'card',
+    componentType: NbCardComponent,
+    definition: CardDefinitionComponent,
+    factory: contactsFactory
+  },
+  name: 'Contacts',
+  icon: '',
+  order: 350,
+  previewImage: 'assets/widgets/contacts.png',
+  headerSupport: false,
+  sidebarSupport: false,
+  tags: ['users', 'list']
+};
+
+@NgModule({
+  imports: [CommonModule],
+  providers: [createWidgetMetaDefinitionProvider(metaDefinition)]
+})
+export class ContactsDefinitionModule {
+}

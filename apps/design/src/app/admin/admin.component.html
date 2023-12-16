@@ -1,0 +1,30 @@
+<nb-layout>
+  <nb-layout-header>
+    <h6 class="text-control">Projects:</h6>
+    <nb-actions>
+      <nb-action>
+        <a
+          class="link-control h6"
+          href="#"
+          *ngFor="let project of projects$ | async"
+          (click)="loadProject(project.viewId); (false)"
+        >
+          {{ project.name }}
+        </a>
+      </nb-action>
+    </nb-actions>
+
+    <h6 class="text-control">Pages:</h6>
+    <nb-actions>
+      <nb-action>
+        <a class="link-control h6" href="#" *ngFor="let page of pages$ | async" (click)="navigate(page.url); (false)">
+          {{ page.title }}
+        </a>
+      </nb-action>
+    </nb-actions>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <iframe #iframe [src]="workbenchUrl"></iframe>
+  </nb-layout-column>
+</nb-layout>

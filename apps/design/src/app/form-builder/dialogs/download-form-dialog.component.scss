@@ -1,0 +1,92 @@
+div.dialog {
+  width: 37rem;
+  padding: 2.5rem 3.5rem
+}
+
+div.dialog img.dialog-logo {
+  height: 2.5rem;
+  width: 24.875rem;
+  margin: 1rem 0 1.5rem
+}
+
+@media screen and (max-width: 52em) {
+  div.dialog {
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    padding: 1rem 2rem
+  }
+}
+
+@media screen and (max-width: 25em) {
+  div.dialog {
+    padding: 1rem 2rem
+  }
+  div.dialog img.dialog-logo {
+    width: 100%;
+    margin: 1rem 0 0
+  }
+}
+
+@media screen and (max-width: 52em) and (orientation: landscape) {
+  div.dialog {
+    padding: 2.5rem 3.5rem
+  }
+}
+
+div.dialog label, div.dialog span {
+  display: block;
+  align-self: flex-start;
+  text-align: left;
+  color: #fff;
+  font-size: .8125rem;
+  line-height: 1.25rem;
+  font-weight: 400
+}
+
+div.dialog label span, div.dialog span span {
+  display: inline;
+  color: #ef4e3c
+}
+
+div.dialog input, div.dialog nb-radio-group {
+  margin-top: .4375rem;
+  margin-bottom: 1.5rem
+}
+
+div.dialog input:last-of-type {
+  margin-bottom: 0
+}
+
+div.dialog .field-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  position: relative
+}
+
+div.dialog .field-wrapper input {
+  margin-bottom: 0
+}
+
+div.dialog .field-wrapper p.error-message {
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+  color: #ef4e3c;
+  transform: translateY(100%)
+}
+
+div.dialog input.ng-invalid.ng-dirty, div.dialog input.invalid {
+  border: 1px solid #ef4e3c
+}
+
+div.dialog .dialog-description + button {
+  margin: 0
+}
+
+div.dialog nb-radio-group {
+  display: flex
+}

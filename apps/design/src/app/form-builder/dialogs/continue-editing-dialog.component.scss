@@ -1,0 +1,21 @@
+div.dialog {
+  width: 34rem;
+  height: 25.5rem;
+  padding: 2.5rem 2rem
+}
+
+@media screen and (max-width: 52em) {
+  div.dialog {
+    height: auto;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    padding: 1rem 2rem
+  }
+}
+
+@media screen and (max-width: 52em) and (orientation: landscape) {
+  div.dialog {
+    padding: 0 2rem
+  }
+}

@@ -1,0 +1,26 @@
+.nb-theme-dark :host {
+  border-right: 1px solid #313642
+}
+
+.nb-theme-dark :host button[nbButton].appearance-ghost.size-medium {
+  padding: .5rem .625rem;
+  border: none
+}
+
+.nb-theme-dark :host button[nbButton].appearance-ghost.size-medium:hover bc-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark :host button[nbButton].appearance-ghost.size-medium span {
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  text-transform: capitalize;
+  margin-left: .625rem
+}
+
+.nb-theme-dark :host button bc-icon svg {
+  fill: #959dad;
+  width: 1.25rem;
+  height: 1.25rem
+}

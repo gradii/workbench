@@ -1,0 +1,9 @@
+<nb-card>
+  <nb-card-body>
+    <h6>Please, type the reason why you've bought the subscription.</h6>
+    <form [formGroup]="reasonForm" (submit)="sendReason()" class="bc-form">
+      <textarea formControlName="reason" nbInput fullWidth placeholder="Type the reason here"></textarea>
+      <button nbButton status="primary" [disabled]="reasonForm.invalid" type="submit">Ok</button>
+    </form>
+  </nb-card-body>
+</nb-card>

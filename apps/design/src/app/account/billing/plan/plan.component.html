@@ -1,0 +1,49 @@
+<nb-card>
+  <nb-card-header class="plan-image-container">
+    <img class="plan-image" [src]="plan.image.small" role="presentation"/>
+  </nb-card-header>
+
+  <nb-card-body>
+    <h2 class="plan-title h4 heading-margin-bottom">{{ plan.title }}</h2>
+
+    <div class="prices-container" [class.with-margin-bottom]="withoutAnnuallyPrice">
+      <div class="month-prices">
+        <p *ngIf="plan.priceBeforeDiscount" class="h1 text-primary old-price">${{ plan.priceBeforeDiscount }}</p>
+        <p class="price no-margin text-primary" [ngClass]="{ discounted: plan.priceBeforeDiscount }">
+          <span class="h1 text-primary">${{ plan.price | discount: plan.discountResistant | async }}</span> / month
+        </p>
+      </div>
+      <p class="price annually-price" *ngIf="plan.annuallyPrice">Billed ${{ plan.annuallyPrice }} annually</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <ul class="features">
+      <li class="feature text-hint" *ngFor="let feature of plan.features">
+        {{ feature }}
+      </li>
+    </ul>
+
+    <a
+      *ngIf="plan.link"
+      [disabled]="!plan.available"
+      [href]="plan.link"
+      target="_blank"
+      nbButton
+      class="status-secondary plan-button"
+    >
+      GRAB THE PLAN
+    </a>
+
+    <button
+      *ngIf="!plan.link"
+      (click)="upgrade.next()"
+      [disabled]="!plan.available"
+      nbButton
+      status="primary"
+      class="plan-button"
+    >
+      {{ plan.available ? 'UPGRADE' : 'COMING SOON' }}
+    </button>
+  </nb-card-body>
+</nb-card>

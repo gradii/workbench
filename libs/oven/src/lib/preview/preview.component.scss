@@ -1,0 +1,40 @@
+:host oven-layout nb-layout:not(.preview) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+:host nb-layout-header > nav {
+  width: 100%
+}
+
+:host .header-hidden nb-layout-header {
+  display: none !important
+}
+
+:host .header-hidden nb-layout-header.fixed ~ .layout-container {
+  padding-top: 0 !important
+}
+
+:host .sidebar-hidden nb-sidebar {
+  display: none !important
+}
+
+:host .header-hidden nb-sidebar:not(.fixed) > .main-container {
+  top: 0;
+  height: 100%
+}
+
+:host .header-hidden nb-sidebar.fixed {
+  top: 0
+}
+
+:host .header-hidden nb-sidebar.fixed > .main-container {
+  top: 0;
+  height: 100%
+}
+
+nb-layout-header.fixed ~ .layout-container > nb-sidebar > .main-container {
+  height: var(--sidebar-height)
+}

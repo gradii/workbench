@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding: 1rem
+}
+
+nb-card {
+  max-width: 32rem;
+  width: calc(100vw - 2rem)
+}
+
+nb-card-body {
+  padding: 2rem
+}
+
+.heading {
+  margin-bottom: 1.5rem
+}
+
+.bc-form .form-actions-group-inline {
+  justify-content: flex-end
+}

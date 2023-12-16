@@ -1,0 +1,27 @@
+<!--<button class="bakery-button dashboard-link" (click)="gotoProjects()" nbButton ghost title="Dashboard">-->
+<!--  <bc-icon name="logo-small" class="home"></bc-icon>-->
+<!--</button>-->
+
+<ub-toggle-structure-panel [class.visible]="showProjectSettings"></ub-toggle-structure-panel>
+<ub-tutorial-mode-container></ub-tutorial-mode-container>
+
+<ub-workflow-state-manager-button [class.visible]="showStateManagerButton"></ub-workflow-state-manager-button>
+<ub-data-unavailability-notice [class.visible]="showDataUnavailabilityNotice"></ub-data-unavailability-notice>
+
+<div class="header-controls centered">
+  <ub-breakpoints-container [class.visible]="showBreakpoints"></ub-breakpoints-container>
+</div>
+
+<div class="header-controls end">
+  <ub-data-notification></ub-data-notification>
+  <div class="divider"></div>
+  <ub-history [mode]="mode"></ub-history>
+  <div class="divider"></div>
+  <ub-preview-link [mode]="mode"></ub-preview-link>
+  <div class="divider"></div>
+  <ub-share-button></ub-share-button>
+  <div class="divider"></div>
+  <ub-download></ub-download>
+  <div class="divider"></div>
+  <ub-deploy *ngIf="canUseHosting"></ub-deploy>
+</div>

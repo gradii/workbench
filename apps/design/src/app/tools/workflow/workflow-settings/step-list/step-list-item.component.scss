@@ -1,0 +1,46 @@
+.nb-theme-dark :host {
+  display: flex;
+  align-items: center;
+  background-color: #313642;
+  border-radius: .25rem;
+  padding: 1px
+}
+
+.nb-theme-dark :host ub-step-item {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem
+}
+
+.nb-theme-dark :host:hover {
+  background-color: #3c424f
+}
+
+.nb-theme-dark .selected:host {
+  background-color: #1e89ef
+}
+
+.nb-theme-dark :host .more-vertical-button-wrapper.with-min-width {
+  min-width: 1rem
+}
+
+.nb-theme-dark :host .more-vertical-button {
+  display: inline-block;
+  padding: 0 .375rem
+}
+
+.nb-theme-dark :host .more-vertical-button > bc-icon svg {
+  fill: #d1d7e3
+}
+
+.nb-theme-dark :host .more-vertical-button:hover > bc-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark .size-tiny:host ub-step-item bc-icon {
+  width: 1rem;
+  margin: .625rem 0 .625rem .25rem
+}
+
+.nb-theme-dark .nested.size-middle:host ub-step-item .item-description, .nb-theme-dark .nested.size-small:host ub-step-item .item-description, .nb-theme-dark .nested.size-small:host ub-step-item .item-text, .nb-theme-dark .nested.size-tiny:host ub-step-item .item-description, .nb-theme-dark .nested.size-tiny:host ub-step-item .item-text {
+  display: none
+}

@@ -1,0 +1,24 @@
+.nb-theme-dark :host .preview-container {
+  padding: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../../assets/cell.svg")
+}
+
+.nb-theme-dark :host .preview {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fff
+}
+
+.nb-theme-dark :host .input-container {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .input-container input {
+  margin-left: 1rem;
+  width: 6rem
+}

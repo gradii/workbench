@@ -1,0 +1,70 @@
+<h3 class="title">Configure styles</h3>
+
+<div class="form-group">
+  <label class="label">Primary Color</label>
+
+  <ub-color-picker
+    [color]="primary._500"
+    [loading]="loading"
+    areaWidth="272"
+    hueWidth="272"
+    (mouseup)="changeColor()"
+    (colorChange)="setColorChange($event, 'picker', null)"
+  >
+  </ub-color-picker>
+  <ub-color-input
+    label="Primary"
+    [editable]="!loading"
+    [withModal]="false"
+    [color]="currentColorChange ? currentColorChange.color : primary._500"
+    (colorChange)="setColorChange($event.color, 'picker', null, true)"
+  >
+  </ub-color-input>
+  <ub-color-shades [shades]="primary" [selectable]="true" [loading]="loading"></ub-color-shades>
+</div>
+
+<div class="form-group">
+  <label class="label">Support Colors</label>
+
+  <p class="description">Configured Automatically. Available for paid UI Builder users.</p>
+
+  <ub-color-input
+    label="Success"
+    [logoInput]="true"
+    [editable]="false"
+    [color]="success._500"
+    icon="lock"
+    (colorChange)="changeColor($event)"
+  >
+  </ub-color-input>
+
+  <ub-color-input
+    label="Info"
+    [logoInput]="true"
+    [editable]="false"
+    [color]="info._500"
+    icon="lock"
+    (colorChange)="changeColor($event)"
+  >
+  </ub-color-input>
+
+  <ub-color-input
+    label="Warning"
+    [logoInput]="true"
+    [editable]="false"
+    [color]="warning._500"
+    icon="lock"
+    (colorChange)="changeColor($event)"
+  >
+  </ub-color-input>
+
+  <ub-color-input
+    label="Danger"
+    [logoInput]="true"
+    [editable]="false"
+    [color]="danger._500"
+    icon="lock"
+    (colorChange)="changeColor($event)"
+  >
+  </ub-color-input>
+</div>

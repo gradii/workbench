@@ -1,0 +1,23 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host .input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.nb-theme-dark :host nb-select {
+  flex: 1;
+  margin-right: 1rem
+}
+
+.nb-theme-dark :host bc-input-unit {
+  width: 5.5rem
+}
+
+.nb-theme-dark :host nb-select .select-button {
+  min-width: 7rem
+}

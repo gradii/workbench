@@ -1,0 +1,143 @@
+.nb-theme-dark :host {
+  padding-top: 120px;
+  height: calc(100% - 160px);
+  width: 40px;
+  flex-direction: column;
+  background-color: #15171f;
+  border-right: 1px solid #313642
+}
+
+.nb-theme-dark :host, .nb-theme-dark :host .builder {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.nb-theme-dark :host .builder {
+  height: 2rem;
+  width: 2rem;
+  margin: .375rem 0;
+  border-radius: .25rem;
+  background-color: rgba(30, 137, 239, .24)
+}
+
+.nb-theme-dark :host .builder bc-icon svg {
+  fill: #1e89ef
+}
+
+.nb-theme-dark :host .builder.active {
+  background-color: #1e89ef
+}
+
+.nb-theme-dark :host .builder.active bc-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark :host .builder:hover:not(.active) {
+  background-color: rgba(30, 137, 239, .4)
+}
+
+.nb-theme-dark :host .painter {
+  height: 2rem;
+  width: 2rem;
+  margin: .375rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .25rem;
+  background-color: rgba(71, 194, 86, .24)
+}
+
+.nb-theme-dark :host .painter bc-icon svg {
+  fill: #47c256
+}
+
+.nb-theme-dark :host .painter.active {
+  background-color: #47c256
+}
+
+.nb-theme-dark :host .painter.active bc-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark :host .painter:hover:not(.active) {
+  background-color: rgba(71, 194, 86, .4)
+}
+
+.nb-theme-dark :host .data {
+  height: 2rem;
+  width: 2rem;
+  margin: .375rem 0;
+  border-radius: .25rem;
+  background-color: rgba(143, 92, 255, .24)
+}
+
+.nb-theme-dark :host .data bc-icon svg {
+  fill: #8f5cff
+}
+
+.nb-theme-dark :host .data.active {
+  background-color: #8f5cff
+}
+
+.nb-theme-dark :host .data.active bc-icon svg {
+  fill: #fff
+}
+
+.nb-theme-dark :host .data:hover:not(.active) {
+  background-color: rgba(143, 92, 255, .4)
+}
+
+.nb-theme-dark :host bc-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .builder svg {
+  fill: #fff;
+  width: 1.1rem;
+  height: 1.1rem
+}
+
+.nb-theme-dark :host .data.active svg path, .nb-theme-dark :host .painter.active svg path {
+  fill: #fff
+}
+
+.nb-theme-dark :host .data {
+  position: relative
+}
+
+.nb-theme-dark :host .beta, .nb-theme-dark :host .data {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.nb-theme-dark :host .beta {
+  height: 10px;
+  width: 24px;
+  border-radius: 2px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 10px;
+  position: absolute;
+  bottom: -6px;
+  background-color: #8f5cff;
+  color: #fff
+}
+
+.nb-theme-dark :host .data.active .beta {
+  background-color: #fff;
+  color: #8f5cff
+}
+
+.tutorial-popover {
+  display: flex;
+  align-items: center;
+  padding: 1rem
+}
+
+.tutorial-popover > div {
+  margin-right: .5rem
+}

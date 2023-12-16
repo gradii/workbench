@@ -1,0 +1,7 @@
+:host {
+  pointer-events: auto
+}
+
+.toastr-overlay-container > .cdk-overlay-pane {
+  pointer-events: none !important
+}

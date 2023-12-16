@@ -1,0 +1,112 @@
+.nb-theme-dark :host .image-file-input {
+  display: none
+}
+
+.nb-theme-dark :host nb-tab {
+  padding: 1rem 1rem 0;
+  overflow: hidden
+}
+
+.nb-theme-dark :host nb-tab ub-text-settings-field {
+  margin-top: 0
+}
+
+.nb-theme-dark :host .download-container {
+  display: flex;
+  align-items: center;
+  width: 100%
+}
+
+.nb-theme-dark :host .download-container .add-image-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(149, 157, 173, .08);
+  width: 1.75rem;
+  height: 1.813rem;
+  padding: 0;
+  border: none
+}
+
+.nb-theme-dark :host .download-container .add-image-button:disabled, .nb-theme-dark :host .download-container .add-image-button:hover {
+  background-color: rgba(149, 157, 173, .16)
+}
+
+.nb-theme-dark :host .download-container .add-image-button:active, .nb-theme-dark :host .download-container .add-image-button:focus {
+  background-color: rgba(149, 157, 173, .24)
+}
+
+.nb-theme-dark :host .download-container .add-image-button:disabled nb-icon svg {
+  fill: rgba(149, 157, 173, .48)
+}
+
+.nb-theme-dark :host .download-container .add-image-button nb-icon svg {
+  height: 100%;
+  width: 100%;
+  fill: #959dad
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #313642;
+  border-radius: .25rem;
+  flex-grow: 1;
+  max-width: 12.125rem;
+  margin-right: .125rem;
+  border: 1px solid #313642
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item .name {
+  max-width: 9.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-grow: 1;
+  cursor: pointer;
+  display: block;
+  font-size: .6875rem;
+  line-height: 1.5;
+  padding: .375rem .5rem
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item .without-name {
+  color: #959dad;
+  font-size: .6875rem;
+  font-weight: 400
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item .delete-image {
+  margin: 0 .5rem
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item .delete-image:active, .nb-theme-dark :host .download-container .image-loaded-item .delete-image:focus, .nb-theme-dark :host .download-container .image-loaded-item .delete-image:hover {
+  background: transparent;
+  border-color: transparent;
+  color: #eee
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item .delete-image nb-icon {
+  height: auto;
+  width: auto
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item button {
+  padding: 0;
+  color: #959dad
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item button:hover {
+  color: #1e89ef
+}
+
+.nb-theme-dark :host .download-container .image-loaded-item nb-icon {
+  font-size: 1rem;
+  padding: 0
+}
+
+.nb-theme-dark :host div.error {
+  color: #ff4070;
+  font-size: .688rem
+}

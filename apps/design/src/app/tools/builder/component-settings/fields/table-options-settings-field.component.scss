@@ -1,0 +1,36 @@
+.nb-theme-dark :host .filter-setting {
+  width: 100%
+}
+
+.nb-theme-dark :host .id-title-block {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .id-title-block nb-icon {
+  margin-left: .25rem
+}
+
+.nb-theme-dark :host .id-title-block nb-icon, .nb-theme-dark :host .id-title-block nb-icon svg {
+  fill: #959dad;
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .row {
+  flex-direction: row;
+  display: flex;
+  width: 100%
+}
+
+.nb-theme-dark :host .row .column {
+  width: 50%
+}
+
+.nb-theme-dark :host .row .column nb-select button {
+  min-width: auto !important
+}
+
+.nb-theme-dark :host .row .column:first-child {
+  margin-right: 1rem
+}

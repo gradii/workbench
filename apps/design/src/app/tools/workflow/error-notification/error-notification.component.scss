@@ -1,0 +1,15 @@
+.nb-theme-dark :host .error-icon {
+  cursor: pointer
+}
+
+.nb-theme-dark :host .error-icon.empty {
+  display: none
+}
+
+.nb-theme-dark :host:not(.selected) nb-icon svg {
+  fill: #ef4e3c
+}
+
+.nb-theme-dark .selected:host nb-icon svg {
+  fill: #a4dffe
+}

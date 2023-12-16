@@ -1,0 +1,24 @@
+:host {
+  font-size: 11px;
+  line-height: 1rem
+}
+
+:host a {
+  color: #1e89ef
+}
+
+:host a:hover {
+  color: #1e89ef;
+  text-decoration: underline
+}
+
+:host nb-icon {
+  margin-left: .5rem;
+  margin-right: .5rem
+}
+
+:host nb-icon svg, :host nb-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: #e8ba06
+}

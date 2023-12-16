@@ -1,0 +1,33 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host .settings-field-label {
+  color: #fff;
+  font-size: .6875rem;
+  vertical-align: top;
+  text-transform: uppercase
+}
+
+.nb-theme-dark :host .setting-hint {
+  color: #959dad;
+  font-size: .6875rem;
+  vertical-align: top
+}
+
+.nb-theme-dark :host .no-tab-container {
+  padding: 0 1rem 1rem
+}
+
+.nb-theme-dark :host ub-checkbox-settings-field + ub-checkbox-settings-field {
+  margin-top: 0
+}
+
+.nb-theme-dark :host nb-accordion-item-body.row .item-body {
+  display: flex
+}
+
+.nb-theme-dark :host .column:first-child {
+  margin-right: 1rem
+}

@@ -1,9 +1,0 @@
-FROM nginx:alpine
-
-EXPOSE 80
-
-WORKDIR /var/www
-
-COPY dist/dev-app-web-pkg /var/www
-
-ENTRYPOINT nginx -g "daemon off;"

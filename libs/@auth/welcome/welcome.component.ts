@@ -1,15 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { AbstractControl, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AnalyticsService, containsNoMoreNChars, getConfigValue } from '@common/public-api';
-import { TriAuthOAuth2JWTToken, TriAuthService } from '@gradii/triangle/auth';
-import { Subject } from 'rxjs';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { filter, takeUntil } from 'rxjs/operators';
-import { TemporaryProjectService } from '../temporary-project.service';
+import { Subject } from 'rxjs';
+import { NbAuthOAuth2JWTToken, NbAuthService } from '@nebular/auth';
+import { containsNoMoreNChars, getConfigValue, AnalyticsService } from '@common';
 
 import { UserService } from '../user.service';
-
-// import { TutorialService } from '@shared/tutorial/tutorial.service';
+import { TemporaryProjectService } from '../temporary-project.service';
+import { TutorialService } from '@shared/tutorial/tutorial.service';
 
 @Component({
   selector: 'ub-welcome',
@@ -18,7 +17,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
-  user: UntypedFormGroup = this.fb.group({
+  user: FormGroup = this.fb.group({
     fullName: ['', containsNoMoreNChars(getConfigValue('profile.name.maxLength'))],
     companySize: [''],
     companyIndustry: [''],
@@ -29,16 +28,16 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   });
 
   submitted = false;
-  private destroyed$ = new Subject<void>();
+  private destroyed$ = new Subject();
 
   constructor(
     private temporaryProjectService: TemporaryProjectService,
     private userService: UserService,
-    private authService: TriAuthService,
+    private authService: NbAuthService,
     protected router: Router,
-    // private tutorialService: TutorialService,
+    private tutorialService: TutorialService,
     private analytics: AnalyticsService,
-    private fb: UntypedFormBuilder
+    private fb: FormBuilder
   ) {
   }
 
@@ -46,10 +45,10 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.authService
       .onTokenChange()
       .pipe(
-        filter(item => item instanceof TriAuthOAuth2JWTToken && item.getOwnerStrategyName() !== 'google'),
+        filter(item => item instanceof NbAuthOAuth2JWTToken && item.getOwnerStrategyName() !== 'google'),
         takeUntil(this.destroyed$)
       )
-      .subscribe((token: TriAuthOAuth2JWTToken) => {
+      .subscribe((token: NbAuthOAuth2JWTToken) => {
         this.user.get('fullName').setValue(token.getAccessTokenPayload().fullName);
       });
   }
@@ -77,11 +76,12 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   navigate(): void {
     this.analytics.logWelcome(this.user.value);
 
-    // if (this.temporaryProjectService.viewIdToOpen) {
+    // TODO this shit if for form-builder
+    if (this.temporaryProjectService.viewIdToOpen) {
       this.temporaryProjectService.naviagateToProject();
-    // } else {
-    //   this.userService.saveViewedOnboarding();
-      // this.tutorialService.startStartYourJourneyTutorial();
-    // }
+    } else {
+      this.userService.saveViewedOnboarding();
+      this.tutorialService.startStartYourJourneyTutorial();
+    }
   }
 }

@@ -1,0 +1,84 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host .logo {
+  height: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #313642
+}
+
+.nb-theme-dark :host .logo.active {
+  background-color: #15171f
+}
+
+.nb-theme-dark :host .logo img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+  height: 100%
+}
+
+.nb-theme-dark :host .logo img[src=""] {
+  opacity: 0
+}
+
+.nb-theme-dark :host .upload-icon {
+  padding: 2rem;
+  box-sizing: content-box;
+  font-size: 2.25rem;
+  color: #fff;
+  cursor: pointer
+}
+
+.nb-theme-dark :host .upload-icon:hover {
+  color: #959dad
+}
+
+.nb-theme-dark :host .color-label {
+  margin: 1rem 1rem .25rem;
+  font-weight: 700;
+  color: #fff;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .color-block {
+  display: flex;
+  margin: 0 1rem 1rem
+}
+
+.nb-theme-dark :host ub-color-preview {
+  margin-right: .375rem
+}
+
+.nb-theme-dark :host .upload-button.appearance-ghost.size-medium {
+  margin: 1rem;
+  padding: .375rem;
+  font-size: .6875rem;
+  background-color: #313642;
+  text-transform: none
+}
+
+.nb-theme-dark :host .upload-button.appearance-ghost.size-medium:active, .nb-theme-dark :host .upload-button.appearance-ghost.size-medium:focus, .nb-theme-dark :host .upload-button.appearance-ghost.size-medium:hover {
+  background-color: #313642;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, .3)
+}
+
+.nb-theme-dark :host .upload-button.appearance-ghost.size-medium nb-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .hidden-input {
+  visibility: hidden
+}
+
+.nb-theme-dark :host .error {
+  padding: .5rem 1rem;
+  font-size: .6875rem;
+  color: #ff4070
+}

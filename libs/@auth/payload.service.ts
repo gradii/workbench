@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { TriAuthOAuth2JWTToken, TriAuthService } from '@gradii/triangle/auth';
+import { NbAuthOAuth2JWTToken, NbAuthService } from '@nebular/auth';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { filter, map, mergeMap } from 'rxjs/operators';
+
 import { Plan } from '@account-state/billing/billing.service';
 import { Coupon } from '@shared/redeem-coupon/coupon';
 
 export interface Payload {
-  plan: Plan;
-  accountName: string;
-  realName: string;
   email: string;
+  plan: Plan;
   subscriptionStatus: string;
   admin: boolean;
-  role: number;
-  permissionCodes: string[],
   featureAmplify: boolean;
   coupon: Coupon;
   viewedDemo: boolean;
@@ -27,17 +24,10 @@ export interface Payload {
 }
 
 interface TokenPayload {
-  plan: Plan;
   sub: string;
+  plan: Plan;
   subscriptionStatus: string;
-  accountName: string;
-  realName: string;
   admin: boolean;
-  /**
-   * @deprecated use permissionCodes instead
-   */
-  role: number;
-  permissionCodes: string[];
   featureAmplify: boolean;
   coupon: Coupon;
   viewedDemo: boolean;
@@ -57,35 +47,31 @@ export class PayloadService {
     // Nebular Auth fires token onTokenChange event even if user isn't logged in.
     // In that case token will be mocked as a NbSimpleToken
     // That's why we need to verify that we have appropriate token stored by Nebular Auth.
-    filter(token => token instanceof TriAuthOAuth2JWTToken),
-    map((token: TriAuthOAuth2JWTToken) => {
+    filter(token => token instanceof NbAuthOAuth2JWTToken),
+    map((token: NbAuthOAuth2JWTToken) => {
       const payload: TokenPayload = token.getAccessTokenPayload();
       return this.toPayload(payload);
     }),
-    // // TODO remove on next release
-    // mergeMap((payload: Payload) => {
-    //   if (!payload.plan || !payload.subscriptionStatus) {
-    //     return this.authService.logout('email').pipe(map(() => payload));
-    //   }
-    //
-    //   return of(payload);
-    // })
+    // TODO remove on next release
+    mergeMap((payload: Payload) => {
+      if (!payload.plan || !payload.subscriptionStatus) {
+        return this.authService.logout('email').pipe(map(() => payload));
+      }
+
+      return of(payload);
+    })
   );
 
-  constructor(private authService: TriAuthService) {
-    this.authService.onTokenChange().subscribe((token: TriAuthOAuth2JWTToken) => this.payload.next(token));
+  constructor(private authService: NbAuthService) {
+    this.authService.onTokenChange().subscribe((token: NbAuthOAuth2JWTToken) => this.payload.next(token));
   }
 
   private toPayload(tokenPayload: TokenPayload): Payload {
     return {
-      plan: tokenPayload.plan,
       email: tokenPayload.sub,
+      plan: tokenPayload.plan,
       subscriptionStatus: tokenPayload.subscriptionStatus,
-      accountName: tokenPayload.accountName,
-      realName: tokenPayload.realName,
       admin: tokenPayload.admin,
-      role: tokenPayload.role,
-      permissionCodes: tokenPayload.permissionCodes,
       featureAmplify: tokenPayload.featureAmplify,
       coupon: tokenPayload.coupon,
       viewedDemo: tokenPayload.viewedDemo,

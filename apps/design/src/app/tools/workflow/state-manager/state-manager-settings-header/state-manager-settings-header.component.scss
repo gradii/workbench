@@ -1,0 +1,41 @@
+.nb-theme-dark :host {
+  display: flex;
+  background-color: #15171f;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center
+}
+
+.nb-theme-dark :host bc-notification-label {
+  flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content
+}
+
+.nb-theme-dark :host .workflow-title {
+  margin: 0 .25rem 0 0
+}
+
+.nb-theme-dark :host .action-controls {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .save-button {
+  display: flex;
+  align-items: center;
+  margin-left: .5rem;
+  padding: .325rem;
+  font-size: .6875rem;
+  text-transform: none
+}
+
+.nb-theme-dark :host .save-button bc-icon {
+  margin-right: .325rem
+}
+
+.nb-theme-dark :host .save-button bc-icon svg {
+  width: 1rem;
+  height: 1rem
+}

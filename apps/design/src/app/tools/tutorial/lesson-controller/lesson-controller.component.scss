@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px 0 rgba(38, 46, 67, .2);
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+:host .footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem
+}

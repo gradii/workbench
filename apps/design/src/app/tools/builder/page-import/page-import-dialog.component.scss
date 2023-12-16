@@ -1,0 +1,95 @@
+.nb-theme-dark :host {
+  display: block;
+  width: 30rem
+}
+
+.nb-theme-dark :host nb-card {
+  border: none
+}
+
+.nb-theme-dark :host nb-card-header {
+  border-bottom: none;
+  background: #15171f;
+  padding: 1rem
+}
+
+.nb-theme-dark :host nb-card-body {
+  background: #15171f;
+  padding: 0;
+  min-height: 5rem;
+  max-height: 24rem
+}
+
+.nb-theme-dark :host nb-card-footer {
+  background: #15171f;
+  padding: 1rem;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.nb-theme-dark :host .modal-title {
+  font-size: 1rem;
+  margin: 0
+}
+
+.nb-theme-dark :host .total-label {
+  color: #fff;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .error-message {
+  color: #ff4070;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .controls {
+  display: flex
+}
+
+.nb-theme-dark :host .cancel-btn {
+  margin-right: 1rem
+}
+
+.nb-theme-dark :host .cannot-load-projects {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.nb-theme-dark :host nb-accordion {
+  box-shadow: none
+}
+
+.nb-theme-dark :host nb-accordion nb-accordion-item nb-accordion-item-header {
+  padding: .25rem 1rem;
+  background-color: transparent;
+  border-top: 1px solid #313642;
+  border-bottom: none
+}
+
+.nb-theme-dark :host nb-accordion nb-accordion-item:not(.collapsed) + nb-accordion-item nb-accordion-item-header {
+  border-top: 1px solid #313642
+}
+
+.nb-theme-dark :host nb-accordion nb-accordion-item-body .item-body {
+  position: relative;
+  top: -.25rem;
+  padding: 0 1rem .5rem;
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host nb-checkbox .label {
+  padding: .25rem 1.5rem .25rem 0
+}
+
+.nb-theme-dark :host nb-checkbox .label .text {
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host nb-checkbox.project-name .label .text {
+  font-weight: 800
+}

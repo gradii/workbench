@@ -9,7 +9,7 @@
 /node_modules
 
 # IDEs and editors
-.idea
+/.idea
 .project
 .classpath
 .c9/
@@ -25,7 +25,6 @@
 !.vscode/extensions.json
 
 # misc
-/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -38,7 +37,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/.env
-/gen
-/.theia
-.angular

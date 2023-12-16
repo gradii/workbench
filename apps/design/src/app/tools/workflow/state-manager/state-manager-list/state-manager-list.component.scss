@@ -1,0 +1,28 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column;
+  background-color: #15171f;
+  border-right: 1px solid #313642
+}
+
+.nb-theme-dark :host .list-block {
+  padding: 1rem;
+  overflow-y: auto;
+  scrollbar-face-color: rgba(149, 157, 173, .16);
+  scrollbar-track-color: #15171f
+}
+
+.nb-theme-dark :host .list-block::-webkit-scrollbar {
+  width: .3125rem;
+  height: .3125rem
+}
+
+.nb-theme-dark :host .list-block::-webkit-scrollbar-thumb {
+  background: rgba(149, 157, 173, .16);
+  cursor: pointer;
+  border-radius: .15625rem
+}
+
+.nb-theme-dark :host .list-block::-webkit-scrollbar-track {
+  background: #15171f
+}

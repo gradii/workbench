@@ -17,8 +17,11 @@ const projectDirPath = join(__dirname, '../');
 // Go to project directory.
 process.chdir(projectDirPath);
 
+const PROJECT_NAME = process.argv.slice(2)[0] || 'triangle';
 
-const PROJECT_NAME = 'workbench';
+if (!fs.existsSync('yarn.lock')) {
+  runYarnInstall();
+}
 
 const yarnLockContent = fs.readFileSync('yarn.lock');
 const yarnLockHash    = createHash('sha1').update(yarnLockContent).digest('hex');
@@ -35,8 +38,8 @@ async function buildCache() {
       key   : `${PROJECT_NAME}-node-modules`,
       cwd   : './',
       source: ['node_modules'],
-      output: outputTgz
-    }
+      output: outputTgz,
+    },
   ];
 
   fs.rmdirSync(buildTarDir, { recursive: true, force: true });
@@ -46,7 +49,7 @@ async function buildCache() {
     process.chdir(val.cwd);
     execSync(`tar czf ${val.output} ${val.source.join(' ')}`, { stdio: 'inherit' });
 
-    console.log(`${val.key} .. tarball has been created ..`);
+    console.log(`${val.key} .. ${outputTgz} tarball has been created ..`);
   }
 }
 
@@ -64,8 +67,10 @@ function runYarnInstall() {
 }
 
 try {
-  if (fs.existsSync('node_modules/@angular/core')) {
-    console.log('node_modules exist. exit...');
+  if (
+    fs.existsSync('node_modules/@angular/core') &&
+    checkCacheExist()) {
+    console.log('node_modules and cache exist. exit...');
     return;
   }
   if (checkCacheExist()) {
@@ -79,5 +84,5 @@ try {
   }
 
 } catch (e) {
-  process.exit(-1);
+  process.exit(1);
 }

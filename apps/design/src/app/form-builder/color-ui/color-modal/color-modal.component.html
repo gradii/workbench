@@ -1,0 +1,19 @@
+<nb-tabset class="sub-tabs">
+  <nb-tab tabTitle="Custom" tabIcon="color-picker">
+    <ub-color-picker [color]="color" (colorChange)="updateColor($event, 'picker', null)"></ub-color-picker>
+  </nb-tab>
+  <nb-tab tabTitle="Palettes" tabIcon="color-palette">
+    <ub-color-palette [color]="color" (colorChange)="updateColor($event, 'palette', null)"></ub-color-palette>
+  </nb-tab>
+  <nb-tab *ngIf="includeLogo" tabTitle="From logo" tabIcon="star">
+    <ub-color-logo [color]="color" (colorChange)="updateColor($event.color, 'logo', $event.logo)"></ub-color-logo>
+  </nb-tab>
+</nb-tabset>
+<div class="controls">
+  <button nbButton size="small" ghost class="basic" (click)="cancel.emit()">
+    Cancel
+  </button>
+  <button nbButton size="small" status="primary" (click)="done()">
+    Done
+  </button>
+</div>

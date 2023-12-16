@@ -1,0 +1,109 @@
+ub-subheader {
+  margin: 0
+}
+
+.nav-and-heading {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem
+}
+
+.back-button {
+  margin: -.5rem 0
+}
+
+.heading {
+  margin-left: .5rem
+}
+
+.current-plan {
+  margin-left: auto;
+  display: flex;
+  align-items: center
+}
+
+.plan-name {
+  margin-left: .5rem
+}
+
+.component-list {
+  max-width: 100%
+}
+
+.component-list > .placeholder:not(:first-child) {
+  display: none
+}
+
+.placeholder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.placeholder > .image-container {
+  position: relative;
+  width: 56.5%;
+  margin: 1rem auto
+}
+
+.placeholder > span {
+  text-align: center
+}
+
+nb-tabset nb-tab {
+  padding: .75rem 0;
+  margin-top: .5rem
+}
+
+nb-tabset nb-tab.content-active {
+  display: flex;
+  justify-content: center
+}
+
+nb-tabset ub-plan:first-of-type {
+  margin-left: 0
+}
+
+nb-tabset ub-plan:last-of-type {
+  margin-right: 0
+}
+
+nb-tabset .tabset {
+  justify-content: center
+}
+
+@media (max-width: 66.4375em) {
+  .component-list {
+    max-width: 43rem
+  }
+}
+
+@media (max-width: 44.9375em) {
+  .component-list {
+    justify-content: center
+  }
+}
+
+@media (max-width: 1188px) {
+  .component-list {
+    width: 588px
+  }
+  nb-tabset nb-tab ub-plan {
+    margin: .75rem
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    display: none
+  }
+  .current-plan {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0
+  }
+  .plan-name {
+    margin-left: 0
+  }
+}

@@ -1,0 +1,35 @@
+.nb-theme-dark :host {
+  display: block
+}
+
+.nb-theme-dark :host:first-of-type {
+  margin-top: 0
+}
+
+.nb-theme-dark :host .settings-field-label {
+  margin: 0
+}
+
+.nb-theme-dark :host .heading-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem
+}
+
+.nb-theme-dark :host button[nbButton].size-medium.appearance-ghost {
+  padding: 0;
+  border: none
+}
+
+.nb-theme-dark :host .action-param-toggle nb-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host button[nbButton].status-basic.appearance-ghost:not([disabled]), .nb-theme-dark :host button[nbButton].status-basic.appearance-ghost:not([disabled]):focus svg {
+  fill: #959dad
+}
+
+.nb-theme-dark :host button[nbButton].status-basic.appearance-ghost:not([disabled]).action-param-enabled, .nb-theme-dark :host button[nbButton].status-basic.appearance-ghost:not([disabled]).action-param-enabled:focus svg {
+  fill: #8f5cff
+}

@@ -1,0 +1,60 @@
+:host {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex
+}
+
+:host iframe {
+  width: 100%;
+  height: 100%;
+  border: none
+}
+
+:host .madeIn {
+  bottom: 1rem;
+  right: 1rem;
+  position: absolute;
+  opacity: .9;
+  transition: opacity .3s ease-in
+}
+
+:host .madeIn:hover {
+  opacity: 1
+}
+
+:host .error {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: calc(50% + 65px);
+  margin: 0;
+  z-index: 10001;
+  font-family: Roboto, sans-serif;
+  font-size: 2rem;
+  color: hsla(0, 0%, 100%, .7);
+  letter-spacing: .25rem;
+  -webkit-animation: appear 1s ease-in;
+  animation: appear 1s ease-in
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}

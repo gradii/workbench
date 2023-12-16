@@ -1,0 +1,97 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.nb-theme-dark :host button[nbButton].bakery-button.workflow-icon {
+  padding: 0;
+  margin: .313rem 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: none;
+  box-sizing: border-box
+}
+
+.nb-theme-dark :host button[nbButton].bakery-button.workflow-icon .button-text {
+  display: none
+}
+
+.nb-theme-dark :host button[nbButton].bakery-button.workflow-icon nb-icon {
+  margin: 0;
+  justify-content: center;
+  height: 1.125rem;
+  width: 1.125rem
+}
+
+.nb-theme-dark :host button[nbButton].bakery-button.workflow-icon nb-icon svg {
+  width: auto;
+  height: auto
+}
+
+.nb-theme-dark :host nb-icon.arrow-icon {
+  width: auto;
+  height: auto;
+  line-height: 0
+}
+
+.nb-theme-dark :host nb-icon.arrow-icon svg {
+  fill: #3c424f
+}
+
+.nb-theme-dark .conditional:host:not(.size-small):not(.size-tiny) button[nbButton].bakery-button.workflow-icon {
+  background-color: #313642;
+  margin: .25rem 0;
+  border-radius: .625rem;
+  padding: 1px 1px 1px .25rem;
+  transform: translateX(-1.13rem);
+  width: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  height: 1.25rem
+}
+
+.nb-theme-dark .conditional:host:not(.size-small):not(.size-tiny) button[nbButton].bakery-button.workflow-icon .button-text {
+  padding-top: 1px;
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: 400;
+  line-height: .6875rem;
+  font-size: .6875rem
+}
+
+.nb-theme-dark .conditional:host:not(.size-small):not(.size-tiny) button[nbButton].bakery-button.workflow-icon:focus, .nb-theme-dark .conditional:host:not(.size-small):not(.size-tiny) button[nbButton].bakery-button.workflow-icon:hover {
+  background-color: #3c424f
+}
+
+.nb-theme-dark .conditional.condition-true:host .bakery-button {
+  color: #00c57e
+}
+
+.nb-theme-dark .conditional.condition-true:host .bakery-button:focus, .nb-theme-dark .conditional.condition-true:host .bakery-button:hover {
+  color: #43db9b
+}
+
+.nb-theme-dark .conditional.condition-true:host .bakery-button:focus nb-icon svg, .nb-theme-dark .conditional.condition-true:host .bakery-button:hover nb-icon svg {
+  fill: #43db9b
+}
+
+.nb-theme-dark .conditional.condition-true:host nb-icon svg {
+  fill: #00c57e
+}
+
+.nb-theme-dark .conditional.condition-false:host .bakery-button {
+  color: #ef4e3c
+}
+
+.nb-theme-dark .conditional.condition-false:host .bakery-button:focus, .nb-theme-dark .conditional.condition-false:host .bakery-button:hover {
+  color: #f5846b
+}
+
+.nb-theme-dark .conditional.condition-false:host .bakery-button:focus nb-icon svg, .nb-theme-dark .conditional.condition-false:host .bakery-button:hover nb-icon svg {
+  fill: #f5846b
+}
+
+.nb-theme-dark .conditional.condition-false:host nb-icon svg {
+  fill: #ef4e3c
+}

@@ -1,0 +1,20 @@
+<div
+  *ngIf="projects$ | async as projects"
+  nbSpinnerStatus="primary"
+  [nbSpinner]="projectsLoading$ | async"
+  class="spinner-container"
+>
+  <ng-container *ngIf="!(projectsLoading$ | async)">
+    <div *ngIf="projects.length" [@projectEnterLeave]="projects.length" class="component-list">
+      <ub-project *ngFor="let project of projects; let i = index" [project]="project" (open)="openProject($event)">
+      </ub-project>
+    </div>
+
+    <div *ngIf="!projects.length" class="no-projects component-list" @noProjectEnter>
+      <img class="no-projects-image" src="assets/no-projects.svg" alt="" role="presentation"/>
+      <span class="no-projects-message text-hint">
+        You have no projects yet. To start your first project click the button above.
+      </span>
+    </div>
+  </ng-container>
+</div>

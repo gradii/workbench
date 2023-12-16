@@ -1,0 +1,98 @@
+<ub-subheader>
+  <a nbButton ghost routerLink="../" aria-label="back" class="back-button">
+    <nb-icon icon="arrow-back"></nb-icon>
+  </a>
+  <h1 class="h5 page-heading">{{ name }}</h1>
+</ub-subheader>
+
+<div class="content-scroll-container" [nbSpinner]="loading$ | async" nbSpinnerStatus="primary">
+  <div class="content-wrapper">
+    <p class="content-header" *ngIf="!(templateListLoading$ | async)">
+      <ng-container *ngIf="templateListLoadingFailed$ | async; else chooseTemplate" class="error">
+        Couldn't load templates
+      </ng-container>
+      <ng-template #chooseTemplate>
+        Choose a template to start from. Let us know if you need the more specific one.
+      </ng-template>
+    </p>
+
+    <div class="content-body" *ngIf="!(templateListLoading$ | async)">
+      <div class="sidebar-container">
+        <div class="tags-container">
+          <nb-form-field>
+            <nb-icon nbPrefix icon="search-outline" pack="eva"></nb-icon>
+            <input
+              type="text"
+              nbInput
+              status="basic"
+              (input)="nameFilter$.next($event.currentTarget.value)"
+              [placeholder]="'Search for a template'"
+            />
+          </nb-form-field>
+          <div class="tags">
+            <p class="category">
+              Category
+            </p>
+            <p
+              class="tag subtitle text-hint"
+              [ngClass]="{ selected: !selectedTag$.getValue() }"
+              (click)="selectTag('')"
+            >
+              All templates
+            </p>
+            <p
+              class="tag subtitle text-hint"
+              [ngClass]="{ selected: selectedTag$.getValue() == tag }"
+              *ngFor="let tag of templateTags$ | async"
+              (click)="selectTag(tag)"
+            >
+              {{ tag }}
+            </p>
+          </div>
+          <div class="tags-drop">
+            <p class="category">
+              Category
+            </p>
+            <nb-select [selected]="selectedTag$ | async" (selectedChange)="this.selectedTag$.next($event)">
+              <nb-option [value]="''">All templates</nb-option>
+              <nb-option *ngFor="let tag of templateTags$ | async" [value]="tag">{{ tag }}</nb-option>
+            </nb-select>
+          </div>
+          <ng-container [ngTemplateOutlet]="orderTemplate"></ng-container>
+        </div>
+      </div>
+
+      <div class="templates">
+        <ub-template
+          *ngFor="let template of filteredTemplates$ | async"
+          [template]="template"
+          [loading]="createLoading$ | async"
+          [downloadState]="template.id === (codeLoadingTemplateId$ | async) && (codeLoading$ | async)"
+          [disableCreation]="disableProjectCreation$ | async"
+          (create)="create(template)"
+          (upgrade)="upgrade()"
+          (download)="download(template)"
+        >
+        </ub-template>
+      </div>
+    </div>
+
+    <ng-container [ngTemplateOutlet]="orderTemplate"></ng-container>
+  </div>
+</div>
+
+<ng-template #orderTemplate>
+  <nb-card class="order-template" status="primary">
+    <nb-card-header>
+      Haven't found the right template?
+    </nb-card-header>
+    <nb-card-body>
+      Specify what kind of template you would like to have, and we'll do our best to prepare it for you.
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton status="control" (click)="openOrderDialog()">
+        REQUEST A TEMPLATE
+      </button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>

@@ -2,14 +2,23 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable, Injector } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
-  TriAuthIllegalTokenError, TriAuthResult, TriAuthStrategyClass, TriAuthToken, TriPasswordAuthStrategy,
-  TriPasswordAuthStrategyOptions
-} from '@gradii/triangle/auth';
+  NbAuthIllegalTokenError,
+  NbAuthOAuth2Token,
+  NbAuthResult,
+  NbAuthStrategyClass,
+  NbAuthToken,
+  NbPasswordAuthStrategy,
+  NbPasswordAuthStrategyOptions
+} from '@nebular/auth';
 import { Observable, of } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
+
+import { environment } from '@environments/environment';
+import { JWTResponseToken, UserProviderToken } from './user.model';
 import { TemporaryProjectService } from './temporary-project.service';
 
 @Injectable({ providedIn: 'root' })
-export class UbAuthStrategy extends TriPasswordAuthStrategy {
+export class UbAuthStrategy extends NbPasswordAuthStrategy {
   private errorHandler: ErrorHandler;
 
   constructor(
@@ -21,15 +30,15 @@ export class UbAuthStrategy extends TriPasswordAuthStrategy {
     super(http, route);
   }
 
-  static setup(options: TriPasswordAuthStrategyOptions): [TriAuthStrategyClass, TriPasswordAuthStrategyOptions] {
+  static setup(options: NbPasswordAuthStrategyOptions): [NbAuthStrategyClass, NbPasswordAuthStrategyOptions] {
     return [UbAuthStrategy, options];
   }
 
-  createToken<T extends TriAuthToken>(value: any, failWhenInvalidToken?: boolean): T {
+  createToken<T extends NbAuthToken>(value: any, failWhenInvalidToken?: boolean): T {
     try {
       return super.createToken(value, failWhenInvalidToken);
     } catch (err) {
-      if (err instanceof TriAuthIllegalTokenError) {
+      if (err instanceof NbAuthIllegalTokenError) {
         if (!this.errorHandler) {
           this.errorHandler = this.injector.get(ErrorHandler);
         }
@@ -39,32 +48,32 @@ export class UbAuthStrategy extends TriPasswordAuthStrategy {
     }
   }
 
-  authenticate(data: any): Observable<TriAuthResult> {
+  authenticate(data: any): Observable<NbAuthResult> {
     // If we call authenticate not with `google` (`email`) strategy name,
     // call `authenticate(data?)` of `NbPasswordAuthStrategy`.
     // Otherwise call `completeAuth(data: UserProviderRequest)` to auth with google provider.
-    // if (!isGoogleToken(data)) {
-    return super.authenticate(data);
-    // }
+    if (!isGoogleToken(data)) {
+      return super.authenticate(data);
+    }
 
-    // return this.completeAuth(data);
+    return this.completeAuth(data);
   }
 
   protected handleResponseError(
-    res: HttpErrorResponse | TriAuthIllegalTokenError,
+    res: HttpErrorResponse | NbAuthIllegalTokenError,
     module: string
-  ): Observable<TriAuthResult> {
-    const error: string         = this.parseError(res);
-    const result: TriAuthResult = this.createAuthResult(res, error, module);
+  ): Observable<NbAuthResult> {
+    const error: string = this.parseError(res);
+    const result: NbAuthResult = this.createAuthResult(res, error, module);
     return of(result);
   }
 
-  private parseError(res: HttpErrorResponse | TriAuthIllegalTokenError): string {
+  private parseError(res: HttpErrorResponse | NbAuthIllegalTokenError): string {
     if (res instanceof HttpErrorResponse && [400, 403, 409].includes(res.status)) {
       return res.error;
     }
 
-    if (res instanceof TriAuthIllegalTokenError) {
+    if (res instanceof NbAuthIllegalTokenError) {
       return res.message;
     }
 
@@ -72,50 +81,50 @@ export class UbAuthStrategy extends TriPasswordAuthStrategy {
   }
 
   private createAuthResult(
-    res: HttpErrorResponse | TriAuthIllegalTokenError,
+    res: HttpErrorResponse | NbAuthIllegalTokenError,
     error: string,
     module: string
-  ): TriAuthResult {
-    return new TriAuthResult(false, res, this.getOption(`${module}.redirect.failure`), [error]);
+  ): NbAuthResult {
+    return new NbAuthResult(false, res, this.getOption(`${module}.redirect.failure`), [error]);
   }
 
-  // private completeAuth(
-  //   data: (TriAuthOAuth2Token | UserProviderToken) & { temporaryProjectToken?: string; templateViewIdToOpen?: string }
-  // ) {
-  //   const temporaryProjectToken: string = this.temporaryProjectService.getTemporaryProjectToken();
-  //   if (temporaryProjectToken) {
-  //     data.temporaryProjectToken = temporaryProjectToken;
-  //   }
-  //   const templateViewIdToOpen: string = this.temporaryProjectService.getTemplateViewIdToOpen();
-  //   if (templateViewIdToOpen) {
-  //     data.templateViewIdToOpen = templateViewIdToOpen;
-  //   }
-  //   return this.http.post(`${environment.apiUrl}/auth/google`, data).pipe(
-  //     switchMap((item: JWTResponseToken) => {
-  //       let redirectPath = this.getOption('redirect.success');
-  //
-  //       this.temporaryProjectService.setViewIdToOpen(item);
-  //       if (item.viewId) {
-  //         redirectPath = `/tools/${item.viewId}/builder`;
-  //       }
-  //
-  //       const result = new TriAuthResult(
-  //         true,
-  //         item,
-  //         redirectPath,
-  //         [],
-  //         this.getOption('defaultMessages'),
-  //         this.createToken(item.token, false)
-  //       );
-  //
-  //       return of(result);
-  //     }),
-  //     tap(() => {
-  //       this.temporaryProjectService.dropTemporaryToken();
-  //       this.temporaryProjectService.dropTemplateViewIdToOpen();
-  //     })
-  //   );
-  // }
+  private completeAuth(
+    data: (NbAuthOAuth2Token | UserProviderToken) & { temporaryProjectToken?: string; templateViewIdToOpen?: string }
+  ) {
+    const temporaryProjectToken: string = this.temporaryProjectService.getTemporaryProjectToken();
+    if (temporaryProjectToken) {
+      data.temporaryProjectToken = temporaryProjectToken;
+    }
+    const templateViewIdToOpen: string = this.temporaryProjectService.getTemplateViewIdToOpen();
+    if (templateViewIdToOpen) {
+      data.templateViewIdToOpen = templateViewIdToOpen;
+    }
+    return this.http.post(`${environment.apiUrl}/auth/google`, data).pipe(
+      switchMap((item: JWTResponseToken) => {
+        let redirectPath = this.getOption('redirect.success');
+
+        this.temporaryProjectService.setViewIdToOpen(item);
+        if (item.viewId) {
+          redirectPath = `/tools/${item.viewId}/builder`;
+        }
+
+        const result = new NbAuthResult(
+          true,
+          item,
+          redirectPath,
+          [],
+          this.getOption('defaultMessages'),
+          this.createToken(item.token, false)
+        );
+
+        return of(result);
+      }),
+      tap(() => {
+        this.temporaryProjectService.dropTemporaryToken();
+        this.temporaryProjectService.dropTemplateViewIdToOpen();
+      })
+    );
+  }
 }
 
 // Check if there is a google token object

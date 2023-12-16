@@ -1,0 +1,59 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: .25rem;
+  transition: border .2s ease-in
+}
+
+.nb-theme-dark :host ub-theme-preview {
+  cursor: pointer
+}
+
+.nb-theme-dark :host ub-theme-preview:hover + .description {
+  background-color: #313642
+}
+
+.nb-theme-dark .active:host {
+  border: 2px solid #47c256;
+  box-shadow: 0 0 2px #47c256
+}
+
+.nb-theme-dark :host .description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: .5rem;
+  font-size: .6875rem;
+  font-weight: 600;
+  background-color: #232730;
+  transition: background-color .2s ease-in
+}
+
+.nb-theme-dark :host .theme-name {
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff
+}
+
+.nb-theme-dark :host .action-container {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .description [nbButton] {
+  padding: .5rem .25rem .425rem;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .description [nbButton] nb-icon, .nb-theme-dark :host .description [nbButton] nb-icon svg {
+  font-size: 0;
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .description span {
+  padding: .325rem 0
+}

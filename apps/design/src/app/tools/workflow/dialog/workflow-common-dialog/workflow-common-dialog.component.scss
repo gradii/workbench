@@ -1,0 +1,30 @@
+.nb-theme-dark :host .text-content {
+  font-size: .8125rem
+}
+
+.nb-theme-dark :host nb-card {
+  width: calc(100vw - 2rem);
+  max-width: 32em
+}
+
+.nb-theme-dark :host nb-card-body {
+  padding: 1rem
+}
+
+.nb-theme-dark :host .heading {
+  font-size: 1.1rem;
+  margin-top: 0
+}
+
+.nb-theme-dark :host .bc-form .form-actions-group-inline {
+  margin-top: 1rem;
+  justify-content: flex-end
+}
+
+.nb-theme-dark :host .bc-form .form-actions-group-inline .control {
+  text-transform: lowercase
+}
+
+.nb-theme-dark :host .bc-form .form-actions-group-inline .control:not(:first-child) {
+  margin-left: 0
+}

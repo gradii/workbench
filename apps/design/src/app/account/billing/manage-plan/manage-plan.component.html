@@ -1,0 +1,15 @@
+<h2 class="h6 heading-margin-bottom">Manage Plan</h2>
+
+<div *ngIf="canCancel$ | async; else cantCancel" class="component-list-margin-sm">
+  <a routerLink="/plans" nbButton status="primary">
+    Change plan
+  </a>
+
+  <button (click)="cancelSubscription()" nbButton>
+    Cancel subscription
+  </button>
+</div>
+
+<ng-template #cantCancel>
+  <p class="caption-2 no-margin">Here you will be able to cancel your plan.</p>
+</ng-template>

@@ -1,0 +1,22 @@
+nb-card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+nb-card-body h6 {
+  margin-bottom: 1rem
+}
+
+nb-card-body form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end
+}
+
+nb-card-body form textarea {
+  resize: none;
+  margin-bottom: 1rem
+}

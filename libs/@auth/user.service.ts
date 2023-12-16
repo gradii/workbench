@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TriAuthResult, TriAuthService, TriTokenService } from '@gradii/triangle/auth';
+import { NbAuthResult, NbAuthService, NbTokenService } from '@nebular/auth';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { environment } from '@environments';
+import { environment } from '@environments/environment';
 import { InitialUserInfo, UpdateUserRequest, UserProviderToken } from './user.model';
 import { UbAuthStrategy } from './auth-strategy.service';
 
@@ -13,8 +13,8 @@ export class UserService {
   constructor(
     private http: HttpClient,
     private strategy: UbAuthStrategy,
-    private authService: TriAuthService,
-    private tokenService: TriTokenService
+    private authService: NbAuthService,
+    private tokenService: NbTokenService
   ) {
   }
 
@@ -28,52 +28,52 @@ export class UserService {
       .pipe(switchMap((token: string) => this.setToken(token)));
   }
 
-  // saveViewedDemo(): Observable<void> {
-  //   return this.http
-  //     .put(`${environment.apiUrl}/user/viewed-demo`, { viewedDemo: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)));
-  // }
+  saveViewedDemo(): Observable<void> {
+    return this.http
+      .put(`${environment.apiUrl}/user/viewed-demo`, { viewedDemo: true })
+      .pipe(switchMap((token: string) => this.setToken(token)));
+  }
 
-  // saveViewedResponsiveStylesNotification(): void {
-  //   this.http
-  //     .put(`${environment.apiUrl}/user/viewed-responsive-style-notification`, {
-  //       viewedResponsiveStyleNotification: true
-  //     })
-  //     .pipe(switchMap((token: string) => this.setToken(token)))
-  //     .subscribe();
-  // }
+  saveViewedResponsiveStylesNotification(): void {
+    this.http
+      .put(`${environment.apiUrl}/user/viewed-responsive-style-notification`, {
+        viewedResponsiveStyleNotification: true
+      })
+      .pipe(switchMap((token: string) => this.setToken(token)))
+      .subscribe();
+  }
 
-  // saveTriedPaidFunctionalityMailSentNotification(): void {
-  //   this.http
-  //     .put(`${environment.apiUrl}/user/tried-paid-functionality-mail-sent`, { triedPaidFunctionalityMailSent: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)))
-  //     .subscribe();
-  // }
+  saveTriedPaidFunctionalityMailSentNotification(): void {
+    this.http
+      .put(`${environment.apiUrl}/user/tried-paid-functionality-mail-sent`, { triedPaidFunctionalityMailSent: true })
+      .pipe(switchMap((token: string) => this.setToken(token)))
+      .subscribe();
+  }
 
-  // saveViewedOnboarding(): void {
-  //   this.http
-  //     .put(`${environment.apiUrl}/user/viewed-onboarding`, { viewedOnboarding: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)))
-  //     .subscribe();
-  // }
+  saveViewedOnboarding(): void {
+    this.http
+      .put(`${environment.apiUrl}/user/viewed-onboarding`, { viewedOnboarding: true })
+      .pipe(switchMap((token: string) => this.setToken(token)))
+      .subscribe();
+  }
 
-  // saveViewedTutorialsNotification(): Observable<void> {
-  //   return this.http
-  //     .put(`${environment.apiUrl}/user/viewed-tutorials-notification`, { viewedTutorialsNotification: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)));
-  // }
+  saveViewedTutorialsNotification(): Observable<void> {
+    return this.http
+      .put(`${environment.apiUrl}/user/viewed-tutorials-notification`, { viewedTutorialsNotification: true })
+      .pipe(switchMap((token: string) => this.setToken(token)));
+  }
 
-  // saveViewedDataConnectionTutorials(): Observable<void> {
-  //   return this.http
-  //     .put(`${environment.apiUrl}/user/viewed-data-connection-tutorials`, { viewedDataConnectionTutorials: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)));
-  // }
+  saveViewedDataConnectionTutorials(): Observable<void> {
+    return this.http
+      .put(`${environment.apiUrl}/user/viewed-data-connection-tutorials`, { viewedDataConnectionTutorials: true })
+      .pipe(switchMap((token: string) => this.setToken(token)));
+  }
 
-  // saveViewedDataConnectionNotification(): Observable<void> {
-  //   return this.http
-  //     .put(`${environment.apiUrl}/user/viewed-data-connection-notification`, { viewedDataConnectionNotification: true })
-  //     .pipe(switchMap((token: string) => this.setToken(token)));
-  // }
+  saveViewedDataConnectionNotification(): Observable<void> {
+    return this.http
+      .put(`${environment.apiUrl}/user/viewed-data-connection-notification`, { viewedDataConnectionNotification: true })
+      .pipe(switchMap((token: string) => this.setToken(token)));
+  }
 
   incViewedResizeAltStick(): Observable<void> {
     return this.http
@@ -86,7 +86,7 @@ export class UserService {
   }
 
   setToken(token: string): Observable<void> {
-    const res: TriAuthResult = new TriAuthResult(true, token, '', [], '', this.strategy.createToken(token, true));
+    const res: NbAuthResult = new NbAuthResult(true, token, '', [], '', this.strategy.createToken(token, true));
 
     return this.tokenService.set(res.getToken());
   }

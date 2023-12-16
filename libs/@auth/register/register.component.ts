@@ -1,21 +1,16 @@
-/**
- * @license
- *
- * Use of this source code is governed by an MIT-style license
- */
-
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, ɵmarkDirty } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { HttpResponseBase } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AnalyticsService } from '@common/public-api';
-import {
-  getDeepFromObject, TRI_AUTH_OPTIONS, TriAuthResult, TriAuthService, TriAuthSocialLink
-} from '@gradii/triangle/auth';
+import { NB_AUTH_OPTIONS, NbAuthResult, NbAuthService, NbRegisterComponent } from '@nebular/auth';
+import { NB_WINDOW } from '@nebular/theme';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AnalyticsService } from '@common';
 
 import { ConfirmState } from '../confirm-register/confirm-register.component';
 import { TemporaryProjectService } from '../temporary-project.service';
 
+// TODO extend nebular user when it will be available
 class RegisterForm {
   constructor(
     public id?: number,
@@ -33,46 +28,39 @@ class RegisterForm {
 }
 
 @Component({
-  selector       : 'puff-register',
-  templateUrl    : './register.component.html',
+  selector: 'ub-register',
+  templateUrl: './register.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterComponent implements OnInit, OnDestroy {
-  user: RegisterForm                = {};
+export class RegisterComponent extends NbRegisterComponent implements OnInit, OnDestroy {
+  user: RegisterForm = {};
   private readonly FROM_PRICING_KEY = 'from-pricing';
-  private destroy$                  = new Subject<void>();
-
-  redirectDelay: number = 0;
-  showMessages: any     = {};
-  strategy: string      = '';
-
-  submitted                        = false;
-  errors: string[]                 = [];
-  messages: string[]               = [];
-  socialLinks: TriAuthSocialLink[] = [];
+  private destroy$ = new Subject<void>();
 
   constructor(
-    protected service: TriAuthService,
-    @Inject(TRI_AUTH_OPTIONS) protected options = {},
+    protected service: NbAuthService,
+    @Inject(NB_AUTH_OPTIONS) protected options = {},
+    protected cd: ChangeDetectorRef,
     protected router: Router,
     private activedRoute: ActivatedRoute,
     private analytics: AnalyticsService,
-    private temporaryProjectService: TemporaryProjectService
+    private temporaryProjectService: TemporaryProjectService,
+    @Inject(NB_WINDOW) private window
   ) {
-    // super(service, options, cd, router);
-
-    this.redirectDelay = this.getConfigValue('forms.register.redirectDelay');
-    this.showMessages  = this.getConfigValue('forms.register.showMessages');
-    this.strategy      = this.getConfigValue('forms.register.strategy');
-    this.socialLinks   = this.getConfigValue('forms.login.socialLinks');
+    super(service, options, cd, router);
   }
 
-  getConfigValue(key: string): any {
-    return getDeepFromObject(this.options, key, null);
+  ngOnInit(): void {
+    this.temporaryProjectService.setTemporaryProjectToken(this.activedRoute.snapshot.queryParams.temporaryProjectToken);
+    this.temporaryProjectService.setTemplateViewIdToOpen(this.activedRoute.snapshot.queryParams.templateViewIdToOpen);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
   }
 
   register(): void {
-    this.errors    = this.messages = [];
+    this.errors = this.messages = [];
     this.submitted = true;
 
     this.setTemporaryProjectToken();
@@ -81,12 +69,14 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.service
       .register(this.strategy, this.user)
       .pipe(takeUntil(this.destroy$))
-      .subscribe((result: TriAuthResult) => {
-        // this.logSignUpToAnalytics(result.getResponse(), this.strategy);
+      .subscribe((result: NbAuthResult) => {
+        this.logSignUpToAnalytics(result.getResponse(), this.strategy);
 
+        // TODO: this should be better done using state
+        // TODO: we should better check it the other way
         const ref = this.activedRoute.snapshot.queryParams.ref;
         if (ref && ref.startsWith('pricing_80')) {
-          window.localStorage.setItem(this.FROM_PRICING_KEY, 'true');
+          this.window.localStorage.setItem(this.FROM_PRICING_KEY, true);
         }
 
         this.submitted = false;
@@ -101,10 +91,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
         const redirect = result.getRedirect();
         if (redirect) {
-          this.router.navigateByUrl(redirect);
-          return;
+          return this.router.navigateByUrl(redirect);
         }
-        ɵmarkDirty(this);
+        this.cd.detectChanges();
       });
   }
 
@@ -136,21 +125,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
     return {};
   }
 
-  // private logSignUpToAnalytics(res: HttpResponseBase, type: string) {
-  //   const emailsAllowed = !!this.user.announcements;
-  //   this.analytics.logSignUp(emailsAllowed, res, type);
-  // }
-
-
-  ngOnInit(): void {
-    this.temporaryProjectService.setTemporaryProjectToken(
-      this.activedRoute.snapshot.queryParams.temporaryProjectToken);
-    this.temporaryProjectService.setTemplateViewIdToOpen(
-      this.activedRoute.snapshot.queryParams.templateViewIdToOpen);
+  private logSignUpToAnalytics(res: HttpResponseBase, type: string) {
+    const emailsAllowed = !!this.user.announcements;
+    this.analytics.logSignUp(emailsAllowed, res, type);
   }
-
-  ngOnDestroy() {
-    this.destroy$.next();
-  }
-
 }

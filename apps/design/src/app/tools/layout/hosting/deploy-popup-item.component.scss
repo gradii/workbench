@@ -1,0 +1,108 @@
+.nb-theme-dark :host {
+  display: flex;
+  flex-direction: row;
+  width: 100%
+}
+
+.nb-theme-dark :host nb-card {
+  width: 100%;
+  margin-bottom: 0
+}
+
+.nb-theme-dark :host nb-card nb-card-body {
+  padding: .5rem
+}
+
+.nb-theme-dark :host nb-card .not-loaded span.caption-2 {
+  color: #959dad
+}
+
+.nb-theme-dark :host nb-card .caption-2 {
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .left-col {
+  margin-right: .5rem;
+  padding-top: .75rem
+}
+
+.nb-theme-dark :host nb-checkbox.disabled {
+  opacity: .6
+}
+
+.nb-theme-dark :host .url-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem
+}
+
+.nb-theme-dark :host .url-row span {
+  padding-right: .6875rem;
+  font-size: .6875rem
+}
+
+.nb-theme-dark :host .url-row .external-link nb-icon {
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  color: #959dad
+}
+
+.nb-theme-dark :host .url-row .external-link nb-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .env-label {
+  display: inline-block;
+  color: #8f5cff;
+  background: rgba(143, 92, 255, .24);
+  font-size: .8125rem;
+  padding: 0 4px;
+  text-transform: capitalize;
+  border-radius: .25rem;
+  font-weight: 700;
+  margin-bottom: .375rem
+}
+
+.nb-theme-dark :host nb-spinner {
+  background-color: transparent
+}
+
+.nb-theme-dark :host .publish-info {
+  margin-bottom: .25rem
+}
+
+.nb-theme-dark :host .deploy-status {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .deploy-status .status-icon {
+  padding-left: .375rem;
+  display: flex
+}
+
+.nb-theme-dark :host .deploy-status .status-icon .status-title {
+  margin-left: .25rem;
+  color: #fff;
+  text-transform: capitalize
+}
+
+.nb-theme-dark :host .deploy-status .status-icon .status-title.success {
+  color: #47c256
+}
+
+.nb-theme-dark :host .deploy-status .status-icon .status-title.fail {
+  color: #ff4070
+}
+
+.nb-theme-dark :host .deploy-status .status-icon nb-icon {
+  font-size: 1rem
+}
+
+.nb-theme-dark :host .deploy-status .status-icon .loading-indicator {
+  display: block;
+  width: 1rem;
+  height: 1rem
+}

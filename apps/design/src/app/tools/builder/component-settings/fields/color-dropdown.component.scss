@@ -1,0 +1,87 @@
+.nb-theme-dark :host .color-container {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .color-container nb-select {
+  flex-grow: 1;
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .color-container nb-select button {
+  min-width: auto
+}
+
+.nb-theme-dark :host .color-preview {
+  width: 1.5rem;
+  height: 1.25rem;
+  border: 1px solid hsla(0, 0%, 100%, .4);
+  border-radius: .25rem;
+  box-shadow: inset 0 0 0 0 #959dad, 0 0 0 0 #959dad;
+  background-color: var(--workbench-text-color)
+}
+
+.nb-theme-dark :host .color-preview.large {
+  width: 2rem;
+  height: 1.875rem
+}
+
+.nb-theme-dark :host .color-preview.bg {
+  background-color: var(--workbench-bg-color)
+}
+
+.nb-theme-dark :host .color-preview.bg.transparent {
+  background-image: url(/assets/colors/transparent.svg)
+}
+
+.nb-theme-dark :host .color-preview.primary {
+  background-color: var(--workbench-primary)
+}
+
+.nb-theme-dark :host .color-preview.info {
+  background-color: var(--workbench-info)
+}
+
+.nb-theme-dark :host .color-preview.success {
+  background-color: var(--workbench-success)
+}
+
+.nb-theme-dark :host .color-preview.warning {
+  background-color: var(--workbench-warning)
+}
+
+.nb-theme-dark :host .color-preview.danger {
+  background-color: var(--workbench-danger)
+}
+
+.nb-theme-dark :host .color-preview.hint {
+  background-color: var(--workbench-text-hint-color)
+}
+
+.nb-theme-dark :host .color-preview.hint.bg {
+  background-color: var(--workbench-bg-hint-color)
+}
+
+.nb-theme-dark :host .color-preview.alternate {
+  background-color: var(--workbench-text-alternate-color)
+}
+
+.nb-theme-dark :host .color-preview.alternate.bg {
+  background-color: var(--workbench-bg-alternate-color)
+}
+
+.nb-theme-dark :host .color-preview.control {
+  background-color: var(--workbench-text-control-color)
+}
+
+.nb-theme-dark :host .color-preview.disabled {
+  background-color: var(--workbench-text-disabled-color)
+}
+
+.nb-theme-dark :host .color-preview.disabled.bg {
+  background-color: var(--workbench-bg-disabled-color)
+}
+
+.nb-theme-dark :host .color-preview.white {
+  background-color: #fff
+}

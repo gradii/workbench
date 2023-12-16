@@ -1,0 +1,39 @@
+<nav aria-label="main navigation">
+  <nb-actions size="medium">
+    <nb-action class="home-action">
+      <a class="nav-link" routerLink="/">
+<!--        <img class="logo-img" src="assets/logo-light-brief.svg" alt="UI Builder"/>-->
+      </a>
+      <div class="logo-divider"></div>
+    </nb-action>
+
+    <nb-action class="projects-action">
+      <a class="nav-link" routerLink="/projects" routerLinkActive="nav-link-active">
+        Projects
+      </a>
+    </nb-action>
+
+    <nb-action class="academy-action">
+      <a class="nav-link" href="https://academy.uibakery.io/" target="_blank">
+        Academy
+      </a>
+    </nb-action>
+
+    <nb-action class="whats-new-action">
+      <a class="nav-link status-secondary" href="https://uibakery.io/post/data-connection-in-ui-bakery" target="_blank">
+        What's new?
+      </a>
+    </nb-action>
+  </nb-actions>
+</nav>
+
+<nb-actions size="medium" class="account-actions">
+  <nb-action>
+    <a nbButton outline class="status-secondary" routerLink="/plans">Upgrade</a>
+  </nb-action>
+
+  <nb-action class="avatar-action" [nbContextMenu]="menuItems" nbContextMenuPlacement="bottom-start">
+    <nb-user [name]="email$ | async" [showName]="false"></nb-user>
+    <nb-icon class="account-menu-icon" pack="eva" icon="arrow-down"></nb-icon>
+  </nb-action>
+</nb-actions>

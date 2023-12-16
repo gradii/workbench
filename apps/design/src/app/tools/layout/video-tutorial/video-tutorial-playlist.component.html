@@ -1,0 +1,12 @@
+<div class="playlist">
+  <div
+    class="video-element"
+    *ngFor="let video of videos"
+    [class.current]="video === selectedVideo"
+    (click)="selectVideo(video)"
+  >
+    <bc-icon name="play-circle"></bc-icon>
+    <span>{{ video.title }}</span>
+    <span class="time">{{ video.time }}</span>
+  </div>
+</div>

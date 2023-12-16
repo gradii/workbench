@@ -1,0 +1,9 @@
+.nb-theme-form-builder :host {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 13px
+}
+
+.nb-theme-form-builder :host ub-color-preview {
+  margin: 3px
+}

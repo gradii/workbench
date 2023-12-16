@@ -7,21 +7,19 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "../../dist/tools/gulp",
-    "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
-    "noImplicitReturns": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
     "noEmitOnError": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
+    "noImplicitAny": true,
     "target": "es5",
     "types": [
       "node"
     ],
     "baseUrl": ".",
     "paths": {
-      "@devops-tools/reiki-ast": ["../../libs/reiki-ast/src/index"]
+      "package-tools": ["../package-tools/index"],
+      "@bitlink/core": ["../../libs/@bitlink/core/index.ts"]
     }
   },
   "files": [

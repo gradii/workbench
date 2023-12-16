@@ -1,0 +1,29 @@
+.card-field {
+  display: flex
+}
+
+ub-card-icon {
+  margin-right: 1rem
+}
+
+.card-number {
+  flex: 1 0 auto
+}
+
+.StripeElement {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem
+}
+
+.StripeElement > * {
+  flex: 1 0 auto
+}
+
+[nbInput].StripeElement:not(.input-full-width) {
+  max-width: none
+}
+
+:host .form-actions-group-inline {
+  justify-content: flex-end
+}

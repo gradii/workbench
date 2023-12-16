@@ -1,0 +1,55 @@
+.nb-theme-dark :host .method {
+  flex-basis: 120px;
+  flex-grow: 0
+}
+
+.nb-theme-dark :host .method-select {
+  min-width: 7.5rem
+}
+
+.nb-theme-dark :host .url {
+  width: 100%;
+  max-width: calc(100% - 120px - 1rem)
+}
+
+.nb-theme-dark :host .with-credentials {
+  margin-top: 1rem;
+  display: flex;
+  padding: 0 0 .25rem .25rem
+}
+
+.nb-theme-dark :host .with-credentials span.text {
+  font-size: .6875rem;
+  line-height: .6875rem;
+  padding-top: 2px
+}
+
+.nb-theme-dark :host nb-select .select-button {
+  min-width: 100%;
+  padding: .425rem .5rem
+}
+
+.nb-theme-dark :host nb-tabset {
+  margin-bottom: .25rem
+}
+
+.nb-theme-dark :host .body-type-value {
+  display: flex;
+  margin-left: .625rem
+}
+
+.nb-theme-dark :host .body-type-value nb-radio label {
+  padding-right: 1rem;
+  cursor: pointer
+}
+
+.nb-theme-dark :host .body-type-value nb-radio .text {
+  text-transform: none;
+  font-size: .6875rem;
+  margin-left: 1rem
+}
+
+.nb-theme-dark :host .body-type-value nb-radio .inner-circle, .nb-theme-dark :host .body-type-value nb-radio .outer-circle {
+  width: .75rem;
+  height: .75rem
+}

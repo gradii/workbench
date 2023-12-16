@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kubesphere
+    component: $APP_NAME-$BRANCH_NAME
+  name: $APP_NAME-$BRANCH_NAME
+  namespace: nginx-project
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: kubesphere
+    component: $APP_NAME-$BRANCH_NAME
+    tier: backend
+  sessionAffinity: None
+  type: NodePort

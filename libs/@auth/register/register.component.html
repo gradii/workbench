@@ -1,16 +1,16 @@
 <div class="auth-wrapper">
-  <img src="assets/logo.svg" class="logo-image" alt="Devops"/>
+  <img src="assets/logo.svg" class="logo-image" alt="UI Bakery"/>
 
   <h1 class="form-heading" id="title">Sign up</h1>
 
   <p>Get access for free to the new solution. No credit card needed.</p>
 
-<!--  <div>
+  <div>
     <button (click)="authGoogle()" nbButton outline fullWidth status="primary">
       <nb-icon pack="eva" icon="google"></nb-icon>
       Sign up with Google
     </button>
-  </div>-->
+  </div>
 
   <p class="divider-container">
     <span class="divider-content text-hint">or</span>
@@ -18,35 +18,36 @@
 
   <form (ngSubmit)="register()" aria-labelledby="title" class="bc-form">
     <div *ngIf="showMessages.error && errors?.length && !submitted" role="alert">
-      <tri-alert *ngFor="let error of errors" color="danger" outline="danger">
-        <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+      <nb-alert *ngFor="let error of errors" status="danger" outline="danger">
+        <nb-icon pack="eva" icon="alert-circle" class="alert-icon"></nb-icon>
         {{ error }}
-      </tri-alert>
+      </nb-alert>
     </div>
 
     <div class="form-control-group">
       <label class="form-control-label" for="input-email">Email</label>
       <input
-        triInput
+        nbInput
         [(ngModel)]="user.email"
         #email="ngModel"
-        triTrim
+        bcTrim
         bcEmailValidator
         id="input-email"
         name="email"
         placeholder="Email"
         fullWidth
+        [status]="email.dirty ? (email.invalid ? 'danger' : 'basic') : 'basic'"
         [required]="getConfigValue('forms.validation.email.required')"
         [attr.aria-invalid]="email.invalid && email.touched ? true : null"
       />
       <span class="form-control-message-container">
         <ng-container *ngIf="email.invalid && email.touched">
           <p class="form-error-message" *ngIf="email.errors?.required">
-            <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
             Email is required!
           </p>
           <p class="form-error-message" *ngIf="!email.errors?.required && email.errors?.email">
-            <tri-icon svgIcon="eva:alert-triangle"></tri-icon>
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
             Email should be the real one!
           </p>
         </ng-container>
@@ -57,7 +58,7 @@
       <label class="form-control-label" for="input-password">Password</label>
       <bc-password-input-icon #passwordInput="passwordInputIcon" iconPosition="right">
         <input
-          triInput
+          nbInput
           [(ngModel)]="user.password"
           #password="ngModel"
           [type]="passwordInput.hidden ? 'password' : 'text'"
@@ -66,6 +67,7 @@
           placeholder="Password"
           fullWidth
           bcPasswordValidator
+          [status]="password.dirty ? (password.invalid ? 'danger' : 'basic') : 'basic'"
           [required]="getConfigValue('forms.validation.password.required')"
           [minlength]="getConfigValue('forms.validation.password.minLength')"
           [maxlength]="getConfigValue('forms.validation.password.maxLength')"
@@ -75,18 +77,18 @@
       <span class="form-control-message-container">
         <ng-container *ngIf="password.invalid && password.touched">
           <p class="form-error-message" *ngIf="password.errors?.required">
-            <tri-icon svgIcon="outline:warning"></tri-icon>
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
             Password is required!
           </p>
           <p class="form-error-message" *ngIf="password.errors?.space">
-            <tri-icon svgIcon="outline:warning"></tri-icon>
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
             Password should not contain spaces!
           </p>
           <p
             class="form-error-message"
             *ngIf="!password.errors?.space && (password.errors?.minlength || password.errors?.maxlength)"
           >
-            <tri-icon svgIcon="outline:warning"></tri-icon>
+            <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
             Password should contain from {{ getConfigValue('forms.validation.password.minLength') }} to
             {{ getConfigValue('forms.validation.password.maxLength') }}
             characters!
@@ -101,11 +103,13 @@
 
     <div class="form-actions-group-inline">
       <button
-        triButton
+        nbButton
+        status="primary"
         [disabled]="!email.valid || !password.valid || !user.terms"
         [type]="submitted ? 'button' : 'submit'"
         [class.spinner-button]="submitted"
-        [loading]="submitted"
+        [nbSpinner]="submitted"
+        nbSpinnerStatus="control"
         class="form-action"
       >
         Sign Up

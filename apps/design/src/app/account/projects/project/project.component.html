@@ -1,0 +1,37 @@
+<nb-card>
+  <nb-card-header>
+    <img class="project-thumb" [src]="project.thumbnail" (click)="open.emit(project.viewId)"/>
+
+    <div *ngIf="project.locked" class="lock-container">
+      <nb-icon class="lock-icon" pack="eva" icon="lock"></nb-icon>
+      <span class="lock-description">
+        <span class="icon caption-3"><nb-icon pack="eva" icon="lock"></nb-icon> LOCKED</span>
+        <span class="text paragraph-2">
+          {{ plan$ | async | titlecase }} plan users can work on one project with up to 10 pages. The rest projects are
+          locked.
+        </span>
+      </span>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body class="project-info">
+    <div class="info no-margin">
+      <span class="subtitle-2">{{ project.name }}</span>
+      <nb-icon *ngIf="project.sharedByMe" nbTooltip="Shared" pack="eva" icon="share"></nb-icon>
+      <nb-icon *ngIf="project.sharedWithMe" nbTooltip="Shared with you" pack="eva" icon="unlock-outline"></nb-icon>
+
+      <p class="caption-3 no-margin">Last Update {{ project.updatedAt | date }}</p>
+    </div>
+
+    <nb-icon
+      class="project-menu"
+      icon="more-horizontal-outline"
+      pack="eva"
+      *ngIf="!project.sharedWithMe"
+      [nbContextMenu]="actions | async"
+      [nbContextMenuPlacement]="'bottom-right'"
+      [nbContextMenuTag]="project.viewId"
+    >
+    </nb-icon>
+  </nb-card-body>
+</nb-card>

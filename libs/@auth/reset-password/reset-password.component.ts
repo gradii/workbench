@@ -1,68 +1,41 @@
-/**
- * @license
- *
- * Use of this source code is governed by an MIT-style license
- */
-
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, Inject, OnInit, ViewChild, ɵmarkDirty } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { getDeepFromObject, TRI_AUTH_OPTIONS, TriAuthResult, TriAuthService } from '@gradii/triangle/auth';
+import { NgForm } from '@angular/forms';
+import { NB_AUTH_OPTIONS, NbAuthResult, NbAuthService, NbResetPasswordComponent } from '@nebular/auth';
 
 @Component({
-  selector       : 'ub-reset-password',
+  selector: 'ub-reset-password',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl    : './reset-password.component.html'
+  templateUrl: './reset-password.component.html'
 })
-export class ResetPasswordComponent implements OnInit {
-
-  redirectDelay: number = 0;
-  showMessages: any     = {};
-  strategy: string      = '';
-
-  submitted          = false;
-  errors: string[]   = [];
-  messages: string[] = [];
-  user: any          = {};
-
-
+export class ResetPasswordComponent extends NbResetPasswordComponent implements OnInit {
   @ViewChild('form') form: NgForm;
-  // private token: string;
+  private token: string;
   private isTokenExpired: boolean;
 
   constructor(
-    protected service: TriAuthService,
-    @Inject(TRI_AUTH_OPTIONS) protected options = {},
+    protected service: NbAuthService,
+    @Inject(NB_AUTH_OPTIONS) protected options = {},
+    protected cd: ChangeDetectorRef,
     protected router: Router,
-    protected route: ActivatedRoute,
-    @Inject(HTTP_INTERCEPTORS) private httpInterceptor: any[]
+    protected route: ActivatedRoute
   ) {
-
-    this.redirectDelay = this.getConfigValue('forms.resetPassword.redirectDelay');
-    this.showMessages  = this.getConfigValue('forms.resetPassword.showMessages');
-    this.strategy      = this.getConfigValue('forms.resetPassword.strategy');
-
-    console.log(httpInterceptor);
-  }
-
-  getConfigValue(key: string): any {
-    return getDeepFromObject(this.options, key, null);
+    super(service, options, cd, router);
   }
 
   ngOnInit() {
-    // const encodedToken = this.route.snapshot.queryParamMap.get('token');
-    // const decodedToken = JSON.parse(atob(encodedToken));
-    //
-    // this.token = decodedToken.token;
+    const encodedToken = this.route.snapshot.queryParamMap.get('token');
+    const decodedToken = JSON.parse(atob(encodedToken));
+
+    this.token = decodedToken.token;
   }
 
   resetPass(): void {
-    this.errors        = this.messages = [];
-    this.submitted     = true;
+    this.errors = this.messages = [];
+    this.submitted = true;
     const resetRequest = this.createResetPasswordRequest();
 
-    this.service.resetPassword(this.strategy, resetRequest).subscribe((result: TriAuthResult) => {
+    this.service.resetPassword(this.strategy, resetRequest).subscribe((result: NbAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
         this.messages = ['Password updated successfully!'];
@@ -72,14 +45,13 @@ export class ResetPasswordComponent implements OnInit {
 
       const redirect = result.getRedirect();
       if (redirect) {
-        this.router.navigateByUrl(redirect);
-        return;
+        return this.router.navigateByUrl(redirect);
       }
-      ɵmarkDirty(this);
+      this.cd.detectChanges();
     });
   }
 
   private createResetPasswordRequest() {
-    return { ...this.user /*token: this.token*/ };
+    return { ...this.user, token: this.token };
   }
 }

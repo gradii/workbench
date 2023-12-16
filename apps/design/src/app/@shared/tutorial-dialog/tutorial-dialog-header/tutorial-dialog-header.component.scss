@@ -1,0 +1,23 @@
+:host {
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between
+}
+
+.title {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #fff
+}
+
+.title bc-icon {
+  padding-right: .375rem
+}
+
+.title bc-icon svg {
+  fill: #fff;
+  width: 1.25rem;
+  height: 1.25rem
+}

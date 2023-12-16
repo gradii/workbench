@@ -1,0 +1,126 @@
+.nb-theme-dark :host {
+  display: flex;
+  padding: .5rem;
+  border-radius: .125rem
+}
+
+.nb-theme-dark :host .card {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+  border-radius: .25rem
+}
+
+.nb-theme-dark :host .colored-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-end
+}
+
+.nb-theme-dark :host .text-container {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host .text-container > div {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .button {
+  padding: .375rem 1rem;
+  border-radius: .25rem;
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1rem
+}
+
+.nb-theme-dark :host .subtitle {
+  font-size: .6875rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .caption {
+  margin: .375rem 0;
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1rem
+}
+
+.nb-theme-dark :host .figures-container {
+  display: flex;
+  margin-top: .5rem
+}
+
+.nb-theme-dark :host .figures-container > div {
+  width: 1rem;
+  height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.nb-theme-dark :host .figures-container > div:first-of-type {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem
+}
+
+.nb-theme-dark :host .figures-container > div:last-of-type {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem
+}
+
+.nb-theme-dark :host .figures-container .circle {
+  width: .5rem;
+  height: .5rem;
+  background: var(--figure-color);
+  border-radius: .25rem
+}
+
+.nb-theme-dark :host .figures-container .triangle {
+  width: 0;
+  height: 0;
+  border-left: .27rem solid transparent;
+  border-bottom: .47rem solid var(--figure-color);
+  border-right: .27rem solid transparent;
+  border-top: 0 solid transparent
+}
+
+.nb-theme-dark :host .figures-container .stop {
+  position: relative;
+  width: .5rem;
+  height: .5rem;
+  background: var(--figure-color)
+}
+
+.nb-theme-dark :host .figures-container .stop:before {
+  top: 0;
+  border-bottom: .15rem solid var(--figure-color)
+}
+
+.nb-theme-dark :host .figures-container .stop:after, .nb-theme-dark :host .figures-container .stop:before {
+  content: "";
+  width: .5rem;
+  height: 0;
+  position: absolute;
+  left: 0;
+  border-left: .15rem solid var(--figure-stop-bg);
+  border-right: .15rem solid var(--figure-stop-bg)
+}
+
+.nb-theme-dark :host .figures-container .stop:after {
+  bottom: 0;
+  border-top: .15rem solid var(--figure-color)
+}
+
+.nb-theme-dark :host .figures-container .rhombus {
+  position: relative;
+  width: .4rem;
+  height: .4rem;
+  background-color: var(--figure-color);
+  transform: rotate(45deg)
+}

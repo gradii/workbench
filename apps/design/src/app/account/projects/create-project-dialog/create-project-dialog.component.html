@@ -1,0 +1,93 @@
+<nb-card>
+  <nb-card-body>
+    <h2 class="h5 heading">Create a Project</h2>
+
+    <form (submit)="create()" [formGroup]="project" class="bc-form">
+      <div class="form-control-group">
+        <label class="form-control-label" for="name">
+          Project name *
+        </label>
+        <input
+          nbInput
+          bcTrim
+          fullWidth
+          name="name"
+          placeholder="My new project"
+          formControlName="name"
+          id="name"
+          [status]="name.dirty && name.errors ? 'danger' : 'basic'"
+        />
+        <span class="form-control-message-container">
+          <ng-container *ngIf="name.dirty && name.errors">
+            <span *ngIf="name.errors?.taken" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name is already taken!
+            </span>
+            <span *ngIf="name.errors?.notEnoughChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should contain at least 4 letters!
+            </span>
+            <span *ngIf="name.errors?.tooManyChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain more than 250 symbols!
+            </span>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="form-control-group no-errors">
+        <label class="form-control-label">Application type *</label>
+        <nb-select
+          id="input-role"
+          shape="rectangle"
+          placeholder="Select your application type"
+          formControlName="type"
+          outline
+          fullWidth
+        >
+          <nb-option value="Marketplace">Marketplace</nb-option>
+          <nb-option value="Admin panel">Admin panel</nb-option>
+          <nb-option value="Social Network">Social Network</nb-option>
+          <nb-option value="CRM">CRM</nb-option>
+          <nb-option value="CMS">CMS</nb-option>
+          <nb-option value="Other">Other</nb-option>
+        </nb-select>
+      </div>
+
+      <div class="form-control-group">
+        <label class="form-control-label" for="name">
+          Description
+        </label>
+        <textarea
+          nbInput
+          bcTrim
+          fullWidth
+          name="name"
+          placeholder="Optional"
+          formControlName="description"
+          id="description"
+          style="resize: none;"
+        ></textarea>
+        <span class="form-control-message-container">
+          <ng-container *ngIf="description.dirty && description.errors">
+            <span *ngIf="description.errors?.notEnoughChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should contain at least 4 letters!
+            </span>
+            <span *ngIf="description.errors?.tooManyChars" class="form-error-message">
+              <nb-icon pack="eva" icon="alert-triangle"></nb-icon>
+              Name should not contain more than 250 symbols!
+            </span>
+          </ng-container>
+        </span>
+      </div>
+
+      <div class="actions form-actions-group-inline component-list-margin-sm">
+        <button nbButton type="button" (click)="cancel()">Cancel</button>
+        <button nbButton type="submit" [disabled]="project.invalid" status="primary">
+          Create
+        </button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

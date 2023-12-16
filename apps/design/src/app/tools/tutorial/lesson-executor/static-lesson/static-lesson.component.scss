@@ -1,0 +1,10 @@
+.nb-theme-dark :host {
+  display: block;
+  border-radius: .25rem;
+  background: #232730
+}
+
+.nb-theme-dark :host ub-step {
+  min-width: 480px;
+  min-height: 368px
+}

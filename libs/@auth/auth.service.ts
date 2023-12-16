@@ -1,14 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
-import { TRI_AUTH_STRATEGIES, TriAuthService, TriAuthToken, TriTokenService } from '@gradii/triangle/auth';
+import { NB_AUTH_STRATEGIES, NbAuthService, NbAuthToken, NbTokenService } from '@nebular/auth';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { isGoogleToken } from './auth-strategy.service';
 
 @Injectable()
-export class UbAuthService extends TriAuthService {
-  constructor(protected tokenService: TriTokenService,
-              @Inject(TRI_AUTH_STRATEGIES) protected strategies: any) {
+export class UbAuthService extends NbAuthService {
+  constructor(protected tokenService: NbTokenService, @Inject(NB_AUTH_STRATEGIES) protected strategies: any) {
     super(tokenService, strategies);
   }
 
@@ -30,7 +29,7 @@ export class UbAuthService extends TriAuthService {
     );
   }
 
-  private refresh(token: TriAuthToken): Observable<boolean> {
+  private refresh(token: NbAuthToken): Observable<boolean> {
     return this.refreshToken(token.getOwnerStrategyName(), token).pipe(
       switchMap(res => {
         if (res.isSuccess()) {

@@ -1,0 +1,11 @@
+<div class="playlist">
+  <div
+    class="video-element"
+    *ngFor="let tutorial of tutorials$ | async"
+    [class.current]="(selectedTutorialId$ | async) === tutorial.id"
+    (click)="selectTutorial(tutorial.id)"
+  >
+    <bc-icon name="play-circle"></bc-icon>
+    <span>{{ tutorial.title }}</span>
+  </div>
+</div>

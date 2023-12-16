@@ -1,0 +1,96 @@
+.nb-theme-dark :host {
+  display: flex;
+  background-color: #15171f;
+  padding: 1rem;
+  border-radius: .25rem
+}
+
+.nb-theme-dark :host .form {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark :host .form-title {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: .8125rem;
+  color: #959dad;
+  font-weight: 700
+}
+
+.nb-theme-dark :host .name-input {
+  margin-bottom: 1.1rem
+}
+
+.nb-theme-dark :host label {
+  display: inline-block;
+  margin-bottom: .4rem;
+  color: #fff;
+  font-size: .6875rem;
+  font-weight: 600
+}
+
+.nb-theme-dark :host .preview-container {
+  display: flex;
+  justify-content: space-between
+}
+
+.nb-theme-dark :host ub-theme-item {
+  flex: 1
+}
+
+.nb-theme-dark :host ub-theme-item:first-of-type {
+  margin-right: 1rem
+}
+
+.nb-theme-dark :host .button-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end
+}
+
+.nb-theme-dark :host .submit-button {
+  min-width: 5rem;
+  margin-left: .5rem
+}
+
+.nb-theme-dark :host .submit-button.icon-end:not(.icon-start) nb-icon {
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-left: 0;
+  font-size: 0
+}
+
+.nb-theme-dark :host .submit-button.icon-end:not(.icon-start) nb-icon, .nb-theme-dark :host .submit-button.icon-end:not(.icon-start) nb-icon svg {
+  width: 1rem;
+  height: 1rem
+}
+
+.nb-theme-dark :host .validation-errors {
+  margin-top: -1.25rem
+}
+
+.nb-theme-dark :host .validation-errors > div {
+  font-size: .6875rem;
+  color: #ff4070
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(1turn)
+  }
+}

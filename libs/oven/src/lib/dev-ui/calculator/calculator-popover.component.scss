@@ -1,0 +1,137 @@
+:host {
+  border: 2px solid transparent;
+  border-radius: .25rem;
+  background: #15171f;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .6);
+  width: 353px;
+  height: 428px
+}
+
+@media (max-height: 600px) {
+  :host {
+    height: 280px
+  }
+}
+
+:host .arrow {
+  position: absolute;
+  width: 0;
+  height: 0
+}
+
+:host nb-overlay-container .primitive-overlay {
+  padding: .75rem 1rem;
+  color: #fff
+}
+
+:host .arrow, :host .arrow:after {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #15171f
+}
+
+:host .arrow:after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  top: 3px;
+  left: calc(50% - 11px);
+  -webkit-clip-path: inset(0 0 2px);
+  clip-path: inset(0 0 2px)
+}
+
+.nb-overlay-bottom:host .arrow {
+  top: -10px;
+  left: calc(50% - 11px)
+}
+
+.nb-overlay-bottom-start:host .arrow {
+  top: -10px
+}
+
+[dir=ltr] .nb-overlay-bottom-start:host .arrow {
+  right: 3px
+}
+
+[dir=rtl] .nb-overlay-bottom-start:host .arrow {
+  left: 3px
+}
+
+.nb-overlay-bottom-end:host .arrow {
+  top: -10px
+}
+
+[dir=ltr] .nb-overlay-bottom-end:host .arrow {
+  left: 3px
+}
+
+[dir=rtl] .nb-overlay-bottom-end:host .arrow {
+  right: 3px
+}
+
+.nb-overlay-left:host .arrow {
+  right: -15px;
+  top: calc(50% - 5.5px);
+  transform: rotate(90deg)
+}
+
+.nb-overlay-start-top:host .arrow {
+  right: -14.5px;
+  bottom: 11px;
+  transform: rotate(90deg)
+}
+
+.nb-overlay-start-bottom:host .arrow {
+  right: -14.5px;
+  top: 11px;
+  transform: rotate(90deg)
+}
+
+.nb-overlay-top:host .arrow {
+  left: calc(50% - 11px)
+}
+
+.nb-overlay-top-start:host .arrow, .nb-overlay-top:host .arrow {
+  bottom: -10px;
+  transform: rotate(180deg)
+}
+
+[dir=ltr] .nb-overlay-top-start:host .arrow {
+  right: 3px
+}
+
+[dir=rtl] .nb-overlay-top-start:host .arrow {
+  left: 3px
+}
+
+.nb-overlay-top-end:host .arrow {
+  bottom: -10px;
+  transform: rotate(180deg)
+}
+
+[dir=ltr] .nb-overlay-top-end:host .arrow {
+  left: 3px
+}
+
+[dir=rtl] .nb-overlay-top-end:host .arrow {
+  right: 3px
+}
+
+.nb-overlay-right:host .arrow {
+  left: -15px;
+  top: calc(50% - 5.5px);
+  transform: rotate(270deg)
+}
+
+.nb-overlay-end-top:host .arrow {
+  left: -14.5px;
+  bottom: 11px;
+  transform: rotate(270deg)
+}
+
+.nb-overlay-end-bottom:host .arrow {
+  left: -14.5px;
+  top: 11px;
+  transform: rotate(270deg)
+}

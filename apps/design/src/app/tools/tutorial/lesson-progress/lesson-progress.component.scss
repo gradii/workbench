@@ -1,0 +1,24 @@
+.nb-theme-dark :host {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #959dad
+}
+
+.nb-theme-dark :host svg {
+  margin-right: .5rem
+}
+
+.nb-theme-dark :host .circle {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke: #000
+}
+
+.nb-theme-dark :host .progress-bar {
+  stroke: #47c256;
+  transition: stroke-dashoffset .35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%
+}

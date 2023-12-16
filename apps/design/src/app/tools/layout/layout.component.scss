@@ -1,0 +1,15 @@
+::ng-deep {
+  nb-sidebar.tools-menu {
+    width: 40px;
+    z-index: 1000;
+    background-color: #15171f
+  }
+
+  nb-sidebar.tools-menu .main-container {
+    width: 40px
+  }
+
+  nb-sidebar.tools-menu .main-container .scrollable {
+    overflow: initial
+  }
+}

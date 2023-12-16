@@ -1,0 +1,25 @@
+<ub-state-manager-list-header
+  (create)="create.emit($event)"
+  (filterByName)="filterByName($event)"
+></ub-state-manager-list-header>
+
+<div class="list-block">
+  <ub-state-manager-list-item
+    *ngFor="let storeItem of filteredStoreItemList$ | async; let i = index; trackBy: trackById"
+    [storeItem]="storeItem"
+    [selected]="storeItem.id === selectedStoreItemId"
+    (click)="selectStoreItem.emit(storeItem.id)"
+    (delete)="delete.emit(storeItem)"
+    (duplicate)="duplicate.emit(storeItem)"
+  >
+  </ub-state-manager-list-item>
+
+  <!-- New Store Item stub-->
+  <ub-state-manager-list-item
+    *ngIf="!selectedStoreItemId && createMode"
+    [storeItem]="newStoreItemStub | async"
+    [createMode]="true"
+    [selected]="true"
+  >
+  </ub-state-manager-list-item>
+</div>

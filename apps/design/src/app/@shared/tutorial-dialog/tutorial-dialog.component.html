@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>
+    <ub-tutorial-dialog-header [icon]="icon" [title]="title" (close)="close.emit()"></ub-tutorial-dialog-header>
+  </nb-card-header>
+
+  <nb-card-body>
+    <ng-content select="[ubTutorialDialogContent]"></ng-content>
+    <ng-content select="[ubTutorialDialogPlaylist]"></ng-content>
+  </nb-card-body>
+</nb-card>

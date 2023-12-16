@@ -9,6 +9,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ConfirmEmailChangeComponent } from './confirm-email-change/confirm-email-change.component';
+import { OAuth2CallbackComponent } from './oauth2/oauth2-callback.component';
 
 export const routes: Routes = [
   {
@@ -20,11 +21,11 @@ export const routes: Routes = [
         component: LoginComponent,
         data: { animation: 'LoginPage' }
       },
-      // {
-      //   path: 'register',
-      //   component: RegisterComponent,
-      //   data: { animation: 'RegisterPage' }
-      // },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        data: { animation: 'RegisterPage' }
+      },
       {
         path: 'logout',
         component: LogoutComponent,
@@ -35,15 +36,15 @@ export const routes: Routes = [
         component: ResetPasswordComponent,
         data: { animation: 'ResetPasswordPage' }
       },
-      // {
-      //   path: 'forgot-password',
-      //   component: ForgotPasswordComponent,
-      //   data: { animation: 'RequestPasswordPage' }
-      // },
-      // {
-      //   path: 'oauth2/callback',
-      //   component: OAuth2CallbackComponent
-      // },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+        data: { animation: 'RequestPasswordPage' }
+      },
+      {
+        path: 'oauth2/callback',
+        component: OAuth2CallbackComponent
+      },
       {
         path: 'welcome',
         component: WelcomeComponent,

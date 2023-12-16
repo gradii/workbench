@@ -1,0 +1,14 @@
+<p class="title caption-2 title">{{ title }}</p>
+<div class="upload-wrapper">
+  <ng-content select="ub-image-preview"></ng-content>
+  <div class="validation-wrapper">
+    <div class="button-wrapper">
+      <input #fileInput class="file-input" type="file" [accept]="accept"/>
+      <button nbButton status="primary" type="button" class="upload-button" (click)="fileInput.click()">
+        Upload
+      </button>
+      <p class="caption-2 no-margin description">{{ description }}</p>
+    </div>
+    <ng-content select=".validation-messages"></ng-content>
+  </div>
+</div>

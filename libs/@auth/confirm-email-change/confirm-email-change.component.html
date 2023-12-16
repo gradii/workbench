@@ -1,24 +1,24 @@
 <div class="auth-wrapper">
-  <img src="assets/logo.svg" class="logo-image" alt="Devops" />
+  <img src="assets/logo.svg" class="logo-image" alt="UI Bakery"/>
 
   <h1 class="h2">Email change confirmation</h1>
 
   <div *ngIf="hasErrors || messages.length" role="alert">
-    <tri-alert *ngIf="!token || isTokenExpired" type="danger" outline="danger">
-      <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+    <nb-alert *ngIf="!token || isTokenExpired" status="danger" outline="danger">
+      <nb-icon icon="alert-circle" pack="eva" class="alert-icon"></nb-icon>
       Email change request expired or not found!
-    </tri-alert>
+    </nb-alert>
 
-    <tri-alert *ngFor="let error of errors" type="danger" outline="danger">
-      <tri-icon svgIcon="eva:alert-circle" class="alert-icon"></tri-icon>
+    <nb-alert *ngFor="let error of errors" status="danger" outline="danger">
+      <nb-icon icon="alert-circle" pack="eva" class="alert-icon"></nb-icon>
       {{ error }}
-    </tri-alert>
+    </nb-alert>
 
-    <tri-alert *ngFor="let message of messages" type="success" outline="success">
-      <tri-icon svgIcon="eva:checkmark-circle-2" class="alert-icon"></tri-icon>
+    <nb-alert *ngFor="let message of messages" status="success" outline="success">
+      <nb-icon icon="checkmark-circle-2" pack="eva" class="alert-icon"></nb-icon>
       {{ message }}
-    </tri-alert>
+    </nb-alert>
   </div>
 
-  <a routerLink="/" *ngIf="!loading" triButton color="primary">Go Home</a>
+  <a routerLink="/" *ngIf="!loading" nbButton status="primary">Go Home</a>
 </div>

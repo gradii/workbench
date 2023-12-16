@@ -1,0 +1,24 @@
+<div
+  class="saturation-lightness"
+  ubColorSlider
+  [rgX]="1"
+  [rgY]="1"
+  [style.height.px]="areaHeight"
+  [style.width.px]="areaWidth"
+  [style.background-color]="hueSliderColor"
+  (newValue)="onSaturationChange($event)"
+>
+  <div
+    class="cursor"
+    [style.height.px]="slCursorWidth"
+    [style.width.px]="slCursorWidth"
+    [style.top.px]="slider.v"
+    [style.left.px]="slider.s"
+  ></div>
+</div>
+
+<div class="hue-preview no-margin">
+  <div class="hue" ubColorSlider [style.width.px]="hueWidth" [rgX]="1" (newValue)="onHueChange($event)">
+    <div class="cursor" [style.width.px]="hueCursorWidth" [style.left.px]="slider.h"></div>
+  </div>
+</div>

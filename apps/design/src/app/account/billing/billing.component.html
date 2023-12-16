@@ -1,0 +1,24 @@
+<div [nbSpinner]="loadBillingInfo$ | async" nbSpinnerStatus="primary" class="component-top-margin">
+  <nb-alert
+    *ngIf="updatePaymentMethodFailed$ | async"
+    status="danger"
+    outline="danger"
+    closable
+    (close)="closeUpdateFailedAlert()"
+  >
+    <nb-icon pack="eva" icon="alert-circle" class="alert-icon"></nb-icon>
+    Can't update payment method
+  </nb-alert>
+
+  <nb-alert *ngIf="loadBillingInfoFailed$ | async" outline="danger" status="danger">
+    <nb-icon pack="eva" icon="alert-circle" class="alert-icon"></nb-icon>
+    Can't load billing info
+  </nb-alert>
+
+  <div [class.pointer-disabled]="billingDisabled$ | async">
+    <ub-payment-info class="component-top-margin"></ub-payment-info>
+    <ub-redeem-coupon class="component-top-margin"></ub-redeem-coupon>
+    <ub-payment-history class="component-top-margin"></ub-payment-history>
+    <ub-manage-plan class="component-top-margin"></ub-manage-plan>
+  </div>
+</div>

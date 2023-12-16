@@ -1,0 +1,52 @@
+.nb-theme-dark :host nb-layout {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  width: calc(100% - 40px);
+  height: calc(100% - 2.5rem);
+  margin-left: 40px
+}
+
+.nb-theme-dark :host nb-layout .layout {
+  min-height: calc(100% - 2.5rem)
+}
+
+.nb-theme-dark :host nb-sidebar {
+  width: 16rem
+}
+
+.nb-theme-dark :host nb-sidebar .main-container {
+  height: calc(100vh - 2.5rem);
+  width: 16rem;
+  background: #15171f
+}
+
+.nb-theme-dark :host nb-sidebar.collapsed, .nb-theme-dark :host nb-sidebar.collapsed .main-container {
+  width: 0
+}
+
+.nb-theme-dark :host .mock {
+  margin: 1rem
+}
+
+.nb-theme-dark :host .pages-sidebar {
+  margin-left: 40px;
+  transition: left .3s
+}
+
+.nb-theme-dark :host .pages-sidebar.collapsed {
+  left: -16rem;
+  width: 16rem
+}
+
+.nb-theme-dark :host .pages-sidebar.collapsed .main-container, .nb-theme-dark :host .pages-sidebar.collapsed .scrollable {
+  width: 16rem
+}
+
+.nb-theme-dark :host .pages-sidebar .main-container, .nb-theme-dark :host .pages-sidebar .main-container .scrollable {
+  transition: left .3s
+}
+
+.nb-theme-dark :host nb-sidebar[tag=settings-sidebar] .scrollable {
+  overflow-y: scroll
+}

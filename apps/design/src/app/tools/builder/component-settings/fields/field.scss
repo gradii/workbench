@@ -1,0 +1,91 @@
+.nb-theme-dark :host {
+  margin-top: .75rem;
+  display: block
+}
+
+.nb-theme-dark :host .inner-field {
+  margin: 1rem 0
+}
+
+.nb-theme-dark .row-field:host {
+  display: flex;
+  align-items: center
+}
+
+.nb-theme-dark :host .column-field {
+  display: flex;
+  flex-direction: column
+}
+
+.nb-theme-dark .no-top-margin:host, .nb-theme-dark :host .no-top-margin, .nb-theme-dark .no-top-margin:host ub-data-field, .nb-theme-dark :host .no-top-margin ub-data-field {
+  margin-top: 0
+}
+
+.nb-theme-dark :host .no-bottom-padding {
+  padding-bottom: 0
+}
+
+.nb-theme-dark :host .no-tab-container {
+  padding: 0 1rem
+}
+
+.nb-theme-dark :host .settings-field-label {
+  color: #fff;
+  font-size: .6875rem;
+  vertical-align: top;
+  text-transform: capitalize
+}
+
+.nb-theme-dark :host .setting-hint {
+  color: #959dad;
+  font-size: .6875rem;
+  vertical-align: top
+}
+
+.nb-theme-dark .row-field:host .settings-field-label {
+  margin-right: .5rem
+}
+
+.nb-theme-dark .column-field:host .settings-field-label {
+  display: inline-block;
+  margin-bottom: .25rem
+}
+
+.nb-theme-dark :host ub-code-editor.resizable {
+  min-height: 5rem
+}
+
+.nb-theme-dark :host .code-highlight {
+  color: #fff;
+  background-color: rgba(143, 92, 255, .32);
+  border-radius: .25rem;
+  padding: 1px
+}
+
+.nb-theme-dark :host .data-source-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.nb-theme-dark :host .data-source-container .data-source-main-label {
+  font-size: .6875rem;
+  font-weight: 700
+}
+
+.nb-theme-dark :host .data-source-sub-label {
+  font-size: .6875rem;
+  line-height: 1rem;
+  display: block;
+  margin: 0;
+  color: #959dad
+}
+
+.nb-theme-dark :host .data-consumer {
+  color: #959dad;
+  font-size: .75rem
+}
+
+.nb-theme-dark :host ub-data-field {
+  margin-top: .25rem
+}

@@ -1,0 +1,63 @@
+.nb-theme-dark :host {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: .25rem;
+  font-size: .8125rem;
+  cursor: pointer
+}
+
+.nb-theme-dark :host:hover {
+  background-color: rgba(149, 157, 173, .08)
+}
+
+.nb-theme-dark .active:host {
+  justify-content: space-between;
+  padding-right: .25rem;
+  background-color: #1e89ef
+}
+
+.nb-theme-dark .locked:host {
+  padding-right: .25rem;
+  cursor: unset
+}
+
+.nb-theme-dark .locked:host .page-name {
+  opacity: .3
+}
+
+.nb-theme-dark :host .page-name {
+  font-size: .6875rem;
+  line-height: 1.425;
+  padding: .4rem .5rem
+}
+
+.nb-theme-dark :host button[nbButton].clear-icon {
+  padding: .375rem
+}
+
+.nb-theme-dark :host button[nbButton].clear-icon svg {
+  fill: #a4dffe
+}
+
+.nb-theme-dark :host .inactive-icon {
+  margin-right: -.3rem
+}
+
+.nb-theme-dark :host .inactive-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: #fff
+}
+
+.nb-theme-dark :host .lock-icon {
+  position: absolute;
+  right: .6125rem
+}
+
+.nb-theme-dark :host .lock-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: #fff
+}

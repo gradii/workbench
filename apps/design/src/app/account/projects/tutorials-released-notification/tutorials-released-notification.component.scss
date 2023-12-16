@@ -1,0 +1,28 @@
+.nb-theme-light :host {
+  background: #232730
+}
+
+.nb-theme-light :host ub-step {
+  min-width: 480px;
+  min-height: 368px
+}
+
+:host {
+  display: block;
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+.footer {
+  display: flex;
+  padding: 1rem
+}
+
+.footer button:first-child {
+  margin-left: auto;
+  margin-right: 1rem
+}
+
+.skip[nbButton].appearance-ghost {
+  text-transform: none
+}

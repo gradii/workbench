@@ -1,0 +1,14 @@
+<ub-step [url]="url$ | async" [style.width.px]="width$ | async" [style.height.px]="height$ | async"></ub-step>
+
+<div class="footer">
+  <button
+    nbButton
+    fullWidth
+    size="small"
+    status="primary"
+    *ngIf="selectedTutorial$ | async as selectedTutorial"
+    (click)="startTutorial(selectedTutorial.id)"
+  >
+    start lesson
+  </button>
+</div>

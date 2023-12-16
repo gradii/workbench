@@ -1,0 +1,17 @@
+<nb-card>
+  <nb-card-body>
+    <h2 class="h5 heading">Are you sure you want to exit tutorial?</h2>
+
+    <p>If you go to Dashboard You will loose your progress.</p>
+
+    <div class="actions component-list-margin-sm">
+      <button nbButton size="small" appearance="ghost" type="button" (click)="cancel()">
+        cancel
+      </button>
+
+      <button nbButton size="small" appearance="filled" status="info" type="submit" (click)="gotoProjects()">
+        go to dashboard
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card>
